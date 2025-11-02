@@ -1,0 +1,13 @@
+# Netlify Configuration
+[build]
+  functions = "netlify/functions"
+  publish = "."
+
+# Environment variables (for local development)
+# Copy this to .env and add your actual API key
+[build.environment]
+  NODE_VERSION = "18"
+
+# Function settings
+[functions]
+  node_bundler = "nft"

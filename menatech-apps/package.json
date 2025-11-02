@@ -1,0 +1,25 @@
+{
+  "name": "menatech-apps",
+  "version": "1.0.0",
+  "description": "Menatech Apps - AI automation hub for startup founders",
+  "main": "index.html",
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "echo 'No build process needed for static site'",
+    "deploy": "netlify deploy --prod"
+  },
+  "dependencies": {
+    "resend": "^3.2.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  },
+  "keywords": [
+    "automation",
+    "ai",
+    "startup",
+    "menatech"
+  ],
+  "author": "Menatech",
+  "license": "MIT"
+}

@@ -502,37 +502,39 @@ async function handleFeedbackSubmit(event) {
     
     try {
         const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
+        const data = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            message: formData.get('message')
+        };
         
-        // Send feedback via FormSubmit (free service for prototypes)
-        const response = await fetch(`https://formsubmit.co/${FEEDBACK_EMAIL}`, {
+        // Send feedback via Netlify function with Resend
+        const response = await fetch('/.netlify/functions/send-feedback', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Accept': 'application/json'
             },
-            body: JSON.stringify({
-                name: data.name,
-                email: data.email,
-                message: data.message,
-                _subject: 'New Feedback from Menatech Apps',
-                _template: 'table'
-            })
+            body: JSON.stringify(data)
         });
         
-        if (response.ok) {
+        const result = await response.json();
+        
+        if (response.ok && result.success) {
             showMessage('success', translations[currentLang].messages.success);
             form.reset();
+            
+            // Track successful feedback submission
+            trackEvent('feedback_submitted', { 
+                email: data.email,
+                emailId: result.emailId 
+            });
         } else {
-            throw new Error('Feedback submission failed');
+            throw new Error(result.error || 'Feedback submission failed');
         }
-        
-        // Track feedback submission
-        trackEvent('feedback_submitted', { email: data.email });
         
     } catch (error) {
         console.error('Error submitting feedback:', error);
-        showMessage('error', translations[currentLang].messages.error);
+        showMessage('error', error.message || translations[currentLang].messages.error);
     } finally {
         submitBtn.classList.remove('loading');
         submitBtn.innerHTML = originalText;
