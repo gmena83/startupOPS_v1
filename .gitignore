@@ -85,3 +85,19 @@ jspm_packages/
 
 # Local development files
 *.local
+
+# Vite/React specific
+*.local
+.vite/
+vite.config.ts.timestamp-*
+
+# TypeScript
+*.tsbuildinfo
+
+# Lock files (keep package-lock.json, ignore others)
+bun.lockb
+pnpm-lock.yaml
+
+# Temporary files
+*.tmp
+.temp/

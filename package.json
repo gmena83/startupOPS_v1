@@ -1,0 +1,40 @@
+{
+  "name": "startupops-v1-monorepo",
+  "version": "1.0.0",
+  "description": "StartupOPS - Full-stack AI automation hub with React frontend and Netlify backend",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "menatech-apps"
+  ],
+  "scripts": {
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "netlify dev",
+    "dev": "netlify dev",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd menatech-apps && npm run build",
+    "build": "cd frontend && npm run build",
+    "install:all": "npm install && cd frontend && npm install && cd ../menatech-apps && npm install",
+    "preview:frontend": "cd frontend && npm run preview",
+    "deploy": "netlify deploy --prod",
+    "deploy:preview": "netlify deploy",
+    "lint": "cd frontend && npm run lint"
+  },
+  "keywords": [
+    "automation",
+    "ai",
+    "startup",
+    "menatech",
+    "react",
+    "vite",
+    "typescript"
+  ],
+  "author": "Menatech",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  }
+}
