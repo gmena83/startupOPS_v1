@@ -3,8 +3,8 @@
   # Build the frontend React app
   base = "frontend"
   command = "npm run build"
-  publish = "frontend/dist"
-  functions = "menatech-apps/netlify/functions"
+  publish = "dist"
+  functions = "../menatech-apps/netlify/functions"
 
 # Environment variables
 [build.environment]
