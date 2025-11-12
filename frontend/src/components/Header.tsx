@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Workflow } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { LanguageToggle } from "@/components/LanguageToggle";
+import { AuthDialog } from "@/components/AuthDialog";
 import { useLanguage } from "@/contexts/LanguageContext";
 import {
   Sheet,
@@ -14,6 +15,8 @@ import {
 export const Header = () => {
   const { t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [authDialogOpen, setAuthDialogOpen] = useState(false);
+  const [authMode, setAuthMode] = useState<"signin" | "signup">("signin");
   
   const navLinks = [
     { href: "#features", label: t("nav.features") },
@@ -25,59 +28,76 @@ export const Header = () => {
   const handleNavClick = () => {
     setMobileMenuOpen(false);
   };
+
+  const handleSignIn = () => {
+    setAuthMode("signin");
+    setAuthDialogOpen(true);
+  };
+
+  const handleGetStarted = () => {
+    setAuthMode("signup");
+    setAuthDialogOpen(true);
+  };
   
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-accent flex items-center justify-center">
-              <Workflow className="h-5 w-5 text-accent-foreground" />
+    <>
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="flex items-center justify-between h-16">
+            {/* Logo */}
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-lg bg-gradient-accent flex items-center justify-center">
+                <Workflow className="h-5 w-5 text-accent-foreground" />
+              </div>
+              <span className="text-lg sm:text-xl font-bold">StartupOPS</span>
             </div>
-            <span className="text-lg sm:text-xl font-bold">StartupOPS</span>
-          </div>
-          
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-foreground hover:text-accent transition-colors"
+            
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center gap-8">
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm font-medium text-foreground hover:text-accent transition-colors"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+            
+            {/* Desktop CTA Buttons */}
+            <div className="hidden md:flex items-center gap-2">
+              <ThemeToggle />
+              <LanguageToggle />
+              <Button
+                variant="ghost"
+                size="sm"
+                className="hidden lg:inline-flex"
+                onClick={handleSignIn}
               >
-                {link.label}
-              </a>
-            ))}
-          </nav>
-          
-          {/* Desktop CTA Buttons */}
-          <div className="hidden md:flex items-center gap-2">
-            <ThemeToggle />
-            <LanguageToggle />
-            <Button variant="ghost" size="sm" className="hidden lg:inline-flex">
-              {t("nav.signIn")}
-            </Button>
-            <Button variant="hero" size="sm">
-              {t("nav.getStarted")}
-            </Button>
-          </div>
-          
-          {/* Mobile Menu Button */}
-          <div className="flex md:hidden items-center gap-2">
-            <ThemeToggle />
-            <LanguageToggle />
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setMobileMenuOpen(true)}
-              aria-label="Open menu"
-            >
-              <Menu className="h-6 w-6" />
-            </Button>
+                {t("nav.signIn")}
+              </Button>
+              <Button variant="hero" size="sm" onClick={handleGetStarted}>
+                {t("nav.getStarted")}
+              </Button>
+            </div>
+            
+            {/* Mobile Menu Button */}
+            <div className="flex md:hidden items-center gap-2">
+              <ThemeToggle />
+              <LanguageToggle />
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setMobileMenuOpen(true)}
+                aria-label="Open menu"
+              >
+                <Menu className="h-6 w-6" />
+              </Button>
+            </div>
           </div>
         </div>
-      </div>
+      </header>
       
       {/* Mobile Menu Sheet */}
       <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
@@ -104,16 +124,37 @@ export const Header = () => {
             ))}
             
             <div className="border-t border-border pt-4 mt-4 space-y-3">
-              <Button variant="ghost" className="w-full justify-start" size="lg">
+              <Button
+                variant="outline"
+                className="w-full"
+                onClick={() => {
+                  handleSignIn();
+                  setMobileMenuOpen(false);
+                }}
+              >
                 {t("nav.signIn")}
               </Button>
-              <Button variant="hero" className="w-full" size="lg">
+              <Button
+                variant="hero"
+                className="w-full"
+                onClick={() => {
+                  handleGetStarted();
+                  setMobileMenuOpen(false);
+                }}
+              >
                 {t("nav.getStarted")}
               </Button>
             </div>
           </nav>
         </SheetContent>
       </Sheet>
-    </header>
+
+      {/* Auth Dialog */}
+      <AuthDialog
+        open={authDialogOpen}
+        onOpenChange={setAuthDialogOpen}
+        mode={authMode}
+      />
+    </>
   );
 };
