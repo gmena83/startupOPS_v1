@@ -1,9 +1,35 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Loader2 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { redirectToCheckout } from "@/lib/payment";
+import { useToast } from "@/hooks/use-toast";
 
 export const CTA = () => {
   const { t } = useLanguage();
+  const { toast } = useToast();
+  const [loading, setLoading] = useState(false);
+  
+  const handleStartTrial = async () => {
+    setLoading(true);
+    try {
+      // Default to Professional plan for CTA
+      await redirectToCheckout('professional');
+    } catch (error) {
+      console.error('Checkout error:', error);
+      toast({
+        title: "Error",
+        description: error instanceof Error ? error.message : "Failed to start checkout. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleScheduleDemo = () => {
+    window.location.href = 'mailto:gonzalo@menatech.cloud?subject=Schedule Demo - StartupOPS';
+  };
   
   return (
     <section className="py-16 sm:py-24 bg-primary text-primary-foreground relative overflow-hidden">
@@ -17,11 +43,31 @@ export const CTA = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
-            <Button size="lg" variant="cta" className="group w-full sm:w-auto">
-              {t("cta.button")}
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            <Button 
+              size="lg" 
+              variant="cta" 
+              className="group w-full sm:w-auto"
+              onClick={handleStartTrial}
+              disabled={loading}
+            >
+              {loading ? (
+                <>
+                  <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                  Loading...
+                </>
+              ) : (
+                <>
+                  {t("cta.button")}
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </>
+              )}
             </Button>
-            <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary w-full sm:w-auto">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary w-full sm:w-auto"
+              onClick={handleScheduleDemo}
+            >
               {t("cta.demo")}
             </Button>
           </div>

@@ -1,12 +1,42 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Check } from "lucide-react";
+import { Check, Loader2 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { redirectToCheckout } from "@/lib/payment";
+import { useToast } from "@/hooks/use-toast";
 
 export const Pricing = () => {
   const { t } = useLanguage();
+  const { toast } = useToast();
+  const [loadingTier, setLoadingTier] = useState<string | null>(null);
   
+  const handleSubscribe = async (tierId: string) => {
+    setLoadingTier(tierId);
+    
+    try {
+      if (tierId === 'enterprise') {
+        // For enterprise, open email client
+        window.location.href = `mailto:${t("pricing.tier4.contact")}?subject=Enterprise Plan Inquiry`;
+        return;
+      }
+      
+      // Redirect to Stripe checkout
+      await redirectToCheckout(tierId as 'starter' | 'professional' | 'growth');
+    } catch (error) {
+      console.error('Subscription error:', error);
+      toast({
+        title: "Error",
+        description: error instanceof Error ? error.message : "Failed to start checkout process. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoadingTier(null);
+    }
+  };
+
   const tiers = [
     {
+      id: "starter",
       nameKey: "pricing.tier1.name",
       priceKey: "pricing.tier1.price",
       period: t("pricing.monthly"),
@@ -16,6 +46,7 @@ export const Pricing = () => {
       highlighted: false,
     },
     {
+      id: "professional",
       nameKey: "pricing.tier2.name",
       priceKey: "pricing.tier2.price",
       period: t("pricing.monthly"),
@@ -25,6 +56,7 @@ export const Pricing = () => {
       highlighted: true,
     },
     {
+      id: "growth",
       nameKey: "pricing.tier3.name",
       priceKey: "pricing.tier3.price",
       period: t("pricing.monthly"),
@@ -34,6 +66,7 @@ export const Pricing = () => {
       highlighted: false,
     },
     {
+      id: "enterprise",
       nameKey: "pricing.tier4.name",
       priceKey: "pricing.tier4.price",
       periodKey: "pricing.tier4.period",
@@ -99,8 +132,17 @@ export const Pricing = () => {
                 variant={tier.highlighted ? "hero" : "outline"} 
                 className="w-full"
                 size="lg"
+                onClick={() => handleSubscribe(tier.id)}
+                disabled={loadingTier !== null}
               >
-                {t(tier.ctaKey)}
+                {loadingTier === tier.id ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Loading...
+                  </>
+                ) : (
+                  t(tier.ctaKey)
+                )}
               </Button>
               
               {tier.contact && (
