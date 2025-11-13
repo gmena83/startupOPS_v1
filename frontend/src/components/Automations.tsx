@@ -2,14 +2,15 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { FileCheck, Sparkles, TrendingUp, Users, Mic, BookOpen } from "lucide-react";
 import { TypeformDialog } from "@/components/TypeformDialog";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const automations = [
   {
     id: "data-validation",
-    name: "Data Validation",
+    nameKey: "automations.1.name",
     icon: FileCheck,
-    description: "Upload a PDF pitch deck, proposal, or report to identify and validate statements against factual data",
-    benefit: "Ensure your documents are backed by verified, accurate information",
+    descriptionKey: "automations.1.description",
+    benefitKey: "automations.1.benefit",
     details: [
       "Click to open the upload folder",
       "Upload your PDF file (pitch deck, proposal, or report)",
@@ -19,10 +20,10 @@ const automations = [
   },
   {
     id: "prompt-generator",
-    name: "Prompt Generator",
+    nameKey: "automations.2.name",
     icon: Sparkles,
-    description: "Generate comprehensive 'megaprompts' tailored for specific no-code/low-code platforms",
-    benefit: "Save time and tokens with optimized prompts from the start",
+    descriptionKey: "automations.2.description",
+    benefitKey: "automations.2.benefit",
     details: [
       "Target platform name",
       "Use case description",
@@ -34,10 +35,10 @@ const automations = [
   },
   {
     id: "brandseo",
-    name: "BrandSEO",
+    nameKey: "automations.3.name",
     icon: TrendingUp,
-    description: "Analyze your brand's position in traditional and AI SEO with actionable recommendations",
-    benefit: "Improve your brand's online visibility and ranking",
+    descriptionKey: "automations.3.description",
+    benefitKey: "automations.3.benefit",
     details: [
       "Brand/company name",
       "Website URL",
@@ -49,10 +50,10 @@ const automations = [
   },
   {
     id: "ai-focus-group",
-    name: "AI Focus Group",
+    nameKey: "automations.4.name",
     icon: Users,
-    description: "Validate product ideas with AI-generated buyer personas that provide customer feedback",
-    benefit: "Get customer insights before investing in development",
+    descriptionKey: "automations.4.description",
+    benefitKey: "automations.4.benefit",
     details: [
       "Click to open the detailed form",
       "Provide product details and target segment",
@@ -62,10 +63,10 @@ const automations = [
   },
   {
     id: "extractstyle",
-    name: "ExtractStyle",
+    nameKey: "automations.5.name",
     icon: Mic,
-    description: "Analyze your communication style from text and audio to create personalized LLM instructions",
-    benefit: "Make AI-generated content sound authentically like you",
+    descriptionKey: "automations.5.description",
+    benefitKey: "automations.5.benefit",
     details: [
       "Click to open the form",
       "Share text samples or upload audio files",
@@ -75,10 +76,10 @@ const automations = [
   },
   {
     id: "topic-research",
-    name: "Topic Research",
+    nameKey: "automations.6.name",
     icon: BookOpen,
-    description: "Generate well-researched blog content with SEO and trend analysis",
-    benefit: "Save time while maintaining high-quality content standards",
+    descriptionKey: "automations.6.description",
+    benefitKey: "automations.6.benefit",
     details: [
       "Click to open the form",
       "Provide your blog topic and requirements",
@@ -89,6 +90,7 @@ const automations = [
 ];
 
 export const Automations = () => {
+  const { t } = useLanguage();
   const [selectedAutomation, setSelectedAutomation] = useState<string | null>(null);
 
   const openDialog = (automationId: string) => {
@@ -107,10 +109,10 @@ export const Automations = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 animate-fade-in">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            Ready-to-Use Automations
+            {t("automations.title")}
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground">
-            No setup required. No APIs to connect. Just click, submit, and receive results.
+            {t("automations.description")}
           </p>
         </div>
 
@@ -130,24 +132,24 @@ export const Automations = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">{automation.name}</h3>
+                <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">{t(automation.nameKey)}</h3>
 
                 {/* Description */}
                 <p className="text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4">
-                  {automation.description}
+                  {t(automation.descriptionKey)}
                 </p>
 
                 {/* Benefit */}
                 <div className="bg-accent/10 border border-accent/20 rounded-lg p-3 sm:p-4 mb-4 sm:mb-6">
                   <p className="text-xs sm:text-sm font-medium text-accent-foreground">
-                    {automation.benefit}
+                    {t(automation.benefitKey)}
                   </p>
                 </div>
 
                 {/* Details */}
                 <div className="mb-4 sm:mb-6">
                   <p className="text-xs sm:text-sm font-semibold text-foreground mb-2">
-                    {automation.detailsLabel || "How it works:"}
+                    {automation.detailsLabel || t("automations.howItWorks")}
                   </p>
                   <ul className="space-y-2">
                     {automation.details.map((detail, idx) => (
@@ -166,7 +168,7 @@ export const Automations = () => {
                   size="lg"
                   onClick={() => openDialog(automation.id)}
                 >
-                  Try {automation.name}
+                  {t("automations.try")} {t(automation.nameKey)}
                 </Button>
               </div>
             );

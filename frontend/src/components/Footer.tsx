@@ -1,7 +1,9 @@
 import { Workflow } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
   
   return (
     <footer className="bg-primary text-primary-foreground py-8 sm:py-12">
@@ -16,53 +18,53 @@ export const Footer = () => {
               <span className="text-lg sm:text-xl font-bold">StartupOPS</span>
             </div>
             <p className="text-xs sm:text-sm opacity-80">
-              Give founders their time back.
+              {t("footer.tagline")}
             </p>
           </div>
           
           {/* Product */}
           <div>
-            <h4 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Product</h4>
+            <h4 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">{t("footer.product")}</h4>
             <ul className="space-y-2 text-xs sm:text-sm opacity-80">
-              <li><a href="#" className="hover:opacity-100 transition-opacity">Features</a></li>
-              <li><a href="#" className="hover:opacity-100 transition-opacity">Integrations</a></li>
-              <li><a href="#" className="hover:opacity-100 transition-opacity">Pricing</a></li>
-              <li><a href="#" className="hover:opacity-100 transition-opacity">Changelog</a></li>
+              <li><a href="#" className="hover:opacity-100 transition-opacity">{t("footer.product.features")}</a></li>
+              <li><a href="#" className="hover:opacity-100 transition-opacity">{t("footer.product.integrations")}</a></li>
+              <li><a href="#" className="hover:opacity-100 transition-opacity">{t("footer.product.pricing")}</a></li>
+              <li><a href="#" className="hover:opacity-100 transition-opacity">{t("footer.product.changelog")}</a></li>
             </ul>
           </div>
           
           {/* Company */}
           <div>
-            <h4 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Company</h4>
+            <h4 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">{t("footer.company")}</h4>
             <ul className="space-y-2 text-xs sm:text-sm opacity-80">
-              <li><a href="#" className="hover:opacity-100 transition-opacity">About</a></li>
-              <li><a href="#" className="hover:opacity-100 transition-opacity">Blog</a></li>
-              <li><a href="#" className="hover:opacity-100 transition-opacity">Careers</a></li>
-              <li><a href="#" className="hover:opacity-100 transition-opacity">Contact</a></li>
+              <li><a href="#" className="hover:opacity-100 transition-opacity">{t("footer.company.about")}</a></li>
+              <li><a href="#" className="hover:opacity-100 transition-opacity">{t("footer.company.blog")}</a></li>
+              <li><a href="#" className="hover:opacity-100 transition-opacity">{t("footer.company.careers")}</a></li>
+              <li><a href="#" className="hover:opacity-100 transition-opacity">{t("footer.company.contact")}</a></li>
             </ul>
           </div>
           
           {/* Legal */}
           <div className="col-span-2 md:col-span-1">
-            <h4 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Legal</h4>
+            <h4 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">{t("footer.legal")}</h4>
             <ul className="space-y-2 text-xs sm:text-sm opacity-80">
-              <li><a href="#" className="hover:opacity-100 transition-opacity">Privacy</a></li>
-              <li><a href="#" className="hover:opacity-100 transition-opacity">Terms</a></li>
-              <li><a href="#" className="hover:opacity-100 transition-opacity">Security</a></li>
+              <li><a href="#" className="hover:opacity-100 transition-opacity">{t("footer.legal.privacy")}</a></li>
+              <li><a href="#" className="hover:opacity-100 transition-opacity">{t("footer.legal.terms")}</a></li>
+              <li><a href="#" className="hover:opacity-100 transition-opacity">{t("footer.legal.security")}</a></li>
             </ul>
           </div>
         </div>
         
         <div className="border-t border-primary-foreground/20 pt-6 sm:pt-8 text-center text-xs sm:text-sm opacity-80">
           <p>
-            Created by Menatech |{" "}
+            {t("footer.createdBy")}{" "}
             <a 
               href="https://menatech.cloud" 
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:opacity-100 transition-opacity underline"
             >
-              Website
+              {t("footer.website")}
             </a>
             {" "}|{" "}
             <a 
@@ -71,10 +73,10 @@ export const Footer = () => {
               rel="noopener noreferrer"
               className="hover:opacity-100 transition-opacity underline"
             >
-              LinkedIn
+              {t("footer.linkedin")}
             </a>
           </p>
-          <p className="mt-2">&copy; {currentYear} StartupOPS. All rights reserved.</p>
+          <p className="mt-2">&copy; {currentYear} StartupOPS. {t("footer.allRights")}</p>
         </div>
       </div>
     </footer>
