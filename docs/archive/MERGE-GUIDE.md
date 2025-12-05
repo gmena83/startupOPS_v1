@@ -33,12 +33,14 @@ npm run install:all
 ### 2. Development Workflow
 
 **Frontend Development:**
+
 ```bash
 npm run dev:frontend
 # Opens Vite dev server (usually http://localhost:5173)
 ```
 
 **Backend Development:**
+
 ```bash
 npm run dev:backend
 # Runs Netlify dev server with functions
@@ -57,12 +59,14 @@ npm run build
 ### 4. Git Integration
 
 **Stage and commit the changes:**
+
 ```bash
 git add .
 git commit -m "Merge ops-elegance frontend into monorepo structure"
 ```
 
 **Push to main repository:**
+
 ```bash
 git push origin main
 ```
@@ -104,16 +108,19 @@ startupOPS_v1/
 ## 🔄 Integration Options
 
 ### Option 1: Keep Separate (Current)
+
 - Deploy frontend and backend separately
 - Frontend: Deploy to Vercel, Netlify, or similar
 - Backend: Continue using Netlify for functions
 
 ### Option 2: Unified Deployment
+
 - Configure frontend to proxy API calls to backend
 - Build frontend and serve from same domain
 - Update Netlify configuration to serve React app
 
 ### Option 3: API Integration
+
 - Connect frontend React components to backend Netlify functions
 - Set up environment variables for API endpoints
 - Configure CORS if needed
@@ -121,6 +128,7 @@ startupOPS_v1/
 ## 🛠️ Recommended Next Actions
 
 1. **Test the frontend:**
+
    ```bash
    npm run dev:frontend
    ```

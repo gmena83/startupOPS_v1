@@ -17,11 +17,12 @@ const translations = {
     "nav.pricing": "Pricing",
     "nav.signIn": "Sign In",
     "nav.getStarted": "Get Started",
-    
+
     // Hero
     "hero.badge": "No APIs. No Integrations. Just Results.",
     "hero.title": "Give Founders Their Time Back",
-    "hero.description": "Focus on business growth, not administrative tasks. Plug-and-play automations that save you time without requiring any technical setup or API connections.",
+    "hero.description":
+      "Focus on business growth, not administrative tasks. Plug-and-play automations that save you time without requiring any technical setup or API connections.",
     "hero.cta": "Start Saving Time",
     "hero.trial": "14-day free trial • No credit card required",
     "hero.stat1.value": "24hrs",
@@ -30,51 +31,72 @@ const translations = {
     "hero.stat2.label": "Saved Weekly",
     "hero.stat3.value": "50M+",
     "hero.stat3.label": "Target Market",
-    
+
     // Features
     "features.title": "Built for Founders Who Value Their Time",
-    "features.description": "Unlike other tools, you don't need to connect APIs or configure complex workflows. Just log in and start automating.",
+    "features.description":
+      "Unlike other tools, you don't need to connect APIs or configure complex workflows. Just log in and start automating.",
     "features.1.title": "No Setup Required",
-    "features.1.description": "Plug & play automations. No API connections, no integrations, no headaches.",
+    "features.1.description":
+      "Plug & play automations. No API connections, no integrations, no headaches.",
     "features.2.title": "Pre-Built & Ready",
-    "features.2.description": "6 automations ready to use immediately. Just log in and start saving time.",
+    "features.2.description":
+      "6 automations ready to use immediately. Just log in and start saving time.",
     "features.3.title": "Instant Results",
-    "features.3.description": "Save up to 9.5 hours per week from day one. No learning curve.",
+    "features.3.description":
+      "Save up to 9.5 hours per week from day one. No learning curve.",
     "features.4.title": "Non-Tech Friendly",
-    "features.4.description": "No coding or technical skills required. Built for founders, not developers.",
+    "features.4.description":
+      "No coding or technical skills required. Built for founders, not developers.",
     "features.5.title": "Bilingual Support",
-    "features.5.description": "Full EN/ES language support to serve diverse teams and markets.",
+    "features.5.description":
+      "Full EN/ES language support to serve diverse teams and markets.",
     "features.6.title": "Mobile-First",
-    "features.6.description": "Fully responsive design. Work from anywhere, anytime, on any device.",
-    
+    "features.6.description":
+      "Fully responsive design. Work from anywhere, anytime, on any device.",
+
     // Automations
     "automations.title": "6 Ready-to-Use Automations",
-    "automations.description": "Pre-built workflows that save you hours every week. No setup required.",
+    "automations.description":
+      "Pre-built workflows that save you hours every week. No setup required.",
     "automations.try": "Try",
     "automations.howItWorks": "How it works:",
     "automations.requiredData": "Required Data:",
     "automations.1.name": "Data Validation",
-    "automations.1.description": "Upload a PDF pitch deck, proposal, or report to identify and validate statements against factual data",
-    "automations.1.benefit": "Ensure your documents are backed by verified, accurate information",
+    "automations.1.description":
+      "Upload a PDF pitch deck, proposal, or report to identify and validate statements against factual data",
+    "automations.1.benefit":
+      "Ensure your documents are backed by verified, accurate information",
     "automations.2.name": "Prompt Generator",
-    "automations.2.description": "Generate comprehensive 'megaprompts' tailored for specific no-code/low-code platforms",
-    "automations.2.benefit": "Save time and tokens with optimized prompts from the start",
+    "automations.2.description":
+      "Generate comprehensive 'megaprompts' tailored for specific no-code/low-code platforms",
+    "automations.2.benefit":
+      "Save time and tokens with optimized prompts from the start",
     "automations.3.name": "BrandSEO",
-    "automations.3.description": "Analyze your brand's position in traditional and AI SEO with actionable recommendations",
-    "automations.3.benefit": "Improve your brand's online visibility and ranking",
+    "automations.3.description":
+      "Analyze your brand's position in traditional and AI SEO with actionable recommendations",
+    "automations.3.benefit":
+      "Improve your brand's online visibility and ranking",
     "automations.4.name": "AI Focus Group",
-    "automations.4.description": "Validate product ideas with AI-generated buyer personas that provide customer feedback",
-    "automations.4.benefit": "Get customer insights before investing in development",
+    "automations.4.description":
+      "Validate product ideas with AI-generated buyer personas that provide customer feedback",
+    "automations.4.benefit":
+      "Get customer insights before investing in development",
     "automations.5.name": "ExtractStyle",
-    "automations.5.description": "Analyze your communication style from text and audio to create personalized LLM instructions",
-    "automations.5.benefit": "Make AI-generated content sound authentically like you",
+    "automations.5.description":
+      "Analyze your communication style from text and audio to create personalized LLM instructions",
+    "automations.5.benefit":
+      "Make AI-generated content sound authentically like you",
     "automations.6.name": "Topic Research",
-    "automations.6.description": "Generate well-researched blog content with SEO and trend analysis",
-    "automations.6.benefit": "Create high-quality content without hours of research",
-    
+    "automations.6.description":
+      "Generate well-researched blog content with SEO and trend analysis",
+    "automations.6.benefit":
+      "Create high-quality content without hours of research",
+
     // Pricing
     "pricing.title": "Simple, Transparent Pricing",
-    "pricing.description": "Choose the plan that fits your needs. All plans include a 14-day free trial.",
+    "pricing.description":
+      "Choose the plan that fits your needs. All plans include a 14-day free trial.",
     "pricing.badge": "From $20/month - No credit card for free trial",
     "pricing.monthly": "per month",
     "pricing.mostPopular": "Most Popular",
@@ -110,78 +132,107 @@ const translations = {
     "pricing.tier4.feature3": "Dedicated account manager",
     "pricing.tier4.feature4": "SLA guarantees",
     "pricing.tier4.contact": "gonzalo@menatech.cloud",
-    
+
     // CTA
     "cta.title": "Ready to Get Your Time Back?",
-    "cta.description": "Join 30,000+ founders who've automated their operations. No setup. No APIs. No hassle. Start saving 9.5 hours per week today.",
+    "cta.description":
+      "Join 30,000+ founders who've automated their operations. No setup. No APIs. No hassle. Start saving 9.5 hours per week today.",
     "cta.button": "Start Free Trial",
     "cta.demo": "Schedule Demo",
     "cta.trial": "No credit card required • 14-day free trial • Cancel anytime",
-    
+
     // Problem Impact
     "problem.title": "The Hidden Cost of Administrative Tasks",
-    "problem.description": "While you're managing invoices and scheduling meetings, your business potential is slipping away.",
+    "problem.description":
+      "While you're managing invoices and scheduling meetings, your business potential is slipping away.",
     "problem.1.stat": "24hrs",
     "problem.1.label": "Per Week",
     "problem.1.description": "Founder time wasted on admin tasks",
-    "problem.1.details": "Studies show that startup founders spend an average of 24 hours per week on administrative tasks including email management, scheduling, invoicing, data entry, and document preparation. This represents 60% of a typical 40-hour work week.",
-    "problem.1.sources": "Harvard Business Review (2023), McKinsey Productivity Report (2024), Startup Genome Survey (2024)",
+    "problem.1.details":
+      "Studies show that startup founders spend an average of 24 hours per week on administrative tasks including email management, scheduling, invoicing, data entry, and document preparation. This represents 60% of a typical 40-hour work week.",
+    "problem.1.sources":
+      "Harvard Business Review (2023), McKinsey Productivity Report (2024), Startup Genome Survey (2024)",
     "problem.2.stat": "$114K-$1M",
     "problem.2.label": "Per Year",
     "problem.2.description": "Lost in opportunity costs",
-    "problem.2.details": "The opportunity cost of founders doing admin work instead of high-value activities (fundraising, product development, sales) ranges from $114,000 for early-stage startups to over $1M for growth-stage companies, based on founder hourly value of $150-500.",
-    "problem.2.sources": "First Round Capital Analysis (2024), Y Combinator Research (2023), CB Insights Founder Time Study (2024)",
+    "problem.2.details":
+      "The opportunity cost of founders doing admin work instead of high-value activities (fundraising, product development, sales) ranges from $114,000 for early-stage startups to over $1M for growth-stage companies, based on founder hourly value of $150-500.",
+    "problem.2.sources":
+      "First Round Capital Analysis (2024), Y Combinator Research (2023), CB Insights Founder Time Study (2024)",
     "problem.3.stat": "72%",
     "problem.3.label": "Of Founders",
     "problem.3.description": "Face mental health challenges",
-    "problem.3.details": "72% of startup founders report experiencing mental health challenges including stress, anxiety, and depression, with administrative burden being cited as a top contributor alongside fundraising pressure and work-life balance issues.",
-    "problem.3.sources": "Startup Mental Health Survey (2024), Forbes Founder Wellness Report (2023), National Bureau of Economic Research Study (2024)",
+    "problem.3.details":
+      "72% of startup founders report experiencing mental health challenges including stress, anxiety, and depression, with administrative burden being cited as a top contributor alongside fundraising pressure and work-life balance issues.",
+    "problem.3.sources":
+      "Startup Mental Health Survey (2024), Forbes Founder Wellness Report (2023), National Bureau of Economic Research Study (2024)",
     "problem.4.stat": "40%",
     "problem.4.label": "Higher Rate",
     "problem.4.description": "Burnout and turnover from stress",
-    "problem.4.details": "Startups that don't address administrative burden experience 40% higher burnout rates among founders and key team members, leading to increased turnover, slower growth, and in some cases, company failure.",
-    "problem.4.sources": "Gallup Workplace Burnout Study (2024), Stanford Research on Startup Failure (2023), Deloitte Future of Work Report (2024)",
-    
+    "problem.4.details":
+      "Startups that don't address administrative burden experience 40% higher burnout rates among founders and key team members, leading to increased turnover, slower growth, and in some cases, company failure.",
+    "problem.4.sources":
+      "Gallup Workplace Burnout Study (2024), Stanford Research on Startup Failure (2023), Deloitte Future of Work Report (2024)",
+
     // How It Works
     "howItWorks.title": "How StartupOPS Works",
-    "howItWorks.description": "From signup to results in minutes. No technical setup required.",
+    "howItWorks.description":
+      "From signup to results in minutes. No technical setup required.",
     "howItWorks.step1.title": "Create Your Account",
-    "howItWorks.step1.description": "Sign up in seconds with email, Google, or LinkedIn. No credit card needed for trial.",
+    "howItWorks.step1.description":
+      "Sign up in seconds with email, Google, or LinkedIn. No credit card needed for trial.",
     "howItWorks.step2.title": "Choose Automation",
-    "howItWorks.step2.description": "Select from 6 ready-to-use automations designed for startup founders.",
+    "howItWorks.step2.description":
+      "Select from 6 ready-to-use automations designed for startup founders.",
     "howItWorks.step3.title": "Fill Simple Form",
-    "howItWorks.step3.description": "Provide the required information through our intuitive form interface.",
+    "howItWorks.step3.description":
+      "Provide the required information through our intuitive form interface.",
     "howItWorks.step4.title": "Receive Results",
-    "howItWorks.step4.description": "Get professional results delivered to your email while our AI does the work.",
-    
+    "howItWorks.step4.description":
+      "Get professional results delivered to your email while our AI does the work.",
+
     // Competitive Edge
     "competitive.title": "Why StartupOPS?",
-    "competitive.description": "Traditional solutions waste your time and money. We give you results instantly.",
+    "competitive.description":
+      "Traditional solutions waste your time and money. We give you results instantly.",
     "competitive.alt1.name": "Hiring Full-Time",
     "competitive.alt1.cost": "$50K-80K/year",
-    "competitive.alt1.limitation": "Expensive overhead, long hiring process, requires management",
+    "competitive.alt1.limitation":
+      "Expensive overhead, long hiring process, requires management",
     "competitive.alt2.name": "Outsourcing",
     "competitive.alt2.cost": "$20-50/hour",
-    "competitive.alt2.limitation": "Inconsistent quality, communication delays, lacks business context",
+    "competitive.alt2.limitation":
+      "Inconsistent quality, communication delays, lacks business context",
     "competitive.alt3.name": "DIY Automation",
     "competitive.alt3.cost": "10-20 hrs/week",
-    "competitive.alt3.limitation": "Requires technical skills, constant maintenance, breaks when APIs change",
+    "competitive.alt3.limitation":
+      "Requires technical skills, constant maintenance, breaks when APIs change",
     "competitive.alt4.name": "Generic No-Code Tools",
     "competitive.alt4.cost": "$50-200/month",
-    "competitive.alt4.limitation": "Still needs configuration, limited capabilities, not startup-specific",
+    "competitive.alt4.limitation":
+      "Still needs configuration, limited capabilities, not startup-specific",
     "competitive.adv1": "Non-Tech Friendly - No coding required",
-    "competitive.adv2": "Pre-Built + Customizable - Ready-to-use, adapts to your needs",
+    "competitive.adv2":
+      "Pre-Built + Customizable - Ready-to-use, adapts to your needs",
     "competitive.adv3": "Affordable at Scale - From $20/month",
     "competitive.adv4": "Instant Results - Save 9.5hrs/week from start",
-    "competitive.adv1.details": "StartupOPS is designed for non-technical founders. No programming knowledge, API configurations, or technical skills required. If you can fill out a form, you can use our automations.",
-    "competitive.adv1.sources": "User testing with 500+ non-technical founders (2024), Product Hunt reviews (2024)",
-    "competitive.adv2.details": "Each automation comes pre-built and ready to use immediately. Unlike generic tools requiring hours of setup, our automations are specifically designed for common startup tasks and can be customized through simple form inputs.",
-    "competitive.adv2.sources": "Internal product testing (2024), Competitor analysis vs. Zapier/Make.com (2024)",
-    "competitive.adv3.details": "Starting at just $20/month for essential automations, scaling to $49 for unlimited use. Compare this to hiring ($50K-80K/year), outsourcing ($20-50/hr), or enterprise automation tools ($200-500/month).",
-    "competitive.adv3.sources": "Pricing analysis of alternatives (2024), ROI calculator based on founder hourly rates",
-    "competitive.adv4.details": "Our users report saving an average of 9.5 hours per week on administrative tasks from their first week of use. Results are delivered via email, typically within minutes to hours depending on automation complexity.",
-    "competitive.adv4.sources": "User survey of 1,000+ active users (2024), Time tracking analysis (Q4 2024)",
-    
+    "competitive.adv1.details":
+      "StartupOPS is designed for non-technical founders. No programming knowledge, API configurations, or technical skills required. If you can fill out a form, you can use our automations.",
+    "competitive.adv1.sources":
+      "User testing with 500+ non-technical founders (2024), Product Hunt reviews (2024)",
+    "competitive.adv2.details":
+      "Each automation comes pre-built and ready to use immediately. Unlike generic tools requiring hours of setup, our automations are specifically designed for common startup tasks and can be customized through simple form inputs.",
+    "competitive.adv2.sources":
+      "Internal product testing (2024), Competitor analysis vs. Zapier/Make.com (2024)",
+    "competitive.adv3.details":
+      "Starting at just $20/month for essential automations, scaling to $49 for unlimited use. Compare this to hiring ($50K-80K/year), outsourcing ($20-50/hr), or enterprise automation tools ($200-500/month).",
+    "competitive.adv3.sources":
+      "Pricing analysis of alternatives (2024), ROI calculator based on founder hourly rates",
+    "competitive.adv4.details":
+      "Our users report saving an average of 9.5 hours per week on administrative tasks from their first week of use. Results are delivered via email, typically within minutes to hours depending on automation complexity.",
+    "competitive.adv4.sources":
+      "User survey of 1,000+ active users (2024), Time tracking analysis (Q4 2024)",
+
     // Footer
     "footer.tagline": "Give founders their time back.",
     "footer.product": "Product",
@@ -211,11 +262,12 @@ const translations = {
     "nav.pricing": "Precios",
     "nav.signIn": "Iniciar Sesión",
     "nav.getStarted": "Comenzar",
-    
+
     // Hero
     "hero.badge": "Sin APIs. Sin Integraciones. Solo Resultados.",
     "hero.title": "Devuelve el Tiempo a los Fundadores",
-    "hero.description": "Enfócate en el crecimiento del negocio, no en tareas administrativas. Automatizaciones plug-and-play que te ahorran tiempo sin requerir configuración técnica ni conexiones de API.",
+    "hero.description":
+      "Enfócate en el crecimiento del negocio, no en tareas administrativas. Automatizaciones plug-and-play que te ahorran tiempo sin requerir configuración técnica ni conexiones de API.",
     "hero.cta": "Comienza a Ahorrar Tiempo",
     "hero.trial": "Prueba gratis de 14 días • Sin tarjeta de crédito",
     "hero.stat1.value": "24hrs",
@@ -224,52 +276,74 @@ const translations = {
     "hero.stat2.label": "Ahorradas Semanalmente",
     "hero.stat3.value": "50M+",
     "hero.stat3.label": "Mercado Objetivo",
-    
+
     // Features
     "features.title": "Construido para Fundadores que Valoran su Tiempo",
-    "features.description": "A diferencia de otras herramientas, no necesitas conectar APIs o configurar flujos de trabajo complejos. Solo inicia sesión y comienza a automatizar.",
+    "features.description":
+      "A diferencia de otras herramientas, no necesitas conectar APIs o configurar flujos de trabajo complejos. Solo inicia sesión y comienza a automatizar.",
     "features.1.title": "Sin Configuración Requerida",
-    "features.1.description": "Automatizaciones plug & play. Sin conexiones API, sin integraciones, sin dolores de cabeza.",
+    "features.1.description":
+      "Automatizaciones plug & play. Sin conexiones API, sin integraciones, sin dolores de cabeza.",
     "features.2.title": "Pre-Construidas y Listas",
-    "features.2.description": "6 automatizaciones listas para usar inmediatamente. Solo inicia sesión y comienza a ahorrar tiempo.",
+    "features.2.description":
+      "6 automatizaciones listas para usar inmediatamente. Solo inicia sesión y comienza a ahorrar tiempo.",
     "features.3.title": "Resultados Instantáneos",
-    "features.3.description": "Ahorra hasta 9.5 horas por semana desde el primer día. Sin curva de aprendizaje.",
+    "features.3.description":
+      "Ahorra hasta 9.5 horas por semana desde el primer día. Sin curva de aprendizaje.",
     "features.4.title": "Amigable para No-Técnicos",
-    "features.4.description": "No se requiere programación ni habilidades técnicas. Construido para fundadores, no desarrolladores.",
+    "features.4.description":
+      "No se requiere programación ni habilidades técnicas. Construido para fundadores, no desarrolladores.",
     "features.5.title": "Soporte Bilingüe",
-    "features.5.description": "Soporte completo en inglés y español para servir a equipos y mercados diversos.",
+    "features.5.description":
+      "Soporte completo en inglés y español para servir a equipos y mercados diversos.",
     "features.6.title": "Mobile-First",
-    "features.6.description": "Diseño totalmente responsive. Trabaja desde cualquier lugar, en cualquier momento, en cualquier dispositivo.",
-    
+    "features.6.description":
+      "Diseño totalmente responsive. Trabaja desde cualquier lugar, en cualquier momento, en cualquier dispositivo.",
+
     // Automations
     "automations.title": "6 Automatizaciones Listas para Usar",
-    "automations.description": "Flujos de trabajo pre-construidos que te ahorran horas cada semana. Sin configuración requerida.",
+    "automations.description":
+      "Flujos de trabajo pre-construidos que te ahorran horas cada semana. Sin configuración requerida.",
     "automations.try": "Probar",
     "automations.howItWorks": "Cómo funciona:",
     "automations.requiredData": "Datos Requeridos:",
     "automations.1.name": "Validación de Datos",
-    "automations.1.description": "Sube un PDF de pitch deck, propuesta o reporte para identificar y validar declaraciones contra datos factuales",
-    "automations.1.benefit": "Asegura que tus documentos estén respaldados por información verificada y precisa",
+    "automations.1.description":
+      "Sube un PDF de pitch deck, propuesta o reporte para identificar y validar declaraciones contra datos factuales",
+    "automations.1.benefit":
+      "Asegura que tus documentos estén respaldados por información verificada y precisa",
     "automations.2.name": "Generador de Prompts",
-    "automations.2.description": "Genera 'megaprompts' completos adaptados para plataformas específicas no-code/low-code",
-    "automations.2.benefit": "Ahorra tiempo y tokens con prompts optimizados desde el inicio",
+    "automations.2.description":
+      "Genera 'megaprompts' completos adaptados para plataformas específicas no-code/low-code",
+    "automations.2.benefit":
+      "Ahorra tiempo y tokens con prompts optimizados desde el inicio",
     "automations.3.name": "BrandSEO",
-    "automations.3.description": "Analiza la posición de tu marca en SEO tradicional y de IA con recomendaciones accionables",
-    "automations.3.benefit": "Mejora la visibilidad y clasificación en línea de tu marca",
+    "automations.3.description":
+      "Analiza la posición de tu marca en SEO tradicional y de IA con recomendaciones accionables",
+    "automations.3.benefit":
+      "Mejora la visibilidad y clasificación en línea de tu marca",
     "automations.4.name": "Grupo Focal IA",
-    "automations.4.description": "Valida ideas de producto con personas compradoras generadas por IA que proporcionan retroalimentación del cliente",
-    "automations.4.benefit": "Obtén insights de clientes antes de invertir en desarrollo",
+    "automations.4.description":
+      "Valida ideas de producto con personas compradoras generadas por IA que proporcionan retroalimentación del cliente",
+    "automations.4.benefit":
+      "Obtén insights de clientes antes de invertir en desarrollo",
     "automations.5.name": "ExtractStyle",
-    "automations.5.description": "Analiza tu estilo de comunicación desde texto y audio para crear instrucciones LLM personalizadas",
-    "automations.5.benefit": "Haz que el contenido generado por IA suene auténticamente como tú",
+    "automations.5.description":
+      "Analiza tu estilo de comunicación desde texto y audio para crear instrucciones LLM personalizadas",
+    "automations.5.benefit":
+      "Haz que el contenido generado por IA suene auténticamente como tú",
     "automations.6.name": "Investigación de Temas",
-    "automations.6.description": "Genera contenido de blog bien investigado con análisis de SEO y tendencias",
-    "automations.6.benefit": "Crea contenido de alta calidad sin horas de investigación",
-    
+    "automations.6.description":
+      "Genera contenido de blog bien investigado con análisis de SEO y tendencias",
+    "automations.6.benefit":
+      "Crea contenido de alta calidad sin horas de investigación",
+
     // Pricing
     "pricing.title": "Precios Simples y Transparentes",
-    "pricing.description": "Elige el plan que se ajuste a tus necesidades. Todos los planes incluyen una prueba gratuita de 14 días.",
-    "pricing.badge": "Desde $20/mes - Sin tarjeta de crédito para prueba gratis",
+    "pricing.description":
+      "Elige el plan que se ajuste a tus necesidades. Todos los planes incluyen una prueba gratuita de 14 días.",
+    "pricing.badge":
+      "Desde $20/mes - Sin tarjeta de crédito para prueba gratis",
     "pricing.monthly": "por mes",
     "pricing.mostPopular": "Más Popular",
     "pricing.getStarted": "Comenzar Prueba Gratis",
@@ -304,78 +378,111 @@ const translations = {
     "pricing.tier4.feature3": "Gerente de cuenta dedicado",
     "pricing.tier4.feature4": "Garantías SLA",
     "pricing.tier4.contact": "gonzalo@menatech.cloud",
-    
+
     // CTA
     "cta.title": "¿Listo para Recuperar tu Tiempo?",
-    "cta.description": "Únete a 30,000+ fundadores que han automatizado sus operaciones. Sin configuración. Sin APIs. Sin complicaciones. Comienza a ahorrar 9.5 horas por semana hoy.",
+    "cta.description":
+      "Únete a 30,000+ fundadores que han automatizado sus operaciones. Sin configuración. Sin APIs. Sin complicaciones. Comienza a ahorrar 9.5 horas por semana hoy.",
     "cta.button": "Comenzar Prueba Gratis",
     "cta.demo": "Agendar Demo",
-    "cta.trial": "Sin tarjeta de crédito • Prueba gratis de 14 días • Cancela en cualquier momento",
-    
+    "cta.trial":
+      "Sin tarjeta de crédito • Prueba gratis de 14 días • Cancela en cualquier momento",
+
     // Problem Impact
     "problem.title": "El Costo Oculto de las Tareas Administrativas",
-    "problem.description": "Mientras gestionas facturas y programas reuniones, el potencial de tu negocio se escapa.",
+    "problem.description":
+      "Mientras gestionas facturas y programas reuniones, el potencial de tu negocio se escapa.",
     "problem.1.stat": "24hrs",
     "problem.1.label": "Por Semana",
-    "problem.1.description": "Tiempo del fundador desperdiciado en tareas administrativas",
-    "problem.1.details": "Los estudios muestran que los fundadores de startups dedican un promedio de 24 horas por semana a tareas administrativas incluyendo gestión de correo, programación, facturación, entrada de datos y preparación de documentos. Esto representa el 60% de una semana laboral típica de 40 horas.",
-    "problem.1.sources": "Harvard Business Review (2023), Informe de Productividad McKinsey (2024), Encuesta Startup Genome (2024)",
+    "problem.1.description":
+      "Tiempo del fundador desperdiciado en tareas administrativas",
+    "problem.1.details":
+      "Los estudios muestran que los fundadores de startups dedican un promedio de 24 horas por semana a tareas administrativas incluyendo gestión de correo, programación, facturación, entrada de datos y preparación de documentos. Esto representa el 60% de una semana laboral típica de 40 horas.",
+    "problem.1.sources":
+      "Harvard Business Review (2023), Informe de Productividad McKinsey (2024), Encuesta Startup Genome (2024)",
     "problem.2.stat": "$114K-$1M",
     "problem.2.label": "Por Año",
     "problem.2.description": "Perdidos en costos de oportunidad",
-    "problem.2.details": "El costo de oportunidad de que los fundadores hagan trabajo administrativo en lugar de actividades de alto valor (recaudación de fondos, desarrollo de producto, ventas) oscila entre $114,000 para startups en etapa temprana y más de $1M para empresas en crecimiento, basado en un valor por hora del fundador de $150-500.",
-    "problem.2.sources": "Análisis First Round Capital (2024), Investigación Y Combinator (2023), Estudio de Tiempo de Fundadores CB Insights (2024)",
+    "problem.2.details":
+      "El costo de oportunidad de que los fundadores hagan trabajo administrativo en lugar de actividades de alto valor (recaudación de fondos, desarrollo de producto, ventas) oscila entre $114,000 para startups en etapa temprana y más de $1M para empresas en crecimiento, basado en un valor por hora del fundador de $150-500.",
+    "problem.2.sources":
+      "Análisis First Round Capital (2024), Investigación Y Combinator (2023), Estudio de Tiempo de Fundadores CB Insights (2024)",
     "problem.3.stat": "72%",
     "problem.3.label": "De Fundadores",
     "problem.3.description": "Enfrentan desafíos de salud mental",
-    "problem.3.details": "El 72% de los fundadores de startups reportan experimentar desafíos de salud mental incluyendo estrés, ansiedad y depresión, siendo la carga administrativa citada como un contribuyente principal junto con la presión de recaudación de fondos y el equilibrio trabajo-vida.",
-    "problem.3.sources": "Encuesta de Salud Mental de Startups (2024), Informe Forbes de Bienestar del Fundador (2023), Estudio Nacional de Investigación Económica (2024)",
+    "problem.3.details":
+      "El 72% de los fundadores de startups reportan experimentar desafíos de salud mental incluyendo estrés, ansiedad y depresión, siendo la carga administrativa citada como un contribuyente principal junto con la presión de recaudación de fondos y el equilibrio trabajo-vida.",
+    "problem.3.sources":
+      "Encuesta de Salud Mental de Startups (2024), Informe Forbes de Bienestar del Fundador (2023), Estudio Nacional de Investigación Económica (2024)",
     "problem.4.stat": "40%",
     "problem.4.label": "Tasa Más Alta",
     "problem.4.description": "Agotamiento y rotación por estrés",
-    "problem.4.details": "Las startups que no abordan la carga administrativa experimentan tasas de agotamiento 40% más altas entre fundadores y miembros clave del equipo, lo que lleva a mayor rotación, crecimiento más lento y, en algunos casos, fracaso de la empresa.",
-    "problem.4.sources": "Estudio Gallup sobre Agotamiento Laboral (2024), Investigación Stanford sobre Fracaso de Startups (2023), Informe Deloitte Futuro del Trabajo (2024)",
-    
+    "problem.4.details":
+      "Las startups que no abordan la carga administrativa experimentan tasas de agotamiento 40% más altas entre fundadores y miembros clave del equipo, lo que lleva a mayor rotación, crecimiento más lento y, en algunos casos, fracaso de la empresa.",
+    "problem.4.sources":
+      "Estudio Gallup sobre Agotamiento Laboral (2024), Investigación Stanford sobre Fracaso de Startups (2023), Informe Deloitte Futuro del Trabajo (2024)",
+
     // How It Works
     "howItWorks.title": "Cómo Funciona StartupOPS",
-    "howItWorks.description": "De registro a resultados en minutos. Sin configuración técnica requerida.",
+    "howItWorks.description":
+      "De registro a resultados en minutos. Sin configuración técnica requerida.",
     "howItWorks.step1.title": "Crea tu Cuenta",
-    "howItWorks.step1.description": "Regístrate en segundos con email, Google o LinkedIn. Sin tarjeta de crédito para la prueba.",
+    "howItWorks.step1.description":
+      "Regístrate en segundos con email, Google o LinkedIn. Sin tarjeta de crédito para la prueba.",
     "howItWorks.step2.title": "Elige Automatización",
-    "howItWorks.step2.description": "Selecciona entre 6 automatizaciones listas para usar diseñadas para fundadores de startups.",
+    "howItWorks.step2.description":
+      "Selecciona entre 6 automatizaciones listas para usar diseñadas para fundadores de startups.",
     "howItWorks.step3.title": "Completa Formulario Simple",
-    "howItWorks.step3.description": "Proporciona la información requerida a través de nuestra interfaz de formulario intuitiva.",
+    "howItWorks.step3.description":
+      "Proporciona la información requerida a través de nuestra interfaz de formulario intuitiva.",
     "howItWorks.step4.title": "Recibe Resultados",
-    "howItWorks.step4.description": "Obtén resultados profesionales entregados a tu email mientras nuestra IA hace el trabajo.",
-    
+    "howItWorks.step4.description":
+      "Obtén resultados profesionales entregados a tu email mientras nuestra IA hace el trabajo.",
+
     // Competitive Edge
     "competitive.title": "¿Por Qué StartupOPS?",
-    "competitive.description": "Las soluciones tradicionales desperdician tu tiempo y dinero. Nosotros te damos resultados instantáneamente.",
+    "competitive.description":
+      "Las soluciones tradicionales desperdician tu tiempo y dinero. Nosotros te damos resultados instantáneamente.",
     "competitive.alt1.name": "Contratación Tiempo Completo",
     "competitive.alt1.cost": "$50K-80K/año",
-    "competitive.alt1.limitation": "Gastos generales costosos, largo proceso de contratación, requiere gestión",
+    "competitive.alt1.limitation":
+      "Gastos generales costosos, largo proceso de contratación, requiere gestión",
     "competitive.alt2.name": "Externalización",
     "competitive.alt2.cost": "$20-50/hora",
-    "competitive.alt2.limitation": "Calidad inconsistente, retrasos de comunicación, falta contexto empresarial",
+    "competitive.alt2.limitation":
+      "Calidad inconsistente, retrasos de comunicación, falta contexto empresarial",
     "competitive.alt3.name": "Automatización DIY",
     "competitive.alt3.cost": "10-20 hrs/semana",
-    "competitive.alt3.limitation": "Requiere habilidades técnicas, mantenimiento constante, se rompe cuando cambian las APIs",
+    "competitive.alt3.limitation":
+      "Requiere habilidades técnicas, mantenimiento constante, se rompe cuando cambian las APIs",
     "competitive.alt4.name": "Herramientas No-Code Genéricas",
     "competitive.alt4.cost": "$50-200/mes",
-    "competitive.alt4.limitation": "Aún necesita configuración, capacidades limitadas, no específico para startups",
-    "competitive.adv1": "Amigable para No-Técnicos - Sin programación requerida",
-    "competitive.adv2": "Pre-Construidas + Personalizables - Listas para usar, se adaptan a tus necesidades",
+    "competitive.alt4.limitation":
+      "Aún necesita configuración, capacidades limitadas, no específico para startups",
+    "competitive.adv1":
+      "Amigable para No-Técnicos - Sin programación requerida",
+    "competitive.adv2":
+      "Pre-Construidas + Personalizables - Listas para usar, se adaptan a tus necesidades",
     "competitive.adv3": "Asequible a Escala - Desde $20/mes",
-    "competitive.adv4": "Resultados Instantáneos - Ahorra 9.5hrs/semana desde el inicio",
-    "competitive.adv1.details": "StartupOPS está diseñado para fundadores no técnicos. No se requiere conocimiento de programación, configuraciones de API o habilidades técnicas. Si puedes llenar un formulario, puedes usar nuestras automatizaciones.",
-    "competitive.adv1.sources": "Pruebas de usuario con 500+ fundadores no técnicos (2024), Reseñas Product Hunt (2024)",
-    "competitive.adv2.details": "Cada automatización viene pre-construida y lista para usar inmediatamente. A diferencia de las herramientas genéricas que requieren horas de configuración, nuestras automatizaciones están diseñadas específicamente para tareas comunes de startups y pueden personalizarse mediante entradas de formulario simples.",
-    "competitive.adv2.sources": "Pruebas internas de producto (2024), Análisis de competidores vs. Zapier/Make.com (2024)",
-    "competitive.adv3.details": "Comenzando en solo $20/mes para automatizaciones esenciales, escalando a $49 para uso ilimitado. Compara esto con contratación ($50K-80K/año), externalización ($20-50/hr) o herramientas empresariales de automatización ($200-500/mes).",
-    "competitive.adv3.sources": "Análisis de precios de alternativas (2024), Calculadora de ROI basada en tarifas por hora del fundador",
-    "competitive.adv4.details": "Nuestros usuarios reportan ahorrar un promedio de 9.5 horas por semana en tareas administrativas desde su primera semana de uso. Los resultados se entregan por email, típicamente en minutos a horas dependiendo de la complejidad de la automatización.",
-    "competitive.adv4.sources": "Encuesta de usuarios de 1,000+ usuarios activos (2024), Análisis de seguimiento de tiempo (Q4 2024)",
-    
+    "competitive.adv4":
+      "Resultados Instantáneos - Ahorra 9.5hrs/semana desde el inicio",
+    "competitive.adv1.details":
+      "StartupOPS está diseñado para fundadores no técnicos. No se requiere conocimiento de programación, configuraciones de API o habilidades técnicas. Si puedes llenar un formulario, puedes usar nuestras automatizaciones.",
+    "competitive.adv1.sources":
+      "Pruebas de usuario con 500+ fundadores no técnicos (2024), Reseñas Product Hunt (2024)",
+    "competitive.adv2.details":
+      "Cada automatización viene pre-construida y lista para usar inmediatamente. A diferencia de las herramientas genéricas que requieren horas de configuración, nuestras automatizaciones están diseñadas específicamente para tareas comunes de startups y pueden personalizarse mediante entradas de formulario simples.",
+    "competitive.adv2.sources":
+      "Pruebas internas de producto (2024), Análisis de competidores vs. Zapier/Make.com (2024)",
+    "competitive.adv3.details":
+      "Comenzando en solo $20/mes para automatizaciones esenciales, escalando a $49 para uso ilimitado. Compara esto con contratación ($50K-80K/año), externalización ($20-50/hr) o herramientas empresariales de automatización ($200-500/mes).",
+    "competitive.adv3.sources":
+      "Análisis de precios de alternativas (2024), Calculadora de ROI basada en tarifas por hora del fundador",
+    "competitive.adv4.details":
+      "Nuestros usuarios reportan ahorrar un promedio de 9.5 horas por semana en tareas administrativas desde su primera semana de uso. Los resultados se entregan por email, típicamente en minutos a horas dependiendo de la complejidad de la automatización.",
+    "competitive.adv4.sources":
+      "Encuesta de usuarios de 1,000+ usuarios activos (2024), Análisis de seguimiento de tiempo (Q4 2024)",
+
     // Footer
     "footer.tagline": "Devuelve el tiempo a los fundadores.",
     "footer.product": "Producto",
@@ -399,7 +506,9 @@ const translations = {
   },
 };
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+const LanguageContext = createContext<LanguageContextType | undefined>(
+  undefined,
+);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguage] = useState<Language>("en");

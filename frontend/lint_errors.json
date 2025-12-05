@@ -1,0 +1,36 @@
+[
+  {
+    "filePath": "C:\\Menatech\\Antigravity\\startupOPS_v1\\frontend\\src\\components\\ui\\textarea.tsx",
+    "messages": [
+      {
+        "ruleId": "@typescript-eslint/no-empty-object-type",
+        "severity": 2,
+        "message": "An interface declaring no members is equivalent to its supertype.",
+        "line": 5,
+        "column": 18,
+        "nodeType": "Identifier",
+        "messageId": "noEmptyInterfaceWithSuper",
+        "endLine": 5,
+        "endColumn": 31,
+        "suggestions": [
+          {
+            "messageId": "replaceEmptyInterfaceWithSuper",
+            "fix": {
+              "range": [75, 159],
+              "text": "type TextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement>"
+            },
+            "desc": "Replace empty interface with a type alias."
+          }
+        ]
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 1,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nexport interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}\n\nconst Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(\n  ({ className, ...props }, ref) => {\n    return (\n      <textarea\n        className={cn(\n          \"flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50\",\n          className,\n        )}\n        ref={ref}\n        {...props}\n      />\n    );\n  },\n);\nTextarea.displayName = \"Textarea\";\n\nexport { Textarea };\n",
+    "usedDeprecatedRules": []
+  }
+]

@@ -4,7 +4,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
   const { t } = useLanguage();
-  
+
   return (
     <footer className="bg-primary text-primary-foreground py-8 sm:py-12">
       <div className="container mx-auto px-4 sm:px-6">
@@ -21,62 +21,114 @@ export const Footer = () => {
               {t("footer.tagline")}
             </p>
           </div>
-          
+
           {/* Product */}
           <div>
-            <h4 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">{t("footer.product")}</h4>
+            <h4 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">
+              {t("footer.product")}
+            </h4>
             <ul className="space-y-2 text-xs sm:text-sm opacity-80">
-              <li><a href="#" className="hover:opacity-100 transition-opacity">{t("footer.product.features")}</a></li>
-              <li><a href="#" className="hover:opacity-100 transition-opacity">{t("footer.product.integrations")}</a></li>
-              <li><a href="#" className="hover:opacity-100 transition-opacity">{t("footer.product.pricing")}</a></li>
-              <li><a href="#" className="hover:opacity-100 transition-opacity">{t("footer.product.changelog")}</a></li>
+              <li>
+                <a href="#" className="hover:opacity-100 transition-opacity">
+                  {t("footer.product.features")}
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:opacity-100 transition-opacity">
+                  {t("footer.product.integrations")}
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:opacity-100 transition-opacity">
+                  {t("footer.product.pricing")}
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:opacity-100 transition-opacity">
+                  {t("footer.product.changelog")}
+                </a>
+              </li>
             </ul>
           </div>
-          
+
           {/* Company */}
           <div>
-            <h4 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">{t("footer.company")}</h4>
+            <h4 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">
+              {t("footer.company")}
+            </h4>
             <ul className="space-y-2 text-xs sm:text-sm opacity-80">
-              <li><a href="#" className="hover:opacity-100 transition-opacity">{t("footer.company.about")}</a></li>
-              <li><a href="#" className="hover:opacity-100 transition-opacity">{t("footer.company.blog")}</a></li>
-              <li><a href="#" className="hover:opacity-100 transition-opacity">{t("footer.company.careers")}</a></li>
-              <li><a href="#" className="hover:opacity-100 transition-opacity">{t("footer.company.contact")}</a></li>
+              <li>
+                <a href="#" className="hover:opacity-100 transition-opacity">
+                  {t("footer.company.about")}
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:opacity-100 transition-opacity">
+                  {t("footer.company.blog")}
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:opacity-100 transition-opacity">
+                  {t("footer.company.careers")}
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:opacity-100 transition-opacity">
+                  {t("footer.company.contact")}
+                </a>
+              </li>
             </ul>
           </div>
-          
+
           {/* Legal */}
           <div className="col-span-2 md:col-span-1">
-            <h4 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">{t("footer.legal")}</h4>
+            <h4 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">
+              {t("footer.legal")}
+            </h4>
             <ul className="space-y-2 text-xs sm:text-sm opacity-80">
-              <li><a href="#" className="hover:opacity-100 transition-opacity">{t("footer.legal.privacy")}</a></li>
-              <li><a href="#" className="hover:opacity-100 transition-opacity">{t("footer.legal.terms")}</a></li>
-              <li><a href="#" className="hover:opacity-100 transition-opacity">{t("footer.legal.security")}</a></li>
+              <li>
+                <a href="#" className="hover:opacity-100 transition-opacity">
+                  {t("footer.legal.privacy")}
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:opacity-100 transition-opacity">
+                  {t("footer.legal.terms")}
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:opacity-100 transition-opacity">
+                  {t("footer.legal.security")}
+                </a>
+              </li>
             </ul>
           </div>
         </div>
-        
+
         <div className="border-t border-primary-foreground/20 pt-6 sm:pt-8 text-center text-xs sm:text-sm opacity-80">
           <p>
             {t("footer.createdBy")}{" "}
-            <a 
-              href="https://menatech.cloud" 
-              target="_blank" 
+            <a
+              href="https://menatech.cloud"
+              target="_blank"
               rel="noopener noreferrer"
               className="hover:opacity-100 transition-opacity underline"
             >
               {t("footer.website")}
-            </a>
-            {" "}|{" "}
-            <a 
-              href="https://www.linkedin.com/company/menatech-cloud" 
-              target="_blank" 
+            </a>{" "}
+            |{" "}
+            <a
+              href="https://www.linkedin.com/company/menatech-cloud"
+              target="_blank"
               rel="noopener noreferrer"
               className="hover:opacity-100 transition-opacity underline"
             >
               {t("footer.linkedin")}
             </a>
           </p>
-          <p className="mt-2">&copy; {currentYear} StartupOPS. {t("footer.allRights")}</p>
+          <p className="mt-2">
+            &copy; {currentYear} StartupOPS. {t("footer.allRights")}
+          </p>
         </div>
       </div>
     </footer>

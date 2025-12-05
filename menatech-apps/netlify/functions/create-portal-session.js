@@ -1,11 +1,11 @@
-const Stripe = require('stripe');
+const Stripe = require("stripe");
 
 exports.handler = async (event) => {
   // Only allow POST requests
-  if (event.httpMethod !== 'POST') {
+  if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,
-      body: JSON.stringify({ error: 'Method not allowed' }),
+      body: JSON.stringify({ error: "Method not allowed" }),
     };
   }
 
@@ -17,31 +17,31 @@ exports.handler = async (event) => {
     if (!customerId) {
       return {
         statusCode: 400,
-        body: JSON.stringify({ error: 'Customer ID is required' }),
+        body: JSON.stringify({ error: "Customer ID is required" }),
       };
     }
 
     // Create a portal session for the customer to manage their subscription
     const session = await stripe.billingPortal.sessions.create({
       customer: customerId,
-      return_url: `${process.env.URL || 'http://localhost:5173'}/#pricing`,
+      return_url: `${process.env.URL || "http://localhost:5173"}/#pricing`,
     });
 
     return {
       statusCode: 200,
       headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': 'Content-Type',
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Content-Type",
       },
       body: JSON.stringify({ url: session.url }),
     };
   } catch (error) {
-    console.error('Error creating portal session:', error);
+    console.error("Error creating portal session:", error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ 
-        error: 'Failed to create portal session',
-        message: error.message 
+      body: JSON.stringify({
+        error: "Failed to create portal session",
+        message: error.message,
       }),
     };
   }

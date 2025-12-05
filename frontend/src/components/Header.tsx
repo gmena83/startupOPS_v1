@@ -17,14 +17,14 @@ export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [authDialogOpen, setAuthDialogOpen] = useState(false);
   const [authMode, setAuthMode] = useState<"signin" | "signup">("signin");
-  
+
   const navLinks = [
     { href: "#features", label: t("nav.features") },
     { href: "#how-it-works", label: t("nav.howItWorks") },
     { href: "#automations", label: t("nav.automations") },
     { href: "#pricing", label: t("nav.pricing") },
   ];
-  
+
   const handleNavClick = () => {
     setMobileMenuOpen(false);
   };
@@ -38,7 +38,7 @@ export const Header = () => {
     setAuthMode("signup");
     setAuthDialogOpen(true);
   };
-  
+
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
@@ -51,7 +51,7 @@ export const Header = () => {
               </div>
               <span className="text-lg sm:text-xl font-bold">StartupOPS</span>
             </div>
-            
+
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8">
               {navLinks.map((link) => (
@@ -64,7 +64,7 @@ export const Header = () => {
                 </a>
               ))}
             </nav>
-            
+
             {/* Desktop CTA Buttons */}
             <div className="hidden md:flex items-center gap-2">
               <ThemeToggle />
@@ -81,7 +81,7 @@ export const Header = () => {
                 {t("nav.getStarted")}
               </Button>
             </div>
-            
+
             {/* Mobile Menu Button */}
             <div className="flex md:hidden items-center gap-2">
               <ThemeToggle />
@@ -98,7 +98,7 @@ export const Header = () => {
           </div>
         </div>
       </header>
-      
+
       {/* Mobile Menu Sheet */}
       <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
         <SheetContent side="right" className="w-[300px] sm:w-[400px]">
@@ -110,7 +110,7 @@ export const Header = () => {
               StartupOPS
             </SheetTitle>
           </SheetHeader>
-          
+
           <nav className="flex flex-col gap-4 mt-8">
             {navLinks.map((link) => (
               <a
@@ -122,7 +122,7 @@ export const Header = () => {
                 {link.label}
               </a>
             ))}
-            
+
             <div className="border-t border-border pt-4 mt-4 space-y-3">
               <Button
                 variant="outline"

@@ -9,24 +9,27 @@ export const Pricing = () => {
   const { t } = useLanguage();
   const { toast } = useToast();
   const [loadingTier, setLoadingTier] = useState<string | null>(null);
-  
+
   const handleSubscribe = async (tierId: string) => {
     setLoadingTier(tierId);
-    
+
     try {
-      if (tierId === 'enterprise') {
+      if (tierId === "enterprise") {
         // For enterprise, open email client
         window.location.href = `mailto:${t("pricing.tier4.contact")}?subject=Enterprise Plan Inquiry`;
         return;
       }
-      
+
       // Redirect to Stripe checkout
-      await redirectToCheckout(tierId as 'starter' | 'professional' | 'growth');
+      await redirectToCheckout(tierId as "starter" | "professional" | "growth");
     } catch (error) {
-      console.error('Subscription error:', error);
+      console.error("Subscription error:", error);
       toast({
         title: "Error",
-        description: error instanceof Error ? error.message : "Failed to start checkout process. Please try again.",
+        description:
+          error instanceof Error
+            ? error.message
+            : "Failed to start checkout process. Please try again.",
         variant: "destructive",
       });
     } finally {
@@ -41,7 +44,12 @@ export const Pricing = () => {
       priceKey: "pricing.tier1.price",
       period: t("pricing.monthly"),
       runsKey: "pricing.tier1.runs",
-      featuresKeys: ["pricing.tier1.feature1", "pricing.tier1.feature2", "pricing.tier1.feature3", "pricing.tier1.feature4"],
+      featuresKeys: [
+        "pricing.tier1.feature1",
+        "pricing.tier1.feature2",
+        "pricing.tier1.feature3",
+        "pricing.tier1.feature4",
+      ],
       ctaKey: "pricing.getStarted",
       highlighted: false,
     },
@@ -51,7 +59,12 @@ export const Pricing = () => {
       priceKey: "pricing.tier2.price",
       period: t("pricing.monthly"),
       runsKey: "pricing.tier2.runs",
-      featuresKeys: ["pricing.tier2.feature1", "pricing.tier2.feature2", "pricing.tier2.feature3", "pricing.tier2.feature4"],
+      featuresKeys: [
+        "pricing.tier2.feature1",
+        "pricing.tier2.feature2",
+        "pricing.tier2.feature3",
+        "pricing.tier2.feature4",
+      ],
       ctaKey: "pricing.getStarted",
       highlighted: true,
     },
@@ -61,7 +74,12 @@ export const Pricing = () => {
       priceKey: "pricing.tier3.price",
       period: t("pricing.monthly"),
       runsKey: "pricing.tier3.runs",
-      featuresKeys: ["pricing.tier3.feature1", "pricing.tier3.feature2", "pricing.tier3.feature3", "pricing.tier3.feature4"],
+      featuresKeys: [
+        "pricing.tier3.feature1",
+        "pricing.tier3.feature2",
+        "pricing.tier3.feature3",
+        "pricing.tier3.feature4",
+      ],
       ctaKey: "pricing.getStarted",
       highlighted: false,
     },
@@ -71,13 +89,18 @@ export const Pricing = () => {
       priceKey: "pricing.tier4.price",
       periodKey: "pricing.tier4.period",
       runsKey: "pricing.tier4.runs",
-      featuresKeys: ["pricing.tier4.feature1", "pricing.tier4.feature2", "pricing.tier4.feature3", "pricing.tier4.feature4"],
+      featuresKeys: [
+        "pricing.tier4.feature1",
+        "pricing.tier4.feature2",
+        "pricing.tier4.feature3",
+        "pricing.tier4.feature4",
+      ],
       ctaKey: "pricing.contactSales",
       highlighted: false,
       contact: t("pricing.tier4.contact"),
     },
   ];
-  
+
   return (
     <section id="pricing" className="py-16 sm:py-24 bg-gradient-subtle">
       <div className="container mx-auto px-4 sm:px-6">
@@ -92,7 +115,7 @@ export const Pricing = () => {
             {t("pricing.badge")}
           </div>
         </div>
-        
+
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-7xl mx-auto">
           {tiers.map((tier, index) => (
             <div
@@ -109,27 +132,41 @@ export const Pricing = () => {
                   {t("pricing.mostPopular")}
                 </div>
               )}
-              
+
               <div className="text-center mb-6">
-                <h3 className="text-xl sm:text-2xl font-bold mb-2">{t(tier.nameKey)}</h3>
+                <h3 className="text-xl sm:text-2xl font-bold mb-2">
+                  {t(tier.nameKey)}
+                </h3>
                 <div className="mb-2">
-                  <span className="text-3xl sm:text-4xl font-bold">{t(tier.priceKey)}</span>
-                  {t(tier.priceKey) !== "Custom" && t(tier.priceKey) !== "Personalizado" && <span className="text-sm sm:text-base text-muted-foreground">/{tier.period}</span>}
+                  <span className="text-3xl sm:text-4xl font-bold">
+                    {t(tier.priceKey)}
+                  </span>
+                  {t(tier.priceKey) !== "Custom" &&
+                    t(tier.priceKey) !== "Personalizado" && (
+                      <span className="text-sm sm:text-base text-muted-foreground">
+                        /{tier.period}
+                      </span>
+                    )}
                 </div>
-                <p className="text-xs sm:text-sm text-muted-foreground">{t(tier.runsKey)}</p>
+                <p className="text-xs sm:text-sm text-muted-foreground">
+                  {t(tier.runsKey)}
+                </p>
               </div>
-              
+
               <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
                 {tier.featuresKeys.map((featureKey) => (
-                  <li key={featureKey} className="flex items-start gap-2 sm:gap-3">
+                  <li
+                    key={featureKey}
+                    className="flex items-start gap-2 sm:gap-3"
+                  >
                     <Check className="h-4 w-4 sm:h-5 sm:w-5 text-accent flex-shrink-0 mt-0.5" />
                     <span className="text-xs sm:text-sm">{t(featureKey)}</span>
                   </li>
                 ))}
               </ul>
-              
-              <Button 
-                variant={tier.highlighted ? "hero" : "outline"} 
+
+              <Button
+                variant={tier.highlighted ? "hero" : "outline"}
                 className="w-full"
                 size="lg"
                 onClick={() => handleSubscribe(tier.id)}
@@ -144,10 +181,16 @@ export const Pricing = () => {
                   t(tier.ctaKey)
                 )}
               </Button>
-              
+
               {tier.contact && (
                 <p className="text-xs text-center text-muted-foreground mt-3 sm:mt-4">
-                  Contact: <a href={`mailto:${tier.contact}`} className="text-accent hover:underline">{tier.contact}</a>
+                  Contact:{" "}
+                  <a
+                    href={`mailto:${tier.contact}`}
+                    className="text-accent hover:underline"
+                  >
+                    {tier.contact}
+                  </a>
                 </p>
               )}
             </div>

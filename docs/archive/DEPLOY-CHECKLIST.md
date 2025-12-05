@@ -1,6 +1,7 @@
 # 🚀 Quick Deployment Checklist
 
 ## ✅ Pre-Deployment (DONE)
+
 - [x] Frontend merged into monorepo
 - [x] Netlify configuration created (`netlify.toml`)
 - [x] API proxy configured in Vite
@@ -10,6 +11,7 @@
 ## 📋 Deploy Now - 3 Easy Steps
 
 ### Step 1: Get Your Resend API Key
+
 1. Go to https://resend.com
 2. Sign up or log in
 3. Navigate to API Keys
@@ -19,6 +21,7 @@
 ### Step 2: Connect to Netlify
 
 **Option A: Via CLI (Fastest)**
+
 ```bash
 # Login to Netlify
 npx netlify login
@@ -36,6 +39,7 @@ npx netlify init
 ```
 
 **Option B: Via Dashboard**
+
 1. Go to https://app.netlify.com
 2. Click "Add new site" → "Import an existing project"
 3. Choose GitHub
@@ -48,6 +52,7 @@ npx netlify init
 ### Step 3: Set Environment Variables
 
 **Via CLI:**
+
 ```bash
 # Set your Resend API key
 npx netlify env:set RESEND_API_KEY "your_actual_key_here"
@@ -57,6 +62,7 @@ npx netlify env:set NODE_VERSION "18"
 ```
 
 **Via Dashboard:**
+
 1. Go to Site settings → Environment variables
 2. Click "Add a variable"
 3. Add these:
@@ -71,6 +77,7 @@ npm run deploy
 ```
 
 Or push to GitHub (if using Dashboard method):
+
 ```bash
 git add .
 git commit -m "Deploy full-stack integrated app"
@@ -111,17 +118,20 @@ npm run dev
 ## 🆘 Quick Troubleshooting
 
 **Build fails?**
+
 ```bash
 # Test locally first
 npm run build
 ```
 
 **API not working?**
+
 - Check environment variables are set in Netlify
 - Verify RESEND_API_KEY is correct
 - Check function logs in Netlify dashboard
 
 **Need help?**
+
 - See `DEPLOYMENT.md` for detailed guide
 - Check Netlify build logs in dashboard
 
@@ -130,6 +140,7 @@ npm run build
 Current status: **READY TO DEPLOY** ✅
 
 Just run:
+
 ```bash
 npx netlify init    # First time only
 npm run deploy      # Deploy to production

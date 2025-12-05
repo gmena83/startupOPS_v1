@@ -10,14 +10,16 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
     proxy: {
       // Proxy API requests to Netlify functions during development
-      '/api': {
-        target: 'http://localhost:8888',
+      "/api": {
+        target: "http://localhost:8888",
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '/.netlify/functions')
-      }
-    }
+        rewrite: (path) => path.replace(/^\/api/, "/.netlify/functions"),
+      },
+    },
   },
-  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+  plugins: [react(), mode === "development" && componentTagger()].filter(
+    Boolean,
+  ),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

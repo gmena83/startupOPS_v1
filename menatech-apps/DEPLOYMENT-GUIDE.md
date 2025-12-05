@@ -1,6 +1,7 @@
 # Menatech Apps - Deployment & Configuration Guide
 
 ## Table of Contents
+
 1. [Quick Start](#quick-start)
 2. [Google Analytics Setup](#google-analytics-setup)
 3. [Activepieces Integration](#activepieces-integration)
@@ -13,6 +14,7 @@
 ## Quick Start
 
 ### What You Have
+
 Your Menatech Apps website is now ready! The package includes:
 
 - **index.html** - Main website file
@@ -21,6 +23,7 @@ Your Menatech Apps website is now ready! The package includes:
 - **images/menatech-logo.png** - Your brand logo
 
 ### Features Included
+
 ✅ 6 automation blocks with descriptions  
 ✅ Bilingual support (English/Spanish)  
 ✅ Light/Dark mode toggle  
@@ -78,18 +81,27 @@ Google Analytics 4 (GA4) is the latest version. Follow these steps to set it up:
 1. Open the file: **index.html**
 2. Find this line (around line 14):
    ```html
-   <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+   <script
+     async
+     src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+   ></script>
    ```
 3. Replace **`GA_MEASUREMENT_ID`** with your actual Measurement ID (appears twice)
-   
+
    **Example:**
+
    ```html
-   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ABC123XYZ"></script>
+   <script
+     async
+     src="https://www.googletagmanager.com/gtag/js?id=G-ABC123XYZ"
+   ></script>
    <script>
-       window.dataLayer = window.dataLayer || [];
-       function gtag(){dataLayer.push(arguments);}
-       gtag('js', new Date());
-       gtag('config', 'G-ABC123XYZ');  <!-- Replace here too -->
+     window.dataLayer = window.dataLayer || [];
+     function gtag() {
+       dataLayer.push(arguments);
+     }
+     gtag("js", new Date());
+     gtag("config", "G-ABC123XYZ"); <!-- Replace here too -->
    </script>
    ```
 
@@ -105,6 +117,7 @@ Google Analytics 4 (GA4) is the latest version. Follow these steps to set it up:
 ### What Gets Tracked Automatically
 
 Your website automatically tracks:
+
 - **Page views** - Every time someone visits
 - **Theme changes** - When users switch between light/dark mode
 - **Language changes** - When users switch between English/Spanish
@@ -135,22 +148,25 @@ For each of your 6 automations in Activepieces:
 2. Find the section at the top (around line 12):
    ```javascript
    const AUTOMATION_WEBHOOKS = {
-       'data-validation': 'YOUR_ACTIVEPIECES_WEBHOOK_URL_HERE',
-       'prompt-generator': 'YOUR_ACTIVEPIECES_WEBHOOK_URL_HERE',
-       'brandseo': 'YOUR_ACTIVEPIECES_WEBHOOK_URL_HERE',
-       'ai-focus-group': 'YOUR_ACTIVEPIECES_WEBHOOK_URL_HERE',
-       'extractstyle': 'YOUR_ACTIVEPIECES_WEBHOOK_URL_HERE',
-       'blogger': 'YOUR_ACTIVEPIECES_WEBHOOK_URL_HERE'
+     "data-validation": "YOUR_ACTIVEPIECES_WEBHOOK_URL_HERE",
+     "prompt-generator": "YOUR_ACTIVEPIECES_WEBHOOK_URL_HERE",
+     brandseo: "YOUR_ACTIVEPIECES_WEBHOOK_URL_HERE",
+     "ai-focus-group": "YOUR_ACTIVEPIECES_WEBHOOK_URL_HERE",
+     extractstyle: "YOUR_ACTIVEPIECES_WEBHOOK_URL_HERE",
+     blogger: "YOUR_ACTIVEPIECES_WEBHOOK_URL_HERE",
    };
    ```
 3. Replace each `'YOUR_ACTIVEPIECES_WEBHOOK_URL_HERE'` with the actual webhook URL
 
    **Example:**
+
    ```javascript
    const AUTOMATION_WEBHOOKS = {
-       'data-validation': 'https://cloud.activepieces.com/api/v1/webhooks/abc123...',
-       'prompt-generator': 'https://cloud.activepieces.com/api/v1/webhooks/def456...',
-       // ... and so on
+     "data-validation":
+       "https://cloud.activepieces.com/api/v1/webhooks/abc123...",
+     "prompt-generator":
+       "https://cloud.activepieces.com/api/v1/webhooks/def456...",
+     // ... and so on
    };
    ```
 
@@ -289,6 +305,7 @@ Similar to Netlify, very easy:
 Before going live, test everything:
 
 ### Visual Testing
+
 - [ ] Logo displays correctly
 - [ ] All 6 automation cards are visible
 - [ ] Light mode looks good
@@ -298,6 +315,7 @@ Before going live, test everything:
 - [ ] Desktop view is responsive
 
 ### Functionality Testing
+
 - [ ] Language toggle works (EN ↔ ES)
 - [ ] Theme toggle works (Light ↔ Dark)
 - [ ] Share button works
@@ -307,6 +325,7 @@ Before going live, test everything:
 - [ ] Clicking outside modal closes it
 
 ### Form Testing
+
 - [ ] Data Validation form opens and submits
 - [ ] Prompt Generator form opens and submits
 - [ ] BrandSEO form opens and submits
@@ -318,6 +337,7 @@ Before going live, test everything:
 - [ ] Required fields are enforced
 
 ### Integration Testing
+
 - [ ] Google Analytics tracks page views
 - [ ] Activepieces receives webhook data
 - [ ] User receives email with results
@@ -326,6 +346,7 @@ Before going live, test everything:
 - [ ] Error messages display correctly
 
 ### Cross-Browser Testing
+
 - [ ] Chrome/Edge (Chromium)
 - [ ] Firefox
 - [ ] Safari (if on Mac/iOS)
@@ -338,6 +359,7 @@ Before going live, test everything:
 ### Issue: Google Analytics not tracking
 
 **Solution:**
+
 1. Check that you replaced `GA_MEASUREMENT_ID` in **both** places in index.html
 2. Clear your browser cache
 3. Wait 24-48 hours for data to appear in reports (Realtime should work immediately)
@@ -346,6 +368,7 @@ Before going live, test everything:
 ### Issue: Activepieces webhook not receiving data
 
 **Solution:**
+
 1. Verify webhook URLs are correct in `js/app.js`
 2. Check Activepieces webhook logs for errors
 3. Make sure the webhook trigger is enabled in Activepieces
@@ -354,6 +377,7 @@ Before going live, test everything:
 ### Issue: Forms not submitting
 
 **Solution:**
+
 1. Open browser console (F12) and check for errors
 2. Verify all required fields are filled
 3. Check internet connection
@@ -362,6 +386,7 @@ Before going live, test everything:
 ### Issue: Website not displaying on custom domain
 
 **Solution:**
+
 1. Verify DNS records are correct (use [dnschecker.org](https://dnschecker.org))
 2. Wait 24-48 hours for DNS propagation
 3. Clear browser cache
@@ -371,6 +396,7 @@ Before going live, test everything:
 ### Issue: Emails not being sent
 
 **Solution:**
+
 1. For feedback form: FormSubmit requires email verification on first use
 2. Check spam/junk folder
 3. Verify email addresses are correct in `js/app.js`
@@ -379,6 +405,7 @@ Before going live, test everything:
 ### Issue: Dark mode not working
 
 **Solution:**
+
 1. Clear browser cache and localStorage
 2. Check browser console for JavaScript errors
 3. Verify `js/app.js` is loaded correctly
@@ -386,6 +413,7 @@ Before going live, test everything:
 ### Issue: Language toggle not working
 
 **Solution:**
+
 1. Clear browser cache and localStorage
 2. Verify all elements have both `data-en` and `data-es` attributes
 3. Check browser console for errors
@@ -421,4 +449,3 @@ After deployment:
 **Congratulations!** Your Menatech Apps website is ready to launch. Follow the deployment steps, configure the integrations, and you'll be live in no time!
 
 For questions or custom development needs, contact: **gonzalo@menatech.cloud**
-

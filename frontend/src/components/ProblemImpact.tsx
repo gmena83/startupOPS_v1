@@ -68,7 +68,7 @@ export const ProblemImpact = () => {
             {t("problem.description")}
           </p>
         </div>
-        
+
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {impacts.map((impact, index) => {
             const Icon = impact.icon;
@@ -82,12 +82,18 @@ export const ProblemImpact = () => {
                 <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-destructive/10 flex items-center justify-center mx-auto mb-4 sm:mb-6">
                   <Icon className="h-6 w-6 sm:h-8 sm:w-8 text-destructive" />
                 </div>
-                <p className="text-3xl sm:text-4xl font-bold mb-2">{t(impact.statKey)}</p>
-                <p className="text-xs sm:text-sm font-semibold text-accent mb-2 sm:mb-3">{t(impact.labelKey)}</p>
+                <p className="text-3xl sm:text-4xl font-bold mb-2">
+                  {t(impact.statKey)}
+                </p>
+                <p className="text-xs sm:text-sm font-semibold text-accent mb-2 sm:mb-3">
+                  {t(impact.labelKey)}
+                </p>
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                   {t(impact.descriptionKey)}
                 </p>
-                <p className="text-xs text-primary mt-3 font-medium">Click to learn more →</p>
+                <p className="text-xs text-primary mt-3 font-medium">
+                  Click to learn more →
+                </p>
               </div>
             );
           })}
@@ -95,7 +101,10 @@ export const ProblemImpact = () => {
       </div>
 
       {/* Details Dialog */}
-      <Dialog open={!!selectedImpact} onOpenChange={() => setSelectedImpact(null)}>
+      <Dialog
+        open={!!selectedImpact}
+        onOpenChange={() => setSelectedImpact(null)}
+      >
         <DialogContent className="sm:max-w-[600px]">
           {selectedImpact && (
             <>
@@ -117,15 +126,17 @@ export const ProblemImpact = () => {
                   {t(selectedImpact.descriptionKey)}
                 </DialogDescription>
               </DialogHeader>
-              
+
               <div className="space-y-4 py-4">
                 <div>
-                  <h3 className="font-semibold text-lg mb-2">Detailed Analysis</h3>
+                  <h3 className="font-semibold text-lg mb-2">
+                    Detailed Analysis
+                  </h3>
                   <p className="text-muted-foreground leading-relaxed">
                     {t(selectedImpact.detailsKey)}
                   </p>
                 </div>
-                
+
                 <div>
                   <h3 className="font-semibold text-lg mb-2">Sources</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">

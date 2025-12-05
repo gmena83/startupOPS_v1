@@ -19,7 +19,11 @@ interface AuthDialogProps {
   mode?: "signin" | "signup";
 }
 
-export const AuthDialog = ({ open, onOpenChange, mode = "signin" }: AuthDialogProps) => {
+export const AuthDialog = ({
+  open,
+  onOpenChange,
+  mode = "signin",
+}: AuthDialogProps) => {
   const { t } = useLanguage();
   const [isSignIn, setIsSignIn] = useState(mode === "signin");
   const [email, setEmail] = useState("");
@@ -157,7 +161,9 @@ export const AuthDialog = ({ open, onOpenChange, mode = "signin" }: AuthDialogPr
           {/* Toggle Sign In/Sign Up */}
           <div className="text-center text-sm">
             <span className="text-muted-foreground">
-              {isSignIn ? "Don't have an account?" : "Already have an account?"}{" "}
+              {isSignIn
+                ? "Don't have an account?"
+                : "Already have an account?"}{" "}
             </span>
             <button
               type="button"

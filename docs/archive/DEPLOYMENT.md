@@ -3,6 +3,7 @@
 ## 🚀 Quick Deployment to Netlify
 
 ### Prerequisites
+
 - Netlify account
 - Git repository connected to GitHub
 - Resend API key (for email functionality)
@@ -185,11 +186,11 @@ npm run build
 
 Required in Netlify:
 
-| Variable | Description | Example |
-|----------|-------------|---------|
-| `RESEND_API_KEY` | API key for email service | `re_xxxxx` |
-| `NODE_VERSION` | Node.js version | `18` |
-| `VITE_API_URL` | API endpoint URL (optional) | `https://your-app.netlify.app/api` |
+| Variable         | Description                 | Example                            |
+| ---------------- | --------------------------- | ---------------------------------- |
+| `RESEND_API_KEY` | API key for email service   | `re_xxxxx`                         |
+| `NODE_VERSION`   | Node.js version             | `18`                               |
+| `VITE_API_URL`   | API endpoint URL (optional) | `https://your-app.netlify.app/api` |
 
 ## 🎯 Next Steps
 

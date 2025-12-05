@@ -1,286 +1,630 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Menatech Apps - Your hub for powerful AI-driven automation workflows">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Menatech Apps - Your hub for powerful AI-driven automation workflows"
+    />
     <title>Menatech Apps - Automation Hub</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MPR5R1ZD5V"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-MPR5R1ZD5V"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-      gtag('config', 'G-MPR5R1ZD5V');
+      gtag("config", "G-MPR5R1ZD5V");
     </script>
-</head>
-<body class="light-mode" data-lang="en">
-    
+  </head>
+  <body class="light-mode" data-lang="en">
     <!-- Header -->
     <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <img src="images/menatech-logo.png" alt="Menatech Logo" class="logo-img">
-                </div>
-                <nav class="nav-controls">
-                    <button id="langToggle" class="control-btn" aria-label="Toggle Language">
-                        <span class="lang-text">ES</span>
-                    </button>
-                    <button id="themeToggle" class="control-btn" aria-label="Toggle Theme">
-                        <svg class="theme-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="5"></circle>
-                            <line x1="12" y1="1" x2="12" y2="3"></line>
-                            <line x1="12" y1="21" x2="12" y2="23"></line>
-                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                            <line x1="1" y1="12" x2="3" y2="12"></line>
-                            <line x1="21" y1="12" x2="23" y2="12"></line>
-                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                        </svg>
-                    </button>
-                    <a href="https://www.linkedin.com/company/menatech-cloud/" target="_blank" class="control-btn linkedin-btn" aria-label="LinkedIn">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                        </svg>
-                    </a>
-                    <button id="shareBtn" class="control-btn share-btn" aria-label="Share">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="18" cy="5" r="3"></circle>
-                            <circle cx="6" cy="12" r="3"></circle>
-                            <circle cx="18" cy="19" r="3"></circle>
-                            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-                            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-                        </svg>
-                    </button>
-                </nav>
-            </div>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <img
+              src="images/menatech-logo.png"
+              alt="Menatech Logo"
+              class="logo-img"
+            />
+          </div>
+          <nav class="nav-controls">
+            <button
+              id="langToggle"
+              class="control-btn"
+              aria-label="Toggle Language"
+            >
+              <span class="lang-text">ES</span>
+            </button>
+            <button
+              id="themeToggle"
+              class="control-btn"
+              aria-label="Toggle Theme"
+            >
+              <svg
+                class="theme-icon"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            </button>
+            <a
+              href="https://www.linkedin.com/company/menatech-cloud/"
+              target="_blank"
+              class="control-btn linkedin-btn"
+              aria-label="LinkedIn"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                />
+              </svg>
+            </a>
+            <button
+              id="shareBtn"
+              class="control-btn share-btn"
+              aria-label="Share"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="18" cy="5" r="3"></circle>
+                <circle cx="6" cy="12" r="3"></circle>
+                <circle cx="18" cy="19" r="3"></circle>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+              </svg>
+            </button>
+          </nav>
         </div>
+      </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <h1 class="hero-title" data-en="Menatech Apps" data-es="Menatech Apps">Menatech Apps</h1>
-            <p class="hero-subtitle" data-en="Powerful AI-driven automation workflows at your fingertips" data-es="Potentes flujos de trabajo de automatización impulsados por IA a tu alcance">
-                Powerful AI-driven automation workflows at your fingertips
-            </p>
-            <a href="https://menatech.cloud" target="_blank" class="cta-btn" data-en="Need Custom Workflows? Visit Menatech Cloud" data-es="¿Necesitas Flujos Personalizados? Visita Menatech Cloud">
-                Need Custom Workflows? Visit Menatech Cloud
-            </a>
-        </div>
+      <div class="container">
+        <h1 class="hero-title" data-en="Menatech Apps" data-es="Menatech Apps">
+          Menatech Apps
+        </h1>
+        <p
+          class="hero-subtitle"
+          data-en="Powerful AI-driven automation workflows at your fingertips"
+          data-es="Potentes flujos de trabajo de automatización impulsados por IA a tu alcance"
+        >
+          Powerful AI-driven automation workflows at your fingertips
+        </p>
+        <a
+          href="https://menatech.cloud"
+          target="_blank"
+          class="cta-btn"
+          data-en="Need Custom Workflows? Visit Menatech Cloud"
+          data-es="¿Necesitas Flujos Personalizados? Visita Menatech Cloud"
+        >
+          Need Custom Workflows? Visit Menatech Cloud
+        </a>
+      </div>
     </section>
 
     <!-- Automations Grid -->
     <section class="automations">
-        <div class="container">
-            <h2 class="section-title" data-en="Our Automations" data-es="Nuestras Automatizaciones">Our Automations</h2>
-            
-            <div class="automation-grid">
-                
-                <!-- Automation 1: Data Validation -->
-                <div class="automation-card" data-automation="data-validation">
-                    <div class="card-icon">📊</div>
-                    <h3 class="card-title" data-en="Data Validation" data-es="Validación de Datos">Data Validation</h3>
-                    <p class="card-description" data-en="Upload a PDF pitch deck, proposal, or report to identify and validate statements against factual data" data-es="Sube un PDF de pitch deck, propuesta o reporte para identificar y validar declaraciones contra datos factuales">
-                        Upload a PDF pitch deck, proposal, or report to identify and validate statements against factual data
-                    </p>
-                    <div class="card-value" data-en="Ensure your documents are backed by verified, accurate information" data-es="Asegura que tus documentos estén respaldados por información verificada y precisa">
-                        <strong data-en="Value:" data-es="Valor:">Value:</strong> Ensure your documents are backed by verified, accurate information
-                    </div>
-                    <div class="card-requirements">
-                        <strong data-en="How it works:" data-es="Cómo funciona:">How it works:</strong>
-                        <ul>
-                            <li data-en="Click to open the upload folder" data-es="Haz clic para abrir la carpeta de subida">Click to open the upload folder</li>
-                            <li data-en="Upload your PDF file (pitch deck, proposal, or report)" data-es="Sube tu archivo PDF (pitch deck, propuesta o reporte)">Upload your PDF file (pitch deck, proposal, or report)</li>
-                            <li data-en="Receive validation results via email" data-es="Recibe los resultados de validación por email">Receive validation results via email</li>
-                        </ul>
-                    </div>
-                    <button class="trigger-btn" data-automation-type="redirect" onclick="openAutomation('data-validation')">
-                        <span data-en="Open Upload Folder" data-es="Abrir Carpeta de Subida">Open Upload Folder</span>
-                    </button>
-                </div>
+      <div class="container">
+        <h2
+          class="section-title"
+          data-en="Our Automations"
+          data-es="Nuestras Automatizaciones"
+        >
+          Our Automations
+        </h2>
 
-                <!-- Automation 2: Prompt Generator -->
-                <div class="automation-card" data-automation="prompt-generator">
-                    <div class="card-icon">✨</div>
-                    <h3 class="card-title" data-en="Prompt Generator" data-es="Generador de Prompts">Prompt Generator</h3>
-                    <p class="card-description" data-en="Generate comprehensive 'megaprompts' tailored for specific no-code/low-code platforms" data-es="Genera 'megaprompts' completos adaptados para plataformas específicas no-code/low-code">
-                        Generate comprehensive "megaprompts" tailored for specific no-code/low-code platforms
-                    </p>
-                    <div class="card-value" data-en="Save time and tokens with optimized prompts from the start" data-es="Ahorra tiempo y tokens con prompts optimizados desde el inicio">
-                        <strong data-en="Value:" data-es="Valor:">Value:</strong> Save time and tokens with optimized prompts from the start
-                    </div>
-                    <div class="card-requirements">
-                        <strong data-en="Required Data:" data-es="Datos Requeridos:">Required Data:</strong>
-                        <ul>
-                            <li data-en="Target platform name" data-es="Nombre de la plataforma objetivo">Target platform name</li>
-                            <li data-en="Use case description" data-es="Descripción del caso de uso">Use case description</li>
-                            <li data-en="Desired output format" data-es="Formato de salida deseado">Desired output format</li>
-                            <li data-en="Email address for results" data-es="Correo electrónico para resultados">Email address for results</li>
-                        </ul>
-                    </div>
-                    <button class="trigger-btn" data-automation-type="redirect" onclick="openAutomation('prompt-generator')">
-                        <span data-en="Open Form" data-es="Abrir Formulario">Open Form</span>
-                    </button>
-                </div>
-
-                <!-- Automation 3: BrandSEO -->
-                <div class="automation-card" data-automation="brandseo">
-                    <div class="card-icon">🎯</div>
-                    <h3 class="card-title" data-en="BrandSEO" data-es="BrandSEO">BrandSEO</h3>
-                    <p class="card-description" data-en="Analyze your brand's position in traditional and AI SEO with actionable recommendations" data-es="Analiza la posición de tu marca en SEO tradicional y de IA con recomendaciones accionables">
-                        Analyze your brand's position in traditional and AI SEO with actionable recommendations
-                    </p>
-                    <div class="card-value" data-en="Improve your brand's online visibility and ranking" data-es="Mejora la visibilidad y el ranking online de tu marca">
-                        <strong data-en="Value:" data-es="Valor:">Value:</strong> Improve your brand's online visibility and ranking
-                    </div>
-                    <div class="card-requirements">
-                        <strong data-en="Required Data:" data-es="Datos Requeridos:">Required Data:</strong>
-                        <ul>
-                            <li data-en="Brand/company name" data-es="Nombre de marca/empresa">Brand/company name</li>
-                            <li data-en="Website URL" data-es="URL del sitio web">Website URL</li>
-                            <li data-en="Industry/sector" data-es="Industria/sector">Industry/sector</li>
-                            <li data-en="Email address for results" data-es="Correo electrónico para resultados">Email address for results</li>
-                        </ul>
-                    </div>
-                    <button class="trigger-btn" data-automation-type="redirect" onclick="openAutomation('brandseo')">
-                        <span data-en="Open Form" data-es="Abrir Formulario">Open Form</span>
-                    </button>
-                </div>
-
-                <!-- Automation 4: AI Focus Group -->
-                <div class="automation-card" data-automation="ai-focus-group">
-                    <div class="card-icon">👥</div>
-                    <h3 class="card-title" data-en="AI Focus Group" data-es="Grupo Focal IA">AI Focus Group</h3>
-                    <p class="card-description" data-en="Validate product ideas with AI-generated buyer personas that provide customer feedback" data-es="Valida ideas de productos con buyer personas generadas por IA que proporcionan retroalimentación del cliente">
-                        Validate product ideas with AI-generated buyer personas that provide customer feedback
-                    </p>
-                    <div class="card-value" data-en="Get customer insights before investing in development" data-es="Obtén insights de clientes antes de invertir en desarrollo">
-                        <strong data-en="Value:" data-es="Valor:">Value:</strong> Get customer insights before investing in development
-                    </div>
-                    <div class="card-requirements">
-                        <strong data-en="How it works:" data-es="Cómo funciona:">How it works:</strong>
-                        <ul>
-                            <li data-en="Click to open the detailed form" data-es="Haz clic para abrir el formulario detallado">Click to open the detailed form</li>
-                            <li data-en="Provide product details and target segment" data-es="Proporciona detalles del producto y segmento objetivo">Provide product details and target segment</li>
-                            <li data-en="Receive AI-generated focus group insights via email" data-es="Recibe insights del grupo focal generado por IA por email">Receive AI-generated focus group insights via email</li>
-                        </ul>
-                    </div>
-                    <button class="trigger-btn" data-automation-type="redirect" onclick="openAutomation('ai-focus-group')">
-                        <span data-en="Open Form" data-es="Abrir Formulario">Open Form</span>
-                    </button>
-                </div>
-
-                <!-- Automation 5: ExtractStyle -->
-                <div class="automation-card" data-automation="extractstyle">
-                    <div class="card-icon">🎨</div>
-                    <h3 class="card-title" data-en="ExtractStyle" data-es="ExtractStyle">ExtractStyle</h3>
-                    <p class="card-description" data-en="Analyze your communication style from text and audio to create personalized LLM instructions" data-es="Analiza tu estilo de comunicación desde texto y audio para crear instrucciones personalizadas para LLMs">
-                        Analyze your communication style from text and audio to create personalized LLM instructions
-                    </p>
-                    <div class="card-value" data-en="Make AI-generated content sound authentically like you" data-es="Haz que el contenido generado por IA suene auténticamente como tú">
-                        <strong data-en="Value:" data-es="Valor:">Value:</strong> Make AI-generated content sound authentically like you
-                    </div>
-                    <div class="card-requirements">
-                        <strong data-en="How it works:" data-es="Cómo funciona:">How it works:</strong>
-                        <ul>
-                            <li data-en="Click to open the form" data-es="Haz clic para abrir el formulario">Click to open the form</li>
-                            <li data-en="Share text samples or upload audio files" data-es="Comparte muestras de texto o sube archivos de audio">Share text samples or upload audio files</li>
-                            <li data-en="Receive your personalized style guide via email" data-es="Recibe tu guía de estilo personalizada por email">Receive your personalized style guide via email</li>
-                        </ul>
-                    </div>
-                    <button class="trigger-btn" data-automation-type="redirect" onclick="openAutomation('extractstyle')">
-                        <span data-en="Open Form" data-es="Abrir Formulario">Open Form</span>
-                    </button>
-                </div>
-
-                <!-- Automation 6: Blogger -->
-                <div class="automation-card" data-automation="blogger">
-                    <div class="card-icon">📝</div>
-                    <h3 class="card-title" data-en="Blogger" data-es="Blogger">Blogger</h3>
-                    <p class="card-description" data-en="Generate well-researched blog content with SEO and trend analysis" data-es="Genera contenido de blog bien investigado con análisis de SEO y tendencias">
-                        Generate well-researched blog content with SEO and trend analysis
-                    </p>
-                    <div class="card-value" data-en="Save time while maintaining high-quality content standards" data-es="Ahorra tiempo mientras mantienes estándares de contenido de alta calidad">
-                        <strong data-en="Value:" data-es="Valor:">Value:</strong> Save time while maintaining high-quality content standards
-                    </div>
-                    <div class="card-requirements">
-                        <strong data-en="How it works:" data-es="Cómo funciona:">How it works:</strong>
-                        <ul>
-                            <li data-en="Click to open the form" data-es="Haz clic para abrir el formulario">Click to open the form</li>
-                            <li data-en="Provide your blog topic and requirements" data-es="Proporciona tu tema de blog y requisitos">Provide your blog topic and requirements</li>
-                            <li data-en="Receive SEO-optimized blog content via email" data-es="Recibe contenido de blog optimizado para SEO por email">Receive SEO-optimized blog content via email</li>
-                        </ul>
-                    </div>
-                    <button class="trigger-btn" data-automation-type="redirect" onclick="openAutomation('blogger')">
-                        <span data-en="Open Form" data-es="Abrir Formulario">Open Form</span>
-                    </button>
-                </div>
-
+        <div class="automation-grid">
+          <!-- Automation 1: Data Validation -->
+          <div class="automation-card" data-automation="data-validation">
+            <div class="card-icon">📊</div>
+            <h3
+              class="card-title"
+              data-en="Data Validation"
+              data-es="Validación de Datos"
+            >
+              Data Validation
+            </h3>
+            <p
+              class="card-description"
+              data-en="Upload a PDF pitch deck, proposal, or report to identify and validate statements against factual data"
+              data-es="Sube un PDF de pitch deck, propuesta o reporte para identificar y validar declaraciones contra datos factuales"
+            >
+              Upload a PDF pitch deck, proposal, or report to identify and
+              validate statements against factual data
+            </p>
+            <div
+              class="card-value"
+              data-en="Ensure your documents are backed by verified, accurate information"
+              data-es="Asegura que tus documentos estén respaldados por información verificada y precisa"
+            >
+              <strong data-en="Value:" data-es="Valor:">Value:</strong> Ensure
+              your documents are backed by verified, accurate information
             </div>
+            <div class="card-requirements">
+              <strong data-en="How it works:" data-es="Cómo funciona:"
+                >How it works:</strong
+              >
+              <ul>
+                <li
+                  data-en="Click to open the upload folder"
+                  data-es="Haz clic para abrir la carpeta de subida"
+                >
+                  Click to open the upload folder
+                </li>
+                <li
+                  data-en="Upload your PDF file (pitch deck, proposal, or report)"
+                  data-es="Sube tu archivo PDF (pitch deck, propuesta o reporte)"
+                >
+                  Upload your PDF file (pitch deck, proposal, or report)
+                </li>
+                <li
+                  data-en="Receive validation results via email"
+                  data-es="Recibe los resultados de validación por email"
+                >
+                  Receive validation results via email
+                </li>
+              </ul>
+            </div>
+            <button
+              class="trigger-btn"
+              data-automation-type="redirect"
+              onclick="openAutomation('data-validation')"
+            >
+              <span
+                data-en="Open Upload Folder"
+                data-es="Abrir Carpeta de Subida"
+                >Open Upload Folder</span
+              >
+            </button>
+          </div>
+
+          <!-- Automation 2: Prompt Generator -->
+          <div class="automation-card" data-automation="prompt-generator">
+            <div class="card-icon">✨</div>
+            <h3
+              class="card-title"
+              data-en="Prompt Generator"
+              data-es="Generador de Prompts"
+            >
+              Prompt Generator
+            </h3>
+            <p
+              class="card-description"
+              data-en="Generate comprehensive 'megaprompts' tailored for specific no-code/low-code platforms"
+              data-es="Genera 'megaprompts' completos adaptados para plataformas específicas no-code/low-code"
+            >
+              Generate comprehensive "megaprompts" tailored for specific
+              no-code/low-code platforms
+            </p>
+            <div
+              class="card-value"
+              data-en="Save time and tokens with optimized prompts from the start"
+              data-es="Ahorra tiempo y tokens con prompts optimizados desde el inicio"
+            >
+              <strong data-en="Value:" data-es="Valor:">Value:</strong> Save
+              time and tokens with optimized prompts from the start
+            </div>
+            <div class="card-requirements">
+              <strong data-en="Required Data:" data-es="Datos Requeridos:"
+                >Required Data:</strong
+              >
+              <ul>
+                <li
+                  data-en="Target platform name"
+                  data-es="Nombre de la plataforma objetivo"
+                >
+                  Target platform name
+                </li>
+                <li
+                  data-en="Use case description"
+                  data-es="Descripción del caso de uso"
+                >
+                  Use case description
+                </li>
+                <li
+                  data-en="Desired output format"
+                  data-es="Formato de salida deseado"
+                >
+                  Desired output format
+                </li>
+                <li
+                  data-en="Email address for results"
+                  data-es="Correo electrónico para resultados"
+                >
+                  Email address for results
+                </li>
+              </ul>
+            </div>
+            <button
+              class="trigger-btn"
+              data-automation-type="redirect"
+              onclick="openAutomation('prompt-generator')"
+            >
+              <span data-en="Open Form" data-es="Abrir Formulario"
+                >Open Form</span
+              >
+            </button>
+          </div>
+
+          <!-- Automation 3: BrandSEO -->
+          <div class="automation-card" data-automation="brandseo">
+            <div class="card-icon">🎯</div>
+            <h3 class="card-title" data-en="BrandSEO" data-es="BrandSEO">
+              BrandSEO
+            </h3>
+            <p
+              class="card-description"
+              data-en="Analyze your brand's position in traditional and AI SEO with actionable recommendations"
+              data-es="Analiza la posición de tu marca en SEO tradicional y de IA con recomendaciones accionables"
+            >
+              Analyze your brand's position in traditional and AI SEO with
+              actionable recommendations
+            </p>
+            <div
+              class="card-value"
+              data-en="Improve your brand's online visibility and ranking"
+              data-es="Mejora la visibilidad y el ranking online de tu marca"
+            >
+              <strong data-en="Value:" data-es="Valor:">Value:</strong> Improve
+              your brand's online visibility and ranking
+            </div>
+            <div class="card-requirements">
+              <strong data-en="Required Data:" data-es="Datos Requeridos:"
+                >Required Data:</strong
+              >
+              <ul>
+                <li
+                  data-en="Brand/company name"
+                  data-es="Nombre de marca/empresa"
+                >
+                  Brand/company name
+                </li>
+                <li data-en="Website URL" data-es="URL del sitio web">
+                  Website URL
+                </li>
+                <li data-en="Industry/sector" data-es="Industria/sector">
+                  Industry/sector
+                </li>
+                <li
+                  data-en="Email address for results"
+                  data-es="Correo electrónico para resultados"
+                >
+                  Email address for results
+                </li>
+              </ul>
+            </div>
+            <button
+              class="trigger-btn"
+              data-automation-type="redirect"
+              onclick="openAutomation('brandseo')"
+            >
+              <span data-en="Open Form" data-es="Abrir Formulario"
+                >Open Form</span
+              >
+            </button>
+          </div>
+
+          <!-- Automation 4: AI Focus Group -->
+          <div class="automation-card" data-automation="ai-focus-group">
+            <div class="card-icon">👥</div>
+            <h3
+              class="card-title"
+              data-en="AI Focus Group"
+              data-es="Grupo Focal IA"
+            >
+              AI Focus Group
+            </h3>
+            <p
+              class="card-description"
+              data-en="Validate product ideas with AI-generated buyer personas that provide customer feedback"
+              data-es="Valida ideas de productos con buyer personas generadas por IA que proporcionan retroalimentación del cliente"
+            >
+              Validate product ideas with AI-generated buyer personas that
+              provide customer feedback
+            </p>
+            <div
+              class="card-value"
+              data-en="Get customer insights before investing in development"
+              data-es="Obtén insights de clientes antes de invertir en desarrollo"
+            >
+              <strong data-en="Value:" data-es="Valor:">Value:</strong> Get
+              customer insights before investing in development
+            </div>
+            <div class="card-requirements">
+              <strong data-en="How it works:" data-es="Cómo funciona:"
+                >How it works:</strong
+              >
+              <ul>
+                <li
+                  data-en="Click to open the detailed form"
+                  data-es="Haz clic para abrir el formulario detallado"
+                >
+                  Click to open the detailed form
+                </li>
+                <li
+                  data-en="Provide product details and target segment"
+                  data-es="Proporciona detalles del producto y segmento objetivo"
+                >
+                  Provide product details and target segment
+                </li>
+                <li
+                  data-en="Receive AI-generated focus group insights via email"
+                  data-es="Recibe insights del grupo focal generado por IA por email"
+                >
+                  Receive AI-generated focus group insights via email
+                </li>
+              </ul>
+            </div>
+            <button
+              class="trigger-btn"
+              data-automation-type="redirect"
+              onclick="openAutomation('ai-focus-group')"
+            >
+              <span data-en="Open Form" data-es="Abrir Formulario"
+                >Open Form</span
+              >
+            </button>
+          </div>
+
+          <!-- Automation 5: ExtractStyle -->
+          <div class="automation-card" data-automation="extractstyle">
+            <div class="card-icon">🎨</div>
+            <h3
+              class="card-title"
+              data-en="ExtractStyle"
+              data-es="ExtractStyle"
+            >
+              ExtractStyle
+            </h3>
+            <p
+              class="card-description"
+              data-en="Analyze your communication style from text and audio to create personalized LLM instructions"
+              data-es="Analiza tu estilo de comunicación desde texto y audio para crear instrucciones personalizadas para LLMs"
+            >
+              Analyze your communication style from text and audio to create
+              personalized LLM instructions
+            </p>
+            <div
+              class="card-value"
+              data-en="Make AI-generated content sound authentically like you"
+              data-es="Haz que el contenido generado por IA suene auténticamente como tú"
+            >
+              <strong data-en="Value:" data-es="Valor:">Value:</strong> Make
+              AI-generated content sound authentically like you
+            </div>
+            <div class="card-requirements">
+              <strong data-en="How it works:" data-es="Cómo funciona:"
+                >How it works:</strong
+              >
+              <ul>
+                <li
+                  data-en="Click to open the form"
+                  data-es="Haz clic para abrir el formulario"
+                >
+                  Click to open the form
+                </li>
+                <li
+                  data-en="Share text samples or upload audio files"
+                  data-es="Comparte muestras de texto o sube archivos de audio"
+                >
+                  Share text samples or upload audio files
+                </li>
+                <li
+                  data-en="Receive your personalized style guide via email"
+                  data-es="Recibe tu guía de estilo personalizada por email"
+                >
+                  Receive your personalized style guide via email
+                </li>
+              </ul>
+            </div>
+            <button
+              class="trigger-btn"
+              data-automation-type="redirect"
+              onclick="openAutomation('extractstyle')"
+            >
+              <span data-en="Open Form" data-es="Abrir Formulario"
+                >Open Form</span
+              >
+            </button>
+          </div>
+
+          <!-- Automation 6: Blogger -->
+          <div class="automation-card" data-automation="blogger">
+            <div class="card-icon">📝</div>
+            <h3 class="card-title" data-en="Blogger" data-es="Blogger">
+              Blogger
+            </h3>
+            <p
+              class="card-description"
+              data-en="Generate well-researched blog content with SEO and trend analysis"
+              data-es="Genera contenido de blog bien investigado con análisis de SEO y tendencias"
+            >
+              Generate well-researched blog content with SEO and trend analysis
+            </p>
+            <div
+              class="card-value"
+              data-en="Save time while maintaining high-quality content standards"
+              data-es="Ahorra tiempo mientras mantienes estándares de contenido de alta calidad"
+            >
+              <strong data-en="Value:" data-es="Valor:">Value:</strong> Save
+              time while maintaining high-quality content standards
+            </div>
+            <div class="card-requirements">
+              <strong data-en="How it works:" data-es="Cómo funciona:"
+                >How it works:</strong
+              >
+              <ul>
+                <li
+                  data-en="Click to open the form"
+                  data-es="Haz clic para abrir el formulario"
+                >
+                  Click to open the form
+                </li>
+                <li
+                  data-en="Provide your blog topic and requirements"
+                  data-es="Proporciona tu tema de blog y requisitos"
+                >
+                  Provide your blog topic and requirements
+                </li>
+                <li
+                  data-en="Receive SEO-optimized blog content via email"
+                  data-es="Recibe contenido de blog optimizado para SEO por email"
+                >
+                  Receive SEO-optimized blog content via email
+                </li>
+              </ul>
+            </div>
+            <button
+              class="trigger-btn"
+              data-automation-type="redirect"
+              onclick="openAutomation('blogger')"
+            >
+              <span data-en="Open Form" data-es="Abrir Formulario"
+                >Open Form</span
+              >
+            </button>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Feedback Section -->
     <section class="feedback">
-        <div class="container">
-            <h2 class="section-title" data-en="Help Us Improve" data-es="Ayúdanos a Mejorar">Help Us Improve</h2>
-            <p class="feedback-description" data-en="Share your feedback and request new automations" data-es="Comparte tu retroalimentación y solicita nuevas automatizaciones">
-                Share your feedback and request new automations
-            </p>
-            <form id="feedbackForm" class="feedback-form">
-                <div class="form-group">
-                    <label for="feedbackName" data-en="Name" data-es="Nombre">Name</label>
-                    <input type="text" id="feedbackName" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="feedbackEmail" data-en="Email" data-es="Correo Electrónico">Email</label>
-                    <input type="email" id="feedbackEmail" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="feedbackMessage" data-en="Feedback / Request" data-es="Retroalimentación / Solicitud">Feedback / Request</label>
-                    <textarea id="feedbackMessage" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">
-                    <span data-en="Submit Feedback" data-es="Enviar Retroalimentación">Submit Feedback</span>
-                </button>
-            </form>
-        </div>
+      <div class="container">
+        <h2
+          class="section-title"
+          data-en="Help Us Improve"
+          data-es="Ayúdanos a Mejorar"
+        >
+          Help Us Improve
+        </h2>
+        <p
+          class="feedback-description"
+          data-en="Share your feedback and request new automations"
+          data-es="Comparte tu retroalimentación y solicita nuevas automatizaciones"
+        >
+          Share your feedback and request new automations
+        </p>
+        <form id="feedbackForm" class="feedback-form">
+          <div class="form-group">
+            <label for="feedbackName" data-en="Name" data-es="Nombre"
+              >Name</label
+            >
+            <input type="text" id="feedbackName" name="name" required />
+          </div>
+          <div class="form-group">
+            <label
+              for="feedbackEmail"
+              data-en="Email"
+              data-es="Correo Electrónico"
+              >Email</label
+            >
+            <input type="email" id="feedbackEmail" name="email" required />
+          </div>
+          <div class="form-group">
+            <label
+              for="feedbackMessage"
+              data-en="Feedback / Request"
+              data-es="Retroalimentación / Solicitud"
+              >Feedback / Request</label
+            >
+            <textarea
+              id="feedbackMessage"
+              name="message"
+              rows="5"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="submit-btn">
+            <span data-en="Submit Feedback" data-es="Enviar Retroalimentación"
+              >Submit Feedback</span
+            >
+          </button>
+        </form>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="disclaimer" data-en="⚠️ Prototype Notice: Please do not use sensitive data before contacting our team at gonzalo@menatech.cloud" data-es="⚠️ Aviso de Prototipo: Por favor no uses datos sensibles antes de contactar a nuestro equipo en gonzalo@menatech.cloud">
-                ⚠️ Prototype Notice: Please do not use sensitive data before contacting our team at gonzalo@menatech.cloud
-            </div>
-            <div class="footer-content">
-                <p>&copy; 2025 Menatech. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span></p>
-                <div class="footer-links">
-                    <a href="https://menatech.cloud" target="_blank">menatech.cloud</a>
-                    <a href="https://www.linkedin.com/company/menatech-cloud/" target="_blank">LinkedIn</a>
-                </div>
-            </div>
+      <div class="container">
+        <div
+          class="disclaimer"
+          data-en="⚠️ Prototype Notice: Please do not use sensitive data before contacting our team at gonzalo@menatech.cloud"
+          data-es="⚠️ Aviso de Prototipo: Por favor no uses datos sensibles antes de contactar a nuestro equipo en gonzalo@menatech.cloud"
+        >
+          ⚠️ Prototype Notice: Please do not use sensitive data before
+          contacting our team at gonzalo@menatech.cloud
         </div>
+        <div class="footer-content">
+          <p>
+            &copy; 2025 Menatech.
+            <span
+              data-en="All rights reserved."
+              data-es="Todos los derechos reservados."
+              >All rights reserved.</span
+            >
+          </p>
+          <div class="footer-links">
+            <a href="https://menatech.cloud" target="_blank">menatech.cloud</a>
+            <a
+              href="https://www.linkedin.com/company/menatech-cloud/"
+              target="_blank"
+              >LinkedIn</a
+            >
+          </div>
+        </div>
+      </div>
     </footer>
 
     <!-- Modal for Automation Forms -->
     <div id="automationModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div id="modalBody"></div>
-        </div>
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div id="modalBody"></div>
+      </div>
     </div>
 
     <script src="js/app.js"></script>
-</body>
+  </body>
 </html>
-

@@ -36,15 +36,18 @@ Your two repositories have been **fully integrated** and are **ready for deploym
 ## 🚀 Deploy Your App (3 Steps)
 
 ### Step 1: Get API Key
+
 Get your Resend API key from https://resend.com
 
 ### Step 2: Initialize Netlify
+
 ```bash
 npx netlify login
 npx netlify init
 ```
 
 ### Step 3: Deploy!
+
 ```bash
 npx netlify env:set RESEND_API_KEY "your_key_here"
 npm run deploy
@@ -92,6 +95,7 @@ startupOPS_v1/
 ## 🎯 Key Files Created/Modified
 
 ### New Files:
+
 - ✅ `netlify.toml` - Deployment configuration
 - ✅ `frontend/src/lib/api.ts` - API client
 - ✅ `.env.example` - Environment template
@@ -100,6 +104,7 @@ startupOPS_v1/
 - ✅ `INTEGRATION-SUMMARY.md` - This file!
 
 ### Modified Files:
+
 - ✅ `package.json` - Updated scripts for deployment
 - ✅ `frontend/vite.config.ts` - Added API proxy
 - ✅ `frontend/src/vite-env.d.ts` - Added env types
@@ -128,17 +133,20 @@ npm run lint             # Lint frontend code
 ## 📊 Architecture Overview
 
 **Frontend (Port 8080)**
+
 - React 18 + TypeScript
 - Vite for building
 - TailwindCSS + shadcn/ui
 - React Router for routing
 
 **Backend (Port 8888)**
+
 - Netlify Serverless Functions
 - Resend for email
 - Node.js 18
 
 **Integration**
+
 - Frontend proxies `/api/*` to backend
 - Production: `/api/*` → `/.netlify/functions/*`
 - Development: Vite proxy handles routing
@@ -146,16 +154,19 @@ npm run lint             # Lint frontend code
 ## ✨ What You Can Do Now
 
 1. **Test Locally**
+
    ```bash
    npm run dev
    ```
 
 2. **Deploy to Netlify**
+
    ```bash
    npm run deploy
    ```
 
 3. **Push to GitHub**
+
    ```bash
    git add .
    git commit -m "Full-stack integration complete"
@@ -183,6 +194,7 @@ All complete! ✅
 **Full Guide**: See `DEPLOYMENT.md`
 
 **Issues?**
+
 - Check build logs: `npm run build`
 - Test locally: `npm run dev`
 - Verify dependencies: `npm run install:all`
@@ -190,18 +202,21 @@ All complete! ✅
 ## 🎯 Next Actions (Your Choice)
 
 ### Option 1: Deploy Immediately
+
 ```bash
 npx netlify init
 npm run deploy
 ```
 
 ### Option 2: Test Locally First
+
 ```bash
 npm run dev
 # Visit http://localhost:8080
 ```
 
 ### Option 3: Push to GitHub
+
 ```bash
 git add .
 git commit -m "Integrate frontend and backend"

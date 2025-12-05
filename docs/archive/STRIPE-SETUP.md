@@ -14,19 +14,19 @@ This guide will help you set up Stripe payments for StartupOPS subscriptions.
 2. **Create Products**:
    - Go to Products → Create Product
    - Create 3 products (Starter, Professional, Growth)
-   
+
    **Starter Plan**:
    - Name: StartupOPS Starter
    - Description: 20 automation runs per month
    - Price: $20/month (recurring)
    - Copy the Price ID (starts with `price_`)
-   
+
    **Professional Plan**:
    - Name: StartupOPS Professional
    - Description: 50 automation runs per month
    - Price: $50/month (recurring)
    - Copy the Price ID
-   
+
    **Growth Plan**:
    - Name: StartupOPS Growth
    - Description: 100 automation runs per month
@@ -121,12 +121,14 @@ URL=http://localhost:5173
 ## Step 6: Test the Integration
 
 ### Test Mode:
+
 1. Use test API keys (start with `pk_test_` and `sk_test_`)
 2. Use Stripe test cards: https://stripe.com/docs/testing
    - Success: `4242 4242 4242 4242`
    - Decline: `4000 0000 0000 0002`
 
 ### Test Flow:
+
 1. Click "Start Free Trial" on any pricing tier
 2. You should be redirected to Stripe Checkout
 3. Use test card: `4242 4242 4242 4242`
@@ -171,12 +173,14 @@ The webhook handler (`stripe-webhook.js`) currently logs events. To fully integr
 ## Security Best Practices
 
 ✅ **DO**:
+
 - Keep secret keys in environment variables
 - Use webhook signatures to verify events
 - Enable HTTPS for all endpoints
 - Implement rate limiting on functions
 
 ❌ **DON'T**:
+
 - Commit API keys to Git
 - Expose secret keys in frontend code
 - Trust client-side data without verification
@@ -185,16 +189,19 @@ The webhook handler (`stripe-webhook.js`) currently logs events. To fully integr
 ## Troubleshooting
 
 ### Checkout not redirecting
+
 - Check that Price IDs are correct in environment variables
 - Verify VITE_STRIPE_PUBLISHABLE_KEY is set
 - Check browser console for errors
 
 ### Webhooks not firing
+
 - Verify webhook URL is correct
 - Check Stripe Dashboard → Developers → Webhooks → Logs
 - Ensure STRIPE_WEBHOOK_SECRET is set correctly
 
 ### "Stripe Price ID not configured" error
+
 - Make sure environment variables are set in Netlify
 - Redeploy your site after adding env vars
 - Check that variable names match exactly

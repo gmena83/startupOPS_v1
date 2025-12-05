@@ -13,6 +13,7 @@ Each automation sends different data based on its purpose. Here's what each webh
 ### 1. Data Validation
 
 **Webhook receives:**
+
 ```json
 {
   "email": "user@example.com",
@@ -22,6 +23,7 @@ Each automation sends different data based on its purpose. Here's what each webh
 ```
 
 **Workflow should:**
+
 1. Receive webhook trigger
 2. Extract PDF file
 3. Analyze document for statements
@@ -33,6 +35,7 @@ Each automation sends different data based on its purpose. Here's what each webh
 ### 2. Prompt Generator
 
 **Webhook receives:**
+
 ```json
 {
   "email": "user@example.com",
@@ -44,6 +47,7 @@ Each automation sends different data based on its purpose. Here's what each webh
 ```
 
 **Workflow should:**
+
 1. Receive webhook trigger
 2. Analyze use case and platform
 3. Generate optimized megaprompt
@@ -54,6 +58,7 @@ Each automation sends different data based on its purpose. Here's what each webh
 ### 3. BrandSEO
 
 **Webhook receives:**
+
 ```json
 {
   "email": "user@example.com",
@@ -65,6 +70,7 @@ Each automation sends different data based on its purpose. Here's what each webh
 ```
 
 **Workflow should:**
+
 1. Receive webhook trigger
 2. Analyze brand's online presence
 3. Check traditional SEO metrics
@@ -76,6 +82,7 @@ Each automation sends different data based on its purpose. Here's what each webh
 ### 4. AI Focus Group
 
 **Webhook receives:**
+
 ```json
 {
   "email": "user@example.com",
@@ -87,6 +94,7 @@ Each automation sends different data based on its purpose. Here's what each webh
 ```
 
 **Workflow should:**
+
 1. Receive webhook trigger
 2. Generate buyer personas
 3. Simulate focus group discussion
@@ -98,6 +106,7 @@ Each automation sends different data based on its purpose. Here's what each webh
 ### 5. ExtractStyle
 
 **Webhook receives:**
+
 ```json
 {
   "email": "user@example.com",
@@ -108,6 +117,7 @@ Each automation sends different data based on its purpose. Here's what each webh
 ```
 
 **Workflow should:**
+
 1. Receive webhook trigger
 2. Process text/audio samples
 3. Analyze communication patterns
@@ -119,6 +129,7 @@ Each automation sends different data based on its purpose. Here's what each webh
 ### 6. Blogger
 
 **Webhook receives:**
+
 ```json
 {
   "email": "user@example.com",
@@ -130,6 +141,7 @@ Each automation sends different data based on its purpose. Here's what each webh
 ```
 
 **Workflow should:**
+
 1. Receive webhook trigger
 2. Research topic and trends
 3. Perform SEO analysis
@@ -269,24 +281,28 @@ View all requests: [Link to your dashboard]
 Here are useful actions for building your workflows:
 
 ### For File Processing (Data Validation, ExtractStyle)
+
 - **Google Drive** - Store uploaded files
 - **PDF.co** - Extract text from PDFs
 - **OpenAI** - Analyze content with GPT-4
 - **Anthropic Claude** - Alternative AI analysis
 
 ### For Research (BrandSEO, Blogger)
+
 - **HTTP Request** - Call external APIs
 - **Google Search** - Automated search queries
 - **Scraper** - Extract data from websites
 - **OpenAI** - Generate content and analysis
 
 ### For Email
+
 - **Gmail** - Send via Gmail account
 - **SendGrid** - Professional email service
 - **Mailgun** - Transactional emails
 - **SMTP** - Use any email provider
 
 ### For Data Processing
+
 - **Code** - Custom JavaScript/Python logic
 - **Data Mapper** - Transform data structure
 - **Filter** - Conditional logic
@@ -301,22 +317,24 @@ For production deployment, add security:
 Add a secret token to verify requests:
 
 **In Activepieces:**
+
 ```javascript
 // Code step to verify token
-if (trigger.headers['x-webhook-token'] !== 'YOUR_SECRET_TOKEN') {
-  throw new Error('Unauthorized');
+if (trigger.headers["x-webhook-token"] !== "YOUR_SECRET_TOKEN") {
+  throw new Error("Unauthorized");
 }
 ```
 
 **In website (js/app.js):**
+
 ```javascript
 const response = await fetch(webhookUrl, {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-        'X-Webhook-Token': 'YOUR_SECRET_TOKEN'
-    },
-    body: JSON.stringify(data)
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "X-Webhook-Token": "YOUR_SECRET_TOKEN",
+  },
+  body: JSON.stringify(data),
 });
 ```
 
@@ -335,12 +353,12 @@ Always validate incoming data:
 
 ```javascript
 // Code step
-if (!trigger.email || !trigger.email.includes('@')) {
-  throw new Error('Invalid email');
+if (!trigger.email || !trigger.email.includes("@")) {
+  throw new Error("Invalid email");
 }
 
 if (trigger.file && trigger.file.size > 10000000) {
-  throw new Error('File too large');
+  throw new Error("File too large");
 }
 ```
 
@@ -362,12 +380,14 @@ Before going live, test each workflow:
 ### Webhook not receiving data
 
 **Check:**
+
 1. Webhook URL is correct in `js/app.js`
 2. Flow is published (not in draft mode)
 3. Network tab in browser shows successful POST request
 4. CORS is not blocking the request
 
 **Solution:**
+
 - Test webhook with Postman first
 - Check Activepieces logs for errors
 - Verify webhook URL hasn't changed
@@ -375,12 +395,14 @@ Before going live, test each workflow:
 ### Emails not being sent
 
 **Check:**
+
 1. Email action is configured correctly
 2. Email address variables are correct ({{trigger.email}})
 3. Email service credentials are valid
 4. Emails aren't in spam folder
 
 **Solution:**
+
 - Test email action separately
 - Use a different email service
 - Add SPF/DKIM records to your domain
@@ -388,11 +410,13 @@ Before going live, test each workflow:
 ### Workflow times out
 
 **Check:**
+
 1. AI actions taking too long
 2. Too many sequential steps
 3. External API delays
 
 **Solution:**
+
 - Add timeout limits to AI actions
 - Use parallel branches for independent tasks
 - Add "Delay" steps to prevent rate limiting
@@ -400,11 +424,13 @@ Before going live, test each workflow:
 ### File uploads failing
 
 **Check:**
+
 1. File size limits
 2. File type restrictions
 3. Storage quota
 
 **Solution:**
+
 - Validate file size on frontend
 - Use cloud storage (Google Drive, S3)
 - Compress files before processing
@@ -458,16 +484,19 @@ Catch Error:
 ## Cost Optimization
 
 ### Reduce API Calls
+
 - Cache common results
 - Batch similar requests
 - Use cheaper AI models for simple tasks
 
 ### Optimize AI Prompts
+
 - Be specific to reduce token usage
 - Use system messages effectively
 - Limit response length
 
 ### Monitor Usage
+
 - Track workflow execution count
 - Set up usage alerts
 - Review expensive steps monthly
@@ -483,4 +512,3 @@ Need help configuring Activepieces?
 ---
 
 **Pro Tip**: Start with one automation, perfect it, then replicate the pattern for the others. This saves time and ensures consistency!
-

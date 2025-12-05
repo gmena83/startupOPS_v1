@@ -9,16 +9,19 @@ Menatech Apps is a modern, responsive web application that serves as a central h
 ## Features
 
 ### 🎨 Design & User Experience
+
 - **Modern Gradient Design** - Orange-to-blue gradient matching Menatech brand
 - **Responsive Layout** - Optimized for desktop, tablet, and mobile devices
 - **Smooth Animations** - Professional hover effects and transitions
 - **Accessibility** - ARIA labels and keyboard navigation support
 
 ### 🌐 Internationalization
+
 - **Bilingual Support** - Toggle between English and Spanish
 - **Persistent Language** - User preference saved in browser
 
 ### 🎭 Theming
+
 - **Light Mode** - Clean, bright interface
 - **Dark Mode** - Easy on the eyes for low-light environments
 - **Persistent Theme** - User preference saved in browser
@@ -56,16 +59,19 @@ Menatech Apps is a modern, responsive web application that serves as a central h
    - Maintains high-quality standards
 
 ### 📧 Communication
+
 - **Email Results** - All automation results sent to user's email
 - **Feedback System** - Users can submit feedback and requests
 - **Notifications** - Admin receives alerts for all submissions
 
 ### 📊 Analytics
+
 - **Google Analytics 4** - Track user behavior and engagement
 - **Event Tracking** - Monitor automation usage, theme changes, language switches
 - **Conversion Tracking** - Measure form submissions and automation triggers
 
 ### 🔗 Integration
+
 - **Activepieces Webhooks** - Seamless connection to automation workflows
 - **Social Sharing** - Share functionality for wider reach
 - **LinkedIn Integration** - Direct link to company page
@@ -162,10 +168,10 @@ Edit CSS variables in `css/styles.css`:
 
 ```css
 :root {
-    --gradient-start: #FF9933;    /* Orange */
-    --gradient-end: #4DB8FF;      /* Blue */
-    --accent-orange: #FF9933;
-    --accent-blue: #00BFFF;
+  --gradient-start: #ff9933; /* Orange */
+  --gradient-end: #4db8ff; /* Blue */
+  --accent-orange: #ff9933;
+  --accent-blue: #00bfff;
 }
 ```
 
@@ -182,8 +188,12 @@ Edit the `translations` object in `js/app.js`:
 
 ```javascript
 const translations = {
-    en: { /* English text */ },
-    es: { /* Spanish text */ }
+  en: {
+    /* English text */
+  },
+  es: {
+    /* Spanish text */
+  },
 };
 ```
 
@@ -192,6 +202,7 @@ const translations = {
 ### Prototype Notice
 
 This is a **prototype** version. The disclaimer warns users:
+
 > "Please do not use sensitive data before contacting our team at gonzalo@menatech.cloud"
 
 ### For Production
@@ -246,6 +257,7 @@ Before handling sensitive data:
 ## Changelog
 
 ### Version 1.0.0 (October 2025)
+
 - Initial release
 - 6 automation workflows
 - Bilingual support (EN/ES)
@@ -258,4 +270,3 @@ Before handling sensitive data:
 ---
 
 **Built with ❤️ by Menatech**
-

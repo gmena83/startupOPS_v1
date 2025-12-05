@@ -29,7 +29,11 @@ Thumbs.db
 *~
 
 # Editor directories and files
-.vscode/
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
 .idea/
 *.suo
 *.ntvs*

@@ -9,17 +9,20 @@ export const CTA = () => {
   const { t } = useLanguage();
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
-  
+
   const handleStartTrial = async () => {
     setLoading(true);
     try {
       // Default to Professional plan for CTA
-      await redirectToCheckout('professional');
+      await redirectToCheckout("professional");
     } catch (error) {
-      console.error('Checkout error:', error);
+      console.error("Checkout error:", error);
       toast({
         title: "Error",
-        description: error instanceof Error ? error.message : "Failed to start checkout. Please try again.",
+        description:
+          error instanceof Error
+            ? error.message
+            : "Failed to start checkout. Please try again.",
         variant: "destructive",
       });
     } finally {
@@ -28,9 +31,10 @@ export const CTA = () => {
   };
 
   const handleScheduleDemo = () => {
-    window.location.href = 'mailto:gonzalo@menatech.cloud?subject=Schedule Demo - StartupOPS';
+    window.location.href =
+      "mailto:gonzalo@menatech.cloud?subject=Schedule Demo - StartupOPS";
   };
-  
+
   return (
     <section className="py-16 sm:py-24 bg-primary text-primary-foreground relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
@@ -41,11 +45,11 @@ export const CTA = () => {
           <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 opacity-90 leading-relaxed">
             {t("cta.description")}
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
-            <Button 
-              size="lg" 
-              variant="cta" 
+            <Button
+              size="lg"
+              variant="cta"
               className="group w-full sm:w-auto"
               onClick={handleStartTrial}
               disabled={loading}
@@ -62,22 +66,22 @@ export const CTA = () => {
                 </>
               )}
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
+            <Button
+              size="lg"
+              variant="outline"
               className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary w-full sm:w-auto"
               onClick={handleScheduleDemo}
             >
               {t("cta.demo")}
             </Button>
           </div>
-          
+
           <p className="mt-4 sm:mt-6 text-xs sm:text-sm opacity-75">
             {t("cta.trial")}
           </p>
         </div>
       </div>
-      
+
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 right-0 w-96 h-96 bg-accent rounded-full blur-3xl" />

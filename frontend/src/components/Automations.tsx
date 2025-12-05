@@ -1,6 +1,13 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { FileCheck, Sparkles, TrendingUp, Users, Mic, BookOpen } from "lucide-react";
+import {
+  FileCheck,
+  Sparkles,
+  TrendingUp,
+  Users,
+  Mic,
+  BookOpen,
+} from "lucide-react";
 import { TypeformDialog } from "@/components/TypeformDialog";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -14,9 +21,9 @@ const automations = [
     details: [
       "Click to open the upload folder",
       "Upload your PDF file (pitch deck, proposal, or report)",
-      "Receive validation results via email"
+      "Receive validation results via email",
     ],
-    typeformUrl: "https://g6jhbb0afjy.typeform.com/to/bGob5KGB"
+    typeformUrl: "https://g6jhbb0afjy.typeform.com/to/bGob5KGB",
   },
   {
     id: "prompt-generator",
@@ -28,10 +35,10 @@ const automations = [
       "Target platform name",
       "Use case description",
       "Desired output format",
-      "Email address for results"
+      "Email address for results",
     ],
     detailsLabel: "Required Data:",
-    typeformUrl: "https://g6jhbb0afjy.typeform.com/to/xi5LEhkm"
+    typeformUrl: "https://g6jhbb0afjy.typeform.com/to/xi5LEhkm",
   },
   {
     id: "brandseo",
@@ -43,10 +50,10 @@ const automations = [
       "Brand/company name",
       "Website URL",
       "Industry/sector",
-      "Email address for results"
+      "Email address for results",
     ],
     detailsLabel: "Required Data:",
-    typeformUrl: "https://g6jhbb0afjy.typeform.com/to/ntzMlRRJ"
+    typeformUrl: "https://g6jhbb0afjy.typeform.com/to/ntzMlRRJ",
   },
   {
     id: "ai-focus-group",
@@ -57,9 +64,9 @@ const automations = [
     details: [
       "Click to open the detailed form",
       "Provide product details and target segment",
-      "Receive AI-generated focus group insights via email"
+      "Receive AI-generated focus group insights via email",
     ],
-    typeformUrl: "https://g6jhbb0afjy.typeform.com/to/WcebIOc9"
+    typeformUrl: "https://g6jhbb0afjy.typeform.com/to/WcebIOc9",
   },
   {
     id: "extractstyle",
@@ -70,9 +77,9 @@ const automations = [
     details: [
       "Click to open the form",
       "Share text samples or upload audio files",
-      "Receive your personalized style guide via email"
+      "Receive your personalized style guide via email",
     ],
-    typeformUrl: "https://g6jhbb0afjy.typeform.com/to/PmxNo7Wy"
+    typeformUrl: "https://g6jhbb0afjy.typeform.com/to/PmxNo7Wy",
   },
   {
     id: "topic-research",
@@ -83,15 +90,17 @@ const automations = [
     details: [
       "Click to open the form",
       "Provide your blog topic and requirements",
-      "Receive SEO-optimized blog content via email"
+      "Receive SEO-optimized blog content via email",
     ],
-    typeformUrl: "https://g6jhbb0afjy.typeform.com/to/s5lO6t5j"
-  }
+    typeformUrl: "https://g6jhbb0afjy.typeform.com/to/s5lO6t5j",
+  },
 ];
 
 export const Automations = () => {
   const { t } = useLanguage();
-  const [selectedAutomation, setSelectedAutomation] = useState<string | null>(null);
+  const [selectedAutomation, setSelectedAutomation] = useState<string | null>(
+    null,
+  );
 
   const openDialog = (automationId: string) => {
     setSelectedAutomation(automationId);
@@ -101,7 +110,9 @@ export const Automations = () => {
     setSelectedAutomation(null);
   };
 
-  const selectedAutomationData = automations.find(a => a.id === selectedAutomation);
+  const selectedAutomationData = automations.find(
+    (a) => a.id === selectedAutomation,
+  );
 
   return (
     <section className="py-16 sm:py-24 bg-muted/30">
@@ -132,7 +143,9 @@ export const Automations = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">{t(automation.nameKey)}</h3>
+                <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">
+                  {t(automation.nameKey)}
+                </h3>
 
                 {/* Description */}
                 <p className="text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4">
@@ -153,7 +166,10 @@ export const Automations = () => {
                   </p>
                   <ul className="space-y-2">
                     {automation.details.map((detail, idx) => (
-                      <li key={idx} className="text-xs sm:text-sm text-muted-foreground flex items-start gap-2">
+                      <li
+                        key={idx}
+                        className="text-xs sm:text-sm text-muted-foreground flex items-start gap-2"
+                      >
                         <span className="text-accent mt-1">•</span>
                         <span>{detail}</span>
                       </li>

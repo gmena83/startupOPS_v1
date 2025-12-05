@@ -15,6 +15,7 @@ StartupOPS empowers startup founders by providing ready-to-use automation soluti
 **Target Audience**: Startup founders, entrepreneurs, solopreneurs, and small business owners looking to streamline operations without technical overhead.
 
 **Key Value Proposition**:
+
 - ⚡ Save 9.5+ hours per week on admin tasks
 - 🔌 No API keys or integrations required
 - 🚀 Instant results delivered via email
@@ -61,16 +62,19 @@ StartupOPS empowers startup founders by providing ready-to-use automation soluti
 ### Design System
 
 **Color Palette**: Slate/Amber with gradient accents
+
 - Primary: Slate tones for professional, modern feel
 - Accent: Amber/warm tones for calls-to-action
 - Gradients: Smooth transitions for premium feel
 
 **Typography**: Inter font family with responsive scaling
+
 - Headings: `text-4xl` → `text-6xl` (mobile → desktop)
 - Body: `text-base` → `text-lg`
 - Optimized line heights for readability
 
 **Component System**:
+
 - Shadows: Soft (`shadow-soft`), medium (`shadow-medium`), large (`shadow-large`)
 - Animations: Fade-in, scale, and stagger effects using Tailwind
 - Spacing: Consistent 8px grid system
@@ -78,14 +82,14 @@ StartupOPS empowers startup founders by providing ready-to-use automation soluti
 
 ### Responsive Breakpoints
 
-| Device | Breakpoint | Target Devices |
-|--------|------------|----------------|
-| Mobile S | 320px | iPhone SE |
-| Mobile M | 375px | iPhone 12/13/14 |
-| Mobile L | 425px | iPhone Plus |
-| Tablet | 768px (md) | iPad, Android tablets |
-| Laptop | 1024px (lg) | Small laptops |
-| Desktop | 1440px+ (xl) | Desktop monitors |
+| Device   | Breakpoint   | Target Devices        |
+| -------- | ------------ | --------------------- |
+| Mobile S | 320px        | iPhone SE             |
+| Mobile M | 375px        | iPhone 12/13/14       |
+| Mobile L | 425px        | iPhone Plus           |
+| Tablet   | 768px (md)   | iPad, Android tablets |
+| Laptop   | 1024px (lg)  | Small laptops         |
+| Desktop  | 1440px+ (xl) | Desktop monitors      |
 
 ### Key UX Features
 
@@ -147,12 +151,14 @@ src/
 ## 🛠️ Technologies Used
 
 ### Core Framework
+
 - **React 18.3.1** - Modern UI library with hooks
 - **TypeScript** - Type-safe JavaScript
 - **Vite** - Lightning-fast build tool and dev server
 - **React Router DOM 6.30.1** - Client-side routing
 
 ### Styling & UI
+
 - **Tailwind CSS** - Utility-first CSS framework
 - **shadcn/ui** - Accessible, customizable component library
 - **Radix UI** - Headless UI primitives for accessibility
@@ -161,16 +167,19 @@ src/
 - **Tailwind Merge** - Smart class merging utility
 
 ### State Management & Forms
+
 - **React Hook Form 7.61.1** - Performant form validation
 - **Zod 3.25.76** - TypeScript-first schema validation
 - **@tanstack/react-query 5.83.0** - Server state management
 
 ### Theme & Utilities
+
 - **next-themes 0.3.0** - Dark/light mode management
 - **date-fns 3.6.0** - Modern date utility library
 - **Sonner** - Beautiful toast notifications
 
 ### Third-Party Integrations
+
 - **Typeform** - Embedded forms for automation triggers
 - Each automation delivers results via email
 
@@ -186,17 +195,20 @@ src/
 ### Installation
 
 1. **Clone the repository**
+
 ```sh
 git clone <YOUR_GIT_URL>
 cd <YOUR_PROJECT_NAME>
 ```
 
 2. **Install dependencies**
+
 ```sh
 npm install
 ```
 
 3. **Start development server**
+
 ```sh
 npm run dev
 ```
@@ -219,14 +231,14 @@ npm run preview
 
 Each automation is accessible via the Automations section. Click "Try [Automation Name]" to open the embedded Typeform and submit your request.
 
-| Automation | Purpose | Input | Output |
-|------------|---------|-------|--------|
-| **Data Validation** | Verify facts in documents | PDF upload | Accuracy report via email |
-| **Prompt Generator** | Create optimized prompts | Description + platform | Megaprompt via email |
-| **BrandSEO** | Analyze brand positioning | Brand name + URL | SEO analysis via email |
-| **AI Focus Group** | Product validation | Product idea | Focus group insights via email |
-| **ExtractStyle** | Communication analysis | Text/audio sample | Style guide via email |
-| **Topic Research** | Blog content generation | Topic + keywords | SEO-optimized content via email |
+| Automation           | Purpose                   | Input                  | Output                          |
+| -------------------- | ------------------------- | ---------------------- | ------------------------------- |
+| **Data Validation**  | Verify facts in documents | PDF upload             | Accuracy report via email       |
+| **Prompt Generator** | Create optimized prompts  | Description + platform | Megaprompt via email            |
+| **BrandSEO**         | Analyze brand positioning | Brand name + URL       | SEO analysis via email          |
+| **AI Focus Group**   | Product validation        | Product idea           | Focus group insights via email  |
+| **ExtractStyle**     | Communication analysis    | Text/audio sample      | Style guide via email           |
+| **Topic Research**   | Blog content generation   | Topic + keywords       | SEO-optimized content via email |
 
 **Pricing**: 0.25€ per credit. Each automation costs a different number of credits based on complexity.
 
@@ -250,6 +262,7 @@ This project is a standard Vite + React app and can be deployed to:
 - **Cloudflare Pages**: Connect repo with build command `npm run build`
 
 **Build Settings**:
+
 - Build command: `npm run build`
 - Output directory: `dist`
 - Node version: 18+
@@ -274,11 +287,13 @@ Currently, this project does not require environment variables. All Typeform URL
 If you need to add environment variables:
 
 1. Create `.env` file in root:
+
 ```
 VITE_API_URL=your_value_here
 ```
 
 2. Access in code:
+
 ```typescript
 const apiUrl = import.meta.env.VITE_API_URL;
 ```
@@ -292,6 +307,7 @@ Edit `src/components/Automations.tsx` → `automations` array → `typeformUrl` 
 Edit `src/index.css` → `:root` and `.dark` CSS variables
 
 **Add New Section**:
+
 1. Create component in `src/components/YourSection.tsx`
 2. Import and add to `src/pages/Index.tsx`
 3. Add navigation link in `src/components/Header.tsx`
@@ -342,6 +358,7 @@ This is a proprietary project by Menatech. For collaboration inquiries, contact 
 ## 📞 Support
 
 For questions, feature requests, or technical support:
+
 - Connect via [LinkedIn](https://www.linkedin.com/company/menatech-cloud)
 - Visit [Menatech](https://menatech.cloud)
 

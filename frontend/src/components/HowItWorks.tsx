@@ -1,4 +1,10 @@
-import { UserPlus, MousePointerClick, FileText, Mail, ArrowRight } from "lucide-react";
+import {
+  UserPlus,
+  MousePointerClick,
+  FileText,
+  Mail,
+  ArrowRight,
+} from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const steps = [
@@ -58,7 +64,9 @@ export const HowItWorks = () => {
                   <div className="relative">
                     <div className="flex items-start gap-4">
                       {/* Icon */}
-                      <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center flex-shrink-0 shadow-lg transform hover:scale-110 transition-transform duration-300`}>
+                      <div
+                        className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center flex-shrink-0 shadow-lg transform hover:scale-110 transition-transform duration-300`}
+                      >
                         <Icon className="h-8 w-8 text-white" />
                       </div>
 
@@ -66,7 +74,7 @@ export const HowItWorks = () => {
                       <div className="flex-1 pt-1">
                         <div className="flex items-center gap-2 mb-2">
                           <span className="text-2xl font-bold text-muted-foreground">
-                            {String(index + 1).padStart(2, '0')}
+                            {String(index + 1).padStart(2, "0")}
                           </span>
                           <h3 className="text-xl font-bold">
                             {t(step.titleKey)}
@@ -92,7 +100,7 @@ export const HowItWorks = () => {
           <div className="hidden md:block relative">
             {/* Connection Line */}
             <div className="absolute top-12 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-border to-transparent" />
-            
+
             <div className="grid grid-cols-4 gap-4 relative">
               {steps.map((step, index) => {
                 const Icon = step.icon;
@@ -107,10 +115,14 @@ export const HowItWorks = () => {
                       {/* Icon Container */}
                       <div className="relative inline-block mb-6">
                         {/* Pulse Animation */}
-                        <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${step.color} opacity-20 animate-pulse`} />
-                        
+                        <div
+                          className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${step.color} opacity-20 animate-pulse`}
+                        />
+
                         {/* Icon */}
-                        <div className={`relative w-24 h-24 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center shadow-lg transform hover:scale-110 hover:-translate-y-2 transition-all duration-300`}>
+                        <div
+                          className={`relative w-24 h-24 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center shadow-lg transform hover:scale-110 hover:-translate-y-2 transition-all duration-300`}
+                        >
                           <Icon className="h-12 w-12 text-white" />
                         </div>
 
@@ -145,7 +157,8 @@ export const HowItWorks = () => {
         {/* Progress Animation Hint */}
         <div className="mt-12 text-center">
           <p className="text-sm text-muted-foreground italic">
-            ⚡ Average time from signup to first results: <span className="font-bold text-accent">Under 5 minutes</span>
+            ⚡ Average time from signup to first results:{" "}
+            <span className="font-bold text-accent">Under 5 minutes</span>
           </p>
         </div>
       </div>

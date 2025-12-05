@@ -26,7 +26,9 @@ export const TypeformDialog = ({
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-4xl w-[95vw] sm:w-full h-[90vh] sm:h-[85vh] p-0 gap-0 flex flex-col">
         <DialogHeader className="px-4 sm:px-6 pt-4 sm:pt-6 pb-3 sm:pb-4 border-b">
-          <DialogTitle className="text-xl sm:text-2xl mb-2">{automationName}</DialogTitle>
+          <DialogTitle className="text-xl sm:text-2xl mb-2">
+            {automationName}
+          </DialogTitle>
           <div className="space-y-2 text-left">
             <p className="text-xs sm:text-sm text-muted-foreground">
               {automationDescription}

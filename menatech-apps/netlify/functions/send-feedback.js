@@ -1,29 +1,29 @@
-const { Resend } = require('resend');
+const { Resend } = require("resend");
 
 exports.handler = async (event, context) => {
   // Only allow POST requests
-  if (event.httpMethod !== 'POST') {
+  if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,
       headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': 'Content-Type',
-        'Access-Control-Allow-Methods': 'POST, OPTIONS'
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Methods": "POST, OPTIONS",
       },
-      body: JSON.stringify({ error: 'Method not allowed' })
+      body: JSON.stringify({ error: "Method not allowed" }),
     };
   }
 
   // Handle CORS preflight
-  if (event.httpMethod === 'OPTIONS') {
+  if (event.httpMethod === "OPTIONS") {
     return {
       statusCode: 200,
       headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': 'Content-Type',
-        'Access-Control-Allow-Methods': 'POST, OPTIONS'
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Methods": "POST, OPTIONS",
       },
-      body: ''
+      body: "",
     };
   }
 
@@ -36,12 +36,13 @@ exports.handler = async (event, context) => {
       return {
         statusCode: 400,
         headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Content-Type': 'application/json'
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ 
-          error: 'Missing required fields: name, email, and message are required' 
-        })
+        body: JSON.stringify({
+          error:
+            "Missing required fields: name, email, and message are required",
+        }),
       };
     }
 
@@ -51,12 +52,12 @@ exports.handler = async (event, context) => {
       return {
         statusCode: 400,
         headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Content-Type': 'application/json'
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ 
-          error: 'Invalid email format' 
-        })
+        body: JSON.stringify({
+          error: "Invalid email format",
+        }),
       };
     }
 
@@ -65,8 +66,8 @@ exports.handler = async (event, context) => {
 
     // Send email using Resend
     const { data, error } = await resend.emails.send({
-      from: 'Menatech Apps <noreply@menatech.cloud>', // Use your verified domain
-      to: ['gonzalo@menatech.cloud'],
+      from: "Menatech Apps <noreply@menatech.cloud>", // Use your verified domain
+      to: [process.env.CONTACT_EMAIL || "gonzalo@menatech.cloud"],
       subject: `New Feedback from ${name} - Menatech Apps`,
       html: `
         <div style="font-family: Inter, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
@@ -103,20 +104,20 @@ Message:
 ${message}
 
 Sent at: ${new Date().toLocaleString()}
-      `
+      `,
     });
 
     if (error) {
-      console.error('Resend error:', error);
+      console.error("Resend error:", error);
       return {
         statusCode: 500,
         headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Content-Type': 'application/json'
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ 
-          error: 'Failed to send email. Please try again later.' 
-        })
+        body: JSON.stringify({
+          error: "Failed to send email. Please try again later.",
+        }),
       };
     }
 
@@ -124,28 +125,27 @@ Sent at: ${new Date().toLocaleString()}
     return {
       statusCode: 200,
       headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/json'
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify({ 
+      body: JSON.stringify({
         success: true,
-        message: 'Feedback sent successfully!',
-        emailId: data.id
-      })
+        message: "Feedback sent successfully!",
+        emailId: data.id,
+      }),
     };
-
   } catch (error) {
-    console.error('Function error:', error);
-    
+    console.error("Function error:", error);
+
     return {
       statusCode: 500,
       headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/json'
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify({ 
-        error: 'Internal server error. Please try again later.' 
-      })
+      body: JSON.stringify({
+        error: "Internal server error. Please try again later.",
+      }),
     };
   }
 };

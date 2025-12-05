@@ -7,6 +7,7 @@
 Log in to your Activepieces account and collect these URLs:
 
 #### ✅ Already Configured (No Action Needed)
+
 - **AI Focus Group**: `https://forms.fillout.com/t/41Avi3Vjtxus` ✓
 
 #### 🔗 Webhook URLs (Copy from Activepieces)
@@ -57,15 +58,15 @@ Find lines 12-32 and replace with your URLs:
 ```javascript
 // AUTOMATION URLS - Replace with your actual URLs from Activepieces
 const AUTOMATION_URLS = {
-    // Webhooks (data sent directly from website)
-    'prompt-generator': 'PASTE_YOUR_WEBHOOK_URL_HERE',
-    'brandseo': 'PASTE_YOUR_WEBHOOK_URL_HERE',
-    
-    // External Forms/UIs (user redirected to external page)
-    'ai-focus-group': 'https://forms.fillout.com/t/41Avi3Vjtxus',  // Already configured ✓
-    'extractstyle': 'PASTE_YOUR_CHATBOT_URL_HERE',
-    'blogger': 'PASTE_YOUR_CHATBOT_URL_HERE',
-    'data-validation': 'PASTE_YOUR_GOOGLE_DRIVE_FOLDER_URL_HERE'
+  // Webhooks (data sent directly from website)
+  "prompt-generator": "PASTE_YOUR_WEBHOOK_URL_HERE",
+  brandseo: "PASTE_YOUR_WEBHOOK_URL_HERE",
+
+  // External Forms/UIs (user redirected to external page)
+  "ai-focus-group": "https://forms.fillout.com/t/41Avi3Vjtxus", // Already configured ✓
+  extractstyle: "PASTE_YOUR_CHATBOT_URL_HERE",
+  blogger: "PASTE_YOUR_CHATBOT_URL_HERE",
+  "data-validation": "PASTE_YOUR_GOOGLE_DRIVE_FOLDER_URL_HERE",
 };
 ```
 
@@ -73,12 +74,14 @@ const AUTOMATION_URLS = {
 
 ```javascript
 const AUTOMATION_URLS = {
-    'prompt-generator': 'https://cloud.activepieces.com/api/v1/webhooks/abc123xyz',
-    'brandseo': 'https://cloud.activepieces.com/api/v1/webhooks/def456uvw',
-    'ai-focus-group': 'https://forms.fillout.com/t/41Avi3Vjtxus',
-    'extractstyle': 'https://cloud.activepieces.com/chatbots/ghi789rst',
-    'blogger': 'https://cloud.activepieces.com/chatbots/jkl012mno',
-    'data-validation': 'https://drive.google.com/drive/folders/1a2b3c4d5e6f7g8h9i0j'
+  "prompt-generator":
+    "https://cloud.activepieces.com/api/v1/webhooks/abc123xyz",
+  brandseo: "https://cloud.activepieces.com/api/v1/webhooks/def456uvw",
+  "ai-focus-group": "https://forms.fillout.com/t/41Avi3Vjtxus",
+  extractstyle: "https://cloud.activepieces.com/chatbots/ghi789rst",
+  blogger: "https://cloud.activepieces.com/chatbots/jkl012mno",
+  "data-validation":
+    "https://drive.google.com/drive/folders/1a2b3c4d5e6f7g8h9i0j",
 };
 ```
 
@@ -116,16 +119,19 @@ After deployment:
 After deployment, test each automation:
 
 ### Webhook Automations (Test on your website)
+
 - [ ] **Prompt Generator** - Fill form, submit, check email
 - [ ] **BrandSEO** - Fill form, submit, check email
 
 ### Redirect Automations (Opens external page)
+
 - [ ] **AI Focus Group** - Click button, Fillout form opens
 - [ ] **ExtractStyle** - Click button, Chat UI opens
 - [ ] **Blogger** - Click button, Chat UI opens
 - [ ] **Data Validation** - Click button, Google Drive opens
 
 ### Other Features
+
 - [ ] Language toggle (EN ↔ ES) works
 - [ ] Theme toggle (Light ↔ Dark) works
 - [ ] Feedback form submits successfully
@@ -151,19 +157,25 @@ Edit `index.html`, find line 14:
 
 ```html
 <!-- Replace GA_MEASUREMENT_ID with your actual ID -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+></script>
 ```
 
 Replace with:
 
 ```html
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ABC123XYZ"></script>
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-ABC123XYZ"
+></script>
 ```
 
 Also update line 18:
 
 ```javascript
-gtag('config', 'G-ABC123XYZ');  // Your actual Measurement ID
+gtag("config", "G-ABC123XYZ"); // Your actual Measurement ID
 ```
 
 **Save and redeploy!**
@@ -173,6 +185,7 @@ gtag('config', 'G-ABC123XYZ');  // Your actual Measurement ID
 ## 📊 What Happens When Users Interact?
 
 ### Webhook Automations (Prompt Generator, BrandSEO)
+
 1. User clicks button on your website
 2. Form modal opens
 3. User fills and submits
@@ -182,6 +195,7 @@ gtag('config', 'G-ABC123XYZ');  // Your actual Measurement ID
 7. You receive notification at gonzalo@menatech.cloud
 
 ### Redirect Automations (AI Focus Group, ExtractStyle, Blogger)
+
 1. User clicks button on your website
 2. New tab opens with external form/chat
 3. User interacts with Fillout or Chat UI
@@ -190,6 +204,7 @@ gtag('config', 'G-ABC123XYZ');  // Your actual Measurement ID
 6. You receive notification at gonzalo@menatech.cloud
 
 ### File Upload (Data Validation)
+
 1. User clicks button on your website
 2. Google Drive folder opens
 3. User uploads PDF file
@@ -203,40 +218,51 @@ gtag('config', 'G-ABC123XYZ');  // Your actual Measurement ID
 ## 🆘 Troubleshooting
 
 ### "This automation is not yet configured" alert appears
+
 **Problem:** URL not configured or contains placeholder text  
 **Solution:** Check `js/app.js` and ensure all URLs are replaced with actual values
 
 ### Webhook not receiving data
+
 **Problem:** Webhook URL incorrect or flow not published  
-**Solution:** 
+**Solution:**
+
 - Verify webhook URL is complete and correct
 - Ensure flow is published in Activepieces
 - Test webhook with Postman or curl first
 
 ### Fillout form doesn't open
+
 **Problem:** Form ID incorrect or form not published  
 **Solution:**
+
 - Verify form ID: `41Avi3Vjtxus`
 - Check form is published in Fillout
 - Test URL directly: `https://forms.fillout.com/t/41Avi3Vjtxus`
 
 ### Chat UI doesn't open
+
 **Problem:** Chatbot URL incorrect or not published  
 **Solution:**
+
 - Verify chatbot is published in Activepieces
 - Check URL format: `https://cloud.activepieces.com/chatbots/...`
 - Test URL directly in browser
 
 ### Google Drive folder not accessible
+
 **Problem:** Sharing permissions not set correctly  
 **Solution:**
+
 - Check folder is set to "Anyone with the link"
 - Verify link is complete
 - Test in incognito mode
 
 ### Not receiving email notifications
+
 **Problem:** Email configuration in Activepieces  
 **Solution:**
+
 - Check email action in each flow
 - Verify email address is correct
 - Check spam folder
@@ -253,6 +279,7 @@ Don't forget to test on real mobile devices:
 - Tablet (iPad/Android)
 
 Check:
+
 - Navigation works
 - Buttons are clickable
 - Forms are easy to fill
@@ -287,6 +314,7 @@ Once live, monitor these in Google Analytics:
 Your automation hub is configured and ready to launch. Follow the 3 steps above and you'll be live in less than an hour!
 
 **Estimated Total Time:** 50 minutes
+
 - Step 1: 30 minutes (collecting URLs)
 - Step 2: 5 minutes (updating config)
 - Step 3: 15 minutes (deploying)
@@ -295,5 +323,4 @@ Good luck with your launch! 🚀
 
 ---
 
-*Last updated: October 2025*
-
+_Last updated: October 2025_

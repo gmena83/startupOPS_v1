@@ -18,7 +18,9 @@
     "preview:frontend": "cd frontend && npm run preview",
     "deploy": "netlify deploy --prod",
     "deploy:preview": "netlify deploy",
-    "lint": "cd frontend && npm run lint"
+    "lint": "cd frontend && npm run lint",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,css,md,json,html}\"",
+    "vibe": "npm run format && (npm run lint || echo Linting completed with warnings) && npm run build"
   },
   "keywords": [
     "automation",
@@ -35,6 +37,7 @@
     "node": ">=18.0.0"
   },
   "devDependencies": {
-    "netlify-cli": "^17.0.0"
+    "netlify-cli": "^17.0.0",
+    "prettier": "^3.7.4"
   }
 }

@@ -3,6 +3,7 @@
 This guide will help you customize and extend your Menatech Apps website without needing deep coding knowledge.
 
 ## Table of Contents
+
 1. [Changing Colors and Branding](#changing-colors-and-branding)
 2. [Adding New Automations](#adding-new-automations)
 3. [Modifying Existing Automations](#modifying-existing-automations)
@@ -22,34 +23,34 @@ This guide will help you customize and extend your Menatech Apps website without
 
 ```css
 :root {
-    /* Brand Colors */
-    --gradient-start: #FF9933;
-    --gradient-mid: #FFA500;
-    --gradient-end: #4DB8FF;
-    --accent-blue: #00BFFF;
-    --accent-orange: #FF9933;
+  /* Brand Colors */
+  --gradient-start: #ff9933;
+  --gradient-mid: #ffa500;
+  --gradient-end: #4db8ff;
+  --accent-blue: #00bfff;
+  --accent-orange: #ff9933;
 }
 ```
 
 **What each color controls:**
 
-| Variable | Where it appears |
-|----------|------------------|
-| `--gradient-start` | Hero section, buttons (start of gradient) |
-| `--gradient-mid` | Hero section, buttons (middle of gradient) |
-| `--gradient-end` | Hero section, buttons (end of gradient) |
-| `--accent-blue` | Card highlights, links |
-| `--accent-orange` | Hover effects, active states |
+| Variable           | Where it appears                           |
+| ------------------ | ------------------------------------------ |
+| `--gradient-start` | Hero section, buttons (start of gradient)  |
+| `--gradient-mid`   | Hero section, buttons (middle of gradient) |
+| `--gradient-end`   | Hero section, buttons (end of gradient)    |
+| `--accent-blue`    | Card highlights, links                     |
+| `--accent-orange`  | Hover effects, active states               |
 
 **Example - Change to purple/pink theme:**
 
 ```css
 :root {
-    --gradient-start: #9333EA;    /* Purple */
-    --gradient-mid: #C026D3;      /* Fuchsia */
-    --gradient-end: #EC4899;      /* Pink */
-    --accent-blue: #EC4899;       /* Pink */
-    --accent-orange: #9333EA;     /* Purple */
+  --gradient-start: #9333ea; /* Purple */
+  --gradient-mid: #c026d3; /* Fuchsia */
+  --gradient-end: #ec4899; /* Pink */
+  --accent-blue: #ec4899; /* Pink */
+  --accent-orange: #9333ea; /* Purple */
 }
 ```
 
@@ -68,8 +69,8 @@ Edit `css/styles.css` (around line 68):
 
 ```css
 .logo-img {
-    height: 50px;  /* Change this value */
-    width: auto;
+  height: 50px; /* Change this value */
+  width: auto;
 }
 ```
 
@@ -88,13 +89,17 @@ Edit `css/styles.css` (around line 68):
 **In `index.html`** (around line 9), replace:
 
 ```html
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+  rel="stylesheet"
+/>
 ```
 
 **In `css/styles.css`** (around line 27), update:
 
 ```css
---font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+--font-family:
+  "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 ```
 
 ---
@@ -112,26 +117,54 @@ Let's add a 7th automation as an example: **"Email Writer"**
 ```html
 <!-- Automation 7: Email Writer -->
 <div class="automation-card" data-automation="email-writer">
-    <div class="card-icon">📧</div>
-    <h3 class="card-title" data-en="Email Writer" data-es="Escritor de Emails">Email Writer</h3>
-    <p class="card-description" data-en="Generate professional emails for any situation with AI assistance" data-es="Genera emails profesionales para cualquier situación con asistencia de IA">
-        Generate professional emails for any situation with AI assistance
-    </p>
-    <div class="card-value" data-en="Save time writing emails while maintaining professionalism" data-es="Ahorra tiempo escribiendo emails mientras mantienes profesionalismo">
-        <strong data-en="Value:" data-es="Valor:">Value:</strong> Save time writing emails while maintaining professionalism
-    </div>
-    <div class="card-requirements">
-        <strong data-en="Required Data:" data-es="Datos Requeridos:">Required Data:</strong>
-        <ul>
-            <li data-en="Email purpose" data-es="Propósito del email">Email purpose</li>
-            <li data-en="Recipient context" data-es="Contexto del destinatario">Recipient context</li>
-            <li data-en="Tone preference" data-es="Preferencia de tono">Tone preference</li>
-            <li data-en="Email address for results" data-es="Correo electrónico para resultados">Email address for results</li>
-        </ul>
-    </div>
-    <button class="trigger-btn" data-automation-type="form" onclick="openAutomation('email-writer')">
-        <span data-en="Open Form" data-es="Abrir Formulario">Open Form</span>
-    </button>
+  <div class="card-icon">📧</div>
+  <h3 class="card-title" data-en="Email Writer" data-es="Escritor de Emails">
+    Email Writer
+  </h3>
+  <p
+    class="card-description"
+    data-en="Generate professional emails for any situation with AI assistance"
+    data-es="Genera emails profesionales para cualquier situación con asistencia de IA"
+  >
+    Generate professional emails for any situation with AI assistance
+  </p>
+  <div
+    class="card-value"
+    data-en="Save time writing emails while maintaining professionalism"
+    data-es="Ahorra tiempo escribiendo emails mientras mantienes profesionalismo"
+  >
+    <strong data-en="Value:" data-es="Valor:">Value:</strong> Save time writing
+    emails while maintaining professionalism
+  </div>
+  <div class="card-requirements">
+    <strong data-en="Required Data:" data-es="Datos Requeridos:"
+      >Required Data:</strong
+    >
+    <ul>
+      <li data-en="Email purpose" data-es="Propósito del email">
+        Email purpose
+      </li>
+      <li data-en="Recipient context" data-es="Contexto del destinatario">
+        Recipient context
+      </li>
+      <li data-en="Tone preference" data-es="Preferencia de tono">
+        Tone preference
+      </li>
+      <li
+        data-en="Email address for results"
+        data-es="Correo electrónico para resultados"
+      >
+        Email address for results
+      </li>
+    </ul>
+  </div>
+  <button
+    class="trigger-btn"
+    data-automation-type="form"
+    onclick="openAutomation('email-writer')"
+  >
+    <span data-en="Open Form" data-es="Abrir Formulario">Open Form</span>
+  </button>
 </div>
 ```
 
@@ -143,13 +176,13 @@ Let's add a 7th automation as an example: **"Email Writer"**
 
 ```javascript
 const AUTOMATION_WEBHOOKS = {
-    'data-validation': 'YOUR_ACTIVEPIECES_WEBHOOK_URL_HERE',
-    'prompt-generator': 'YOUR_ACTIVEPIECES_WEBHOOK_URL_HERE',
-    'brandseo': 'YOUR_ACTIVEPIECES_WEBHOOK_URL_HERE',
-    'ai-focus-group': 'YOUR_ACTIVEPIECES_WEBHOOK_URL_HERE',
-    'extractstyle': 'YOUR_ACTIVEPIECES_WEBHOOK_URL_HERE',
-    'blogger': 'YOUR_ACTIVEPIECES_WEBHOOK_URL_HERE',
-    'email-writer': 'YOUR_ACTIVEPIECES_WEBHOOK_URL_HERE'  // NEW
+  "data-validation": "YOUR_ACTIVEPIECES_WEBHOOK_URL_HERE",
+  "prompt-generator": "YOUR_ACTIVEPIECES_WEBHOOK_URL_HERE",
+  brandseo: "YOUR_ACTIVEPIECES_WEBHOOK_URL_HERE",
+  "ai-focus-group": "YOUR_ACTIVEPIECES_WEBHOOK_URL_HERE",
+  extractstyle: "YOUR_ACTIVEPIECES_WEBHOOK_URL_HERE",
+  blogger: "YOUR_ACTIVEPIECES_WEBHOOK_URL_HERE",
+  "email-writer": "YOUR_ACTIVEPIECES_WEBHOOK_URL_HERE", // NEW
 };
 ```
 
@@ -161,30 +194,30 @@ const AUTOMATION_WEBHOOKS = {
 
 ```javascript
 const translations = {
-    en: {
-        modalTitle: {
-            // ... existing ...
-            'email-writer': 'Email Writer'  // NEW
-        },
-        formLabels: {
-            // ... existing ...
-            emailPurpose: 'Email Purpose',  // NEW
-            recipientContext: 'Recipient Context',  // NEW
-            tonePreference: 'Tone Preference'  // NEW
-        }
+  en: {
+    modalTitle: {
+      // ... existing ...
+      "email-writer": "Email Writer", // NEW
     },
-    es: {
-        modalTitle: {
-            // ... existing ...
-            'email-writer': 'Escritor de Emails'  // NEW
-        },
-        formLabels: {
-            // ... existing ...
-            emailPurpose: 'Propósito del Email',  // NEW
-            recipientContext: 'Contexto del Destinatario',  // NEW
-            tonePreference: 'Preferencia de Tono'  // NEW
-        }
-    }
+    formLabels: {
+      // ... existing ...
+      emailPurpose: "Email Purpose", // NEW
+      recipientContext: "Recipient Context", // NEW
+      tonePreference: "Tone Preference", // NEW
+    },
+  },
+  es: {
+    modalTitle: {
+      // ... existing ...
+      "email-writer": "Escritor de Emails", // NEW
+    },
+    formLabels: {
+      // ... existing ...
+      emailPurpose: "Propósito del Email", // NEW
+      recipientContext: "Contexto del Destinatario", // NEW
+      tonePreference: "Preferencia de Tono", // NEW
+    },
+  },
 };
 ```
 
@@ -196,9 +229,9 @@ const translations = {
 
 ```javascript
 function generateEmailWriterForm(automationType) {
-    const t = translations[currentLang];
-    
-    return `
+  const t = translations[currentLang];
+
+  return `
         <form id="automationForm" class="feedback-form">
             <div class="form-group">
                 <label for="userEmail">${t.formLabels.email}</label>
@@ -237,14 +270,14 @@ function generateEmailWriterForm(automationType) {
 **Find the openAutomation function** (around line 140) and add to the switch statement:
 
 ```javascript
-switch(automationType) {
-    case 'data-validation':
-        formHTML += generateFileUploadForm(automationType, ['pdf']);
-        break;
-    // ... other cases ...
-    case 'email-writer':  // NEW
-        formHTML += generateEmailWriterForm(automationType);
-        break;
+switch (automationType) {
+  case "data-validation":
+    formHTML += generateFileUploadForm(automationType, ["pdf"]);
+    break;
+  // ... other cases ...
+  case "email-writer": // NEW
+    formHTML += generateEmailWriterForm(automationType);
+    break;
 }
 ```
 
@@ -261,10 +294,12 @@ switch(automationType) {
 Find the automation card and change the emoji in:
 
 ```html
-<div class="card-icon">📊</div>  <!-- Change this emoji -->
+<div class="card-icon">📊</div>
+<!-- Change this emoji -->
 ```
 
 **Emoji resources:**
+
 - [Emojipedia](https://emojipedia.org/)
 - [Get Emoji](https://getemoji.com/)
 
@@ -276,8 +311,10 @@ Find the automation's `<ul>` list and modify:
 
 ```html
 <ul>
-    <li data-en="New field name" data-es="Nuevo nombre de campo">New field name</li>
-    <!-- Add or remove <li> items as needed -->
+  <li data-en="New field name" data-es="Nuevo nombre de campo">
+    New field name
+  </li>
+  <!-- Add or remove <li> items as needed -->
 </ul>
 ```
 
@@ -288,6 +325,7 @@ Find the automation's `<ul>` list and modify:
 Find the form generator function (e.g., `generateBloggerForm`) and modify the HTML:
 
 **Add a new field:**
+
 ```javascript
 <div class="form-group">
     <label for="newField">${t.formLabels.newField}</label>
@@ -296,6 +334,7 @@ Find the form generator function (e.g., `generateBloggerForm`) and modify the HT
 ```
 
 **Change field type:**
+
 ```javascript
 <!-- Text input -->
 <input type="text" id="fieldName" name="fieldName" required>
@@ -338,11 +377,12 @@ Find the element and change the `data-en` attribute:
 
 ```html
 <h1 class="hero-title" data-en="New English Text" data-es="Nuevo Texto Español">
-    New English Text
+  New English Text
 </h1>
 ```
 
 **Important:** Always update BOTH:
+
 1. The `data-en` attribute
 2. The text between the tags (this is what shows by default)
 
@@ -353,9 +393,7 @@ Find the element and change the `data-en` attribute:
 Change the `data-es` attribute:
 
 ```html
-<p data-en="English version" data-es="Versión en español">
-    English version
-</p>
+<p data-en="English version" data-es="Versión en español">English version</p>
 ```
 
 ### Add New Translatable Text
@@ -363,9 +401,7 @@ Change the `data-es` attribute:
 **In HTML:**
 
 ```html
-<div data-en="English text" data-es="Texto español">
-    English text
-</div>
+<div data-en="English text" data-es="Texto español">English text</div>
 ```
 
 **In JavaScript (for dynamic content):**
@@ -376,18 +412,18 @@ Add to the translations object:
 
 ```javascript
 const translations = {
-    en: {
-        newSection: {
-            title: 'English Title',
-            description: 'English description'
-        }
+  en: {
+    newSection: {
+      title: "English Title",
+      description: "English description",
     },
-    es: {
-        newSection: {
-            title: 'Título Español',
-            description: 'Descripción española'
-        }
-    }
+  },
+  es: {
+    newSection: {
+      title: "Título Español",
+      description: "Descripción española",
+    },
+  },
 };
 ```
 
@@ -409,9 +445,9 @@ const title = translations[currentLang].newSection.title;
 
 ```css
 .automation-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: var(--spacing-lg);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--spacing-lg);
 }
 ```
 
@@ -439,11 +475,11 @@ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
 ```css
 :root {
-    --spacing-xs: 0.5rem;   /* 8px */
-    --spacing-sm: 1rem;     /* 16px */
-    --spacing-md: 1.5rem;   /* 24px */
-    --spacing-lg: 2rem;     /* 32px */
-    --spacing-xl: 3rem;     /* 48px */
+  --spacing-xs: 0.5rem; /* 8px */
+  --spacing-sm: 1rem; /* 16px */
+  --spacing-md: 1.5rem; /* 24px */
+  --spacing-lg: 2rem; /* 32px */
+  --spacing-xl: 3rem; /* 48px */
 }
 ```
 
@@ -467,16 +503,16 @@ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
 ```css
 :root {
-    --container-width: 1200px;
+  --container-width: 1200px;
 }
 ```
 
 **Options:**
 
 ```css
---container-width: 1000px;  /* Narrower */
---container-width: 1400px;  /* Wider */
---container-width: 100%;    /* Full width */
+--container-width: 1000px; /* Narrower */
+--container-width: 1400px; /* Wider */
+--container-width: 100%; /* Full width */
 ```
 
 ---
@@ -491,17 +527,40 @@ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
 ```html
 <!-- Newsletter Section -->
-<section class="newsletter" style="padding: 3rem 0; background: var(--bg-secondary);">
-    <div class="container">
-        <h2 class="section-title" data-en="Stay Updated" data-es="Mantente Actualizado">Stay Updated</h2>
-        <p style="text-align: center; margin-bottom: 2rem;" data-en="Get notified about new automations and features" data-es="Recibe notificaciones sobre nuevas automatizaciones y características">
-            Get notified about new automations and features
-        </p>
-        <form id="newsletterForm" style="max-width: 500px; margin: 0 auto; display: flex; gap: 1rem;">
-            <input type="email" placeholder="Your email" required style="flex: 1; padding: 1rem; border: 2px solid var(--border-color); border-radius: 8px; font-size: 1rem;">
-            <button type="submit" class="submit-btn" style="padding: 1rem 2rem;">Subscribe</button>
-        </form>
-    </div>
+<section
+  class="newsletter"
+  style="padding: 3rem 0; background: var(--bg-secondary);"
+>
+  <div class="container">
+    <h2
+      class="section-title"
+      data-en="Stay Updated"
+      data-es="Mantente Actualizado"
+    >
+      Stay Updated
+    </h2>
+    <p
+      style="text-align: center; margin-bottom: 2rem;"
+      data-en="Get notified about new automations and features"
+      data-es="Recibe notificaciones sobre nuevas automatizaciones y características"
+    >
+      Get notified about new automations and features
+    </p>
+    <form
+      id="newsletterForm"
+      style="max-width: 500px; margin: 0 auto; display: flex; gap: 1rem;"
+    >
+      <input
+        type="email"
+        placeholder="Your email"
+        required
+        style="flex: 1; padding: 1rem; border: 2px solid var(--border-color); border-radius: 8px; font-size: 1rem;"
+      />
+      <button type="submit" class="submit-btn" style="padding: 1rem 2rem;">
+        Subscribe
+      </button>
+    </form>
+  </div>
 </section>
 ```
 
@@ -509,18 +568,20 @@ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
 ```javascript
 // In attachEventListeners function
-document.getElementById('newsletterForm').addEventListener('submit', handleNewsletterSubmit);
+document
+  .getElementById("newsletterForm")
+  .addEventListener("submit", handleNewsletterSubmit);
 
 // Add new function
 async function handleNewsletterSubmit(event) {
-    event.preventDefault();
-    const email = event.target.querySelector('input[type="email"]').value;
-    
-    // Send to your email service or Activepieces webhook
-    console.log('Newsletter signup:', email);
-    
-    showMessage('success', 'Thank you for subscribing!');
-    event.target.reset();
+  event.preventDefault();
+  const email = event.target.querySelector('input[type="email"]').value;
+
+  // Send to your email service or Activepieces webhook
+  console.log("Newsletter signup:", email);
+
+  showMessage("success", "Thank you for subscribing!");
+  event.target.reset();
 }
 ```
 
@@ -533,23 +594,43 @@ async function handleNewsletterSubmit(event) {
 ```html
 <!-- FAQ Section -->
 <section class="faq" style="padding: 3rem 0; background: var(--bg-primary);">
-    <div class="container">
-        <h2 class="section-title" data-en="Frequently Asked Questions" data-es="Preguntas Frecuentes">Frequently Asked Questions</h2>
-        
-        <div style="max-width: 800px; margin: 0 auto;">
-            <details style="margin-bottom: 1rem; padding: 1.5rem; background: var(--bg-card); border-radius: 8px; border: 2px solid var(--border-color);">
-                <summary style="font-weight: 600; cursor: pointer; font-size: 1.1rem;">How long does it take to get results?</summary>
-                <p style="margin-top: 1rem; color: var(--text-secondary);">Most automations complete within 5-10 minutes. You'll receive results via email.</p>
-            </details>
-            
-            <details style="margin-bottom: 1rem; padding: 1.5rem; background: var(--bg-card); border-radius: 8px; border: 2px solid var(--border-color);">
-                <summary style="font-weight: 600; cursor: pointer; font-size: 1.1rem;">Is my data secure?</summary>
-                <p style="margin-top: 1rem; color: var(--text-secondary);">Yes! We use industry-standard encryption and never share your data with third parties.</p>
-            </details>
-            
-            <!-- Add more FAQ items as needed -->
-        </div>
+  <div class="container">
+    <h2
+      class="section-title"
+      data-en="Frequently Asked Questions"
+      data-es="Preguntas Frecuentes"
+    >
+      Frequently Asked Questions
+    </h2>
+
+    <div style="max-width: 800px; margin: 0 auto;">
+      <details
+        style="margin-bottom: 1rem; padding: 1.5rem; background: var(--bg-card); border-radius: 8px; border: 2px solid var(--border-color);"
+      >
+        <summary style="font-weight: 600; cursor: pointer; font-size: 1.1rem;">
+          How long does it take to get results?
+        </summary>
+        <p style="margin-top: 1rem; color: var(--text-secondary);">
+          Most automations complete within 5-10 minutes. You'll receive results
+          via email.
+        </p>
+      </details>
+
+      <details
+        style="margin-bottom: 1rem; padding: 1.5rem; background: var(--bg-card); border-radius: 8px; border: 2px solid var(--border-color);"
+      >
+        <summary style="font-weight: 600; cursor: pointer; font-size: 1.1rem;">
+          Is my data secure?
+        </summary>
+        <p style="margin-top: 1rem; color: var(--text-secondary);">
+          Yes! We use industry-standard encryption and never share your data
+          with third parties.
+        </p>
+      </details>
+
+      <!-- Add more FAQ items as needed -->
     </div>
+  </div>
 </section>
 ```
 
@@ -561,27 +642,58 @@ async function handleNewsletterSubmit(event) {
 
 ```html
 <!-- Testimonials Section -->
-<section class="testimonials" style="padding: 3rem 0; background: var(--bg-secondary);">
-    <div class="container">
-        <h2 class="section-title" data-en="What Our Users Say" data-es="Lo Que Dicen Nuestros Usuarios">What Our Users Say</h2>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
-            <div style="background: var(--bg-card); padding: 2rem; border-radius: 12px; border: 2px solid var(--border-color);">
-                <p style="font-style: italic; margin-bottom: 1rem; color: var(--text-secondary);">"Menatech Apps saved me hours of work! The Data Validation tool is a game-changer."</p>
-                <p style="font-weight: 600;">- Sarah Johnson, Marketing Director</p>
-            </div>
-            
-            <div style="background: var(--bg-card); padding: 2rem; border-radius: 12px; border: 2px solid var(--border-color);">
-                <p style="font-style: italic; margin-bottom: 1rem; color: var(--text-secondary);">"The Prompt Generator helped me get better results from AI tools immediately."</p>
-                <p style="font-weight: 600;">- Michael Chen, Product Manager</p>
-            </div>
-            
-            <div style="background: var(--bg-card); padding: 2rem; border-radius: 12px; border: 2px solid var(--border-color);">
-                <p style="font-style: italic; margin-bottom: 1rem; color: var(--text-secondary);">"BrandSEO gave us insights we never would have found on our own."</p>
-                <p style="font-weight: 600;">- Emily Rodriguez, CEO</p>
-            </div>
-        </div>
+<section
+  class="testimonials"
+  style="padding: 3rem 0; background: var(--bg-secondary);"
+>
+  <div class="container">
+    <h2
+      class="section-title"
+      data-en="What Our Users Say"
+      data-es="Lo Que Dicen Nuestros Usuarios"
+    >
+      What Our Users Say
+    </h2>
+
+    <div
+      style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;"
+    >
+      <div
+        style="background: var(--bg-card); padding: 2rem; border-radius: 12px; border: 2px solid var(--border-color);"
+      >
+        <p
+          style="font-style: italic; margin-bottom: 1rem; color: var(--text-secondary);"
+        >
+          "Menatech Apps saved me hours of work! The Data Validation tool is a
+          game-changer."
+        </p>
+        <p style="font-weight: 600;">- Sarah Johnson, Marketing Director</p>
+      </div>
+
+      <div
+        style="background: var(--bg-card); padding: 2rem; border-radius: 12px; border: 2px solid var(--border-color);"
+      >
+        <p
+          style="font-style: italic; margin-bottom: 1rem; color: var(--text-secondary);"
+        >
+          "The Prompt Generator helped me get better results from AI tools
+          immediately."
+        </p>
+        <p style="font-weight: 600;">- Michael Chen, Product Manager</p>
+      </div>
+
+      <div
+        style="background: var(--bg-card); padding: 2rem; border-radius: 12px; border: 2px solid var(--border-color);"
+      >
+        <p
+          style="font-style: italic; margin-bottom: 1rem; color: var(--text-secondary);"
+        >
+          "BrandSEO gave us insights we never would have found on our own."
+        </p>
+        <p style="font-weight: 600;">- Emily Rodriguez, CEO</p>
+      </div>
     </div>
+  </div>
 </section>
 ```
 
@@ -593,25 +705,58 @@ async function handleNewsletterSubmit(event) {
 
 ```html
 <div class="footer-content">
-    <p>&copy; 2025 Menatech. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span></p>
-    
-    <!-- NEW: Social Media Links -->
-    <div style="display: flex; gap: 1rem; align-items: center;">
-        <a href="https://twitter.com/menatech" target="_blank" style="color: var(--text-secondary); transition: color 0.3s;">
-            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
-        </a>
-        <a href="https://facebook.com/menatech" target="_blank" style="color: var(--text-secondary); transition: color 0.3s;">
-            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-        </a>
-        <a href="https://instagram.com/menatech" target="_blank" style="color: var(--text-secondary); transition: color 0.3s;">
-            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        </a>
-    </div>
-    
-    <div class="footer-links">
-        <a href="https://menatech.cloud" target="_blank">menatech.cloud</a>
-        <a href="https://www.linkedin.com/company/menatech-cloud/" target="_blank">LinkedIn</a>
-    </div>
+  <p>
+    &copy; 2025 Menatech.
+    <span
+      data-en="All rights reserved."
+      data-es="Todos los derechos reservados."
+      >All rights reserved.</span
+    >
+  </p>
+
+  <!-- NEW: Social Media Links -->
+  <div style="display: flex; gap: 1rem; align-items: center;">
+    <a
+      href="https://twitter.com/menatech"
+      target="_blank"
+      style="color: var(--text-secondary); transition: color 0.3s;"
+    >
+      <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+        <path
+          d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
+        />
+      </svg>
+    </a>
+    <a
+      href="https://facebook.com/menatech"
+      target="_blank"
+      style="color: var(--text-secondary); transition: color 0.3s;"
+    >
+      <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+        <path
+          d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
+        />
+      </svg>
+    </a>
+    <a
+      href="https://instagram.com/menatech"
+      target="_blank"
+      style="color: var(--text-secondary); transition: color 0.3s;"
+    >
+      <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+        <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+      </svg>
+    </a>
+  </div>
+
+  <div class="footer-links">
+    <a href="https://menatech.cloud" target="_blank">menatech.cloud</a>
+    <a href="https://www.linkedin.com/company/menatech-cloud/" target="_blank"
+      >LinkedIn</a
+    >
+  </div>
 </div>
 ```
 
@@ -620,6 +765,7 @@ async function handleNewsletterSubmit(event) {
 ## Tips for Customization
 
 ### 1. Always Test After Changes
+
 - Save your files
 - Refresh the browser (Ctrl+F5 or Cmd+Shift+R to clear cache)
 - Test in both light and dark mode
@@ -627,25 +773,31 @@ async function handleNewsletterSubmit(event) {
 - Test on mobile view
 
 ### 2. Keep Backups
+
 Before making major changes:
+
 ```bash
 # Create a backup
 cp -r menatech-apps menatech-apps-backup
 ```
 
 ### 3. Use Browser Developer Tools
+
 - Press F12 to open developer tools
 - Use "Inspect Element" to see which CSS rules apply
 - Edit CSS live to test changes before saving
 - Check Console tab for JavaScript errors
 
 ### 4. Validate Your Changes
+
 - **HTML**: Use [W3C Validator](https://validator.w3.org/)
 - **CSS**: Use [CSS Validator](https://jigsaw.w3.org/css-validator/)
 - **JavaScript**: Check browser console for errors
 
 ### 5. Mobile-First Approach
+
 Always check how changes look on mobile:
+
 - In Chrome: F12 → Click device icon → Select mobile device
 - Test actual mobile devices when possible
 
@@ -659,11 +811,11 @@ Always check how changes look on mobile:
 
 ```css
 .automation-card {
-    padding: 2.5rem;  /* Increase from 2rem */
+  padding: 2.5rem; /* Increase from 2rem */
 }
 
 .card-title {
-    font-size: 2rem;  /* Increase from 1.75rem */
+  font-size: 2rem; /* Increase from 1.75rem */
 }
 ```
 
@@ -673,9 +825,9 @@ Always check how changes look on mobile:
 
 ```css
 .trigger-btn {
-    border-radius: 50px;  /* Make fully rounded */
-    text-transform: uppercase;  /* ALL CAPS */
-    letter-spacing: 1px;  /* Spacing between letters */
+  border-radius: 50px; /* Make fully rounded */
+  text-transform: uppercase; /* ALL CAPS */
+  letter-spacing: 1px; /* Spacing between letters */
 }
 ```
 
@@ -685,18 +837,18 @@ Always check how changes look on mobile:
 
 ```css
 .automation-card {
-    animation: slideInUp 0.6s ease-out;
+  animation: slideInUp 0.6s ease-out;
 }
 
 @keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 ```
 
@@ -706,13 +858,13 @@ Always check how changes look on mobile:
 
 ```css
 .hero {
-    /* Solid color instead of gradient */
-    background: #FF9933;
-    
-    /* Or use an image */
-    background-image: url('images/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
+  /* Solid color instead of gradient */
+  background: #ff9933;
+
+  /* Or use an image */
+  background-image: url("images/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
 }
 ```
 
@@ -728,4 +880,3 @@ If you get stuck:
 4. **Contact support**: gonzalo@menatech.cloud
 
 Remember: Customization is iterative. Make small changes, test, then move to the next change!
-

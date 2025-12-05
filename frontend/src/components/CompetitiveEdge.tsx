@@ -69,7 +69,9 @@ const advantages: Advantage[] = [
 
 export const CompetitiveEdge = () => {
   const { t } = useLanguage();
-  const [selectedAdvantage, setSelectedAdvantage] = useState<Advantage | null>(null);
+  const [selectedAdvantage, setSelectedAdvantage] = useState<Advantage | null>(
+    null,
+  );
 
   return (
     <section className="py-16 sm:py-24 bg-background">
@@ -82,7 +84,7 @@ export const CompetitiveEdge = () => {
             {t("competitive.description")}
           </p>
         </div>
-        
+
         <div className="max-w-6xl mx-auto">
           {/* Alternatives comparison */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
@@ -97,22 +99,33 @@ export const CompetitiveEdge = () => {
                     <X className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-destructive" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-sm sm:text-base mb-1">{t(alt.nameKey)}</h3>
-                    <p className="text-xs sm:text-sm font-medium text-destructive">{t(alt.costKey)}</p>
+                    <h3 className="font-semibold text-sm sm:text-base mb-1">
+                      {t(alt.nameKey)}
+                    </h3>
+                    <p className="text-xs sm:text-sm font-medium text-destructive">
+                      {t(alt.costKey)}
+                    </p>
                   </div>
                 </div>
-                <p className="text-xs sm:text-sm text-muted-foreground">{t(alt.limitationKey)}</p>
+                <p className="text-xs sm:text-sm text-muted-foreground">
+                  {t(alt.limitationKey)}
+                </p>
               </div>
             ))}
           </div>
-          
+
           {/* StartupOPS advantages */}
-          <div className="p-6 sm:p-8 rounded-2xl bg-gradient-accent shadow-medium animate-fade-in-up" style={{ animationDelay: "400ms" }}>
+          <div
+            className="p-6 sm:p-8 rounded-2xl bg-gradient-accent shadow-medium animate-fade-in-up"
+            style={{ animationDelay: "400ms" }}
+          >
             <div className="flex items-center gap-3 mb-4 sm:mb-6">
               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-accent-foreground/10 flex items-center justify-center">
                 <Check className="h-5 w-5 sm:h-6 sm:w-6 text-accent-foreground" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-accent-foreground">StartupOPS</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-accent-foreground">
+                StartupOPS
+              </h3>
             </div>
             <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
               {advantages.map((advantage) => (
@@ -128,13 +141,18 @@ export const CompetitiveEdge = () => {
                 </div>
               ))}
             </div>
-            <p className="text-xs text-accent-foreground/80 mt-4 text-center">Click any advantage to learn more →</p>
+            <p className="text-xs text-accent-foreground/80 mt-4 text-center">
+              Click any advantage to learn more →
+            </p>
           </div>
         </div>
       </div>
 
       {/* Advantage Details Dialog */}
-      <Dialog open={!!selectedAdvantage} onOpenChange={() => setSelectedAdvantage(null)}>
+      <Dialog
+        open={!!selectedAdvantage}
+        onOpenChange={() => setSelectedAdvantage(null)}
+      >
         <DialogContent className="sm:max-w-[600px]">
           {selectedAdvantage && (
             <>
@@ -148,7 +166,7 @@ export const CompetitiveEdge = () => {
                   </DialogTitle>
                 </div>
               </DialogHeader>
-              
+
               <div className="space-y-4 py-4">
                 <div>
                   <h3 className="font-semibold text-lg mb-2">How It Works</h3>
@@ -156,7 +174,7 @@ export const CompetitiveEdge = () => {
                     {t(selectedAdvantage.detailsKey)}
                   </p>
                 </div>
-                
+
                 <div>
                   <h3 className="font-semibold text-lg mb-2">Data & Sources</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">

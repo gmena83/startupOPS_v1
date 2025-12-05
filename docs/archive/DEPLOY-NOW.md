@@ -27,11 +27,11 @@ git push origin main
 
 #### Update Build Settings:
 
-| Setting | Value |
-|---------|-------|
-| **Base directory** | `frontend` |
-| **Build command** | `npm run build` |
-| **Publish directory** | `frontend/dist` |
+| Setting                 | Value                             |
+| ----------------------- | --------------------------------- |
+| **Base directory**      | `frontend`                        |
+| **Build command**       | `npm run build`                   |
+| **Publish directory**   | `frontend/dist`                   |
 | **Functions directory** | `menatech-apps/netlify/functions` |
 
 #### Set Environment Variables:
@@ -48,10 +48,12 @@ NODE_VERSION = 18
 ### Step 3: Deploy
 
 **Option A: Trigger Deploy**
+
 - Go to **Deploys** tab
 - Click **Trigger deploy** → **Deploy site**
 
 **Option B: Auto Deploy**
+
 - Just push to GitHub (already set up)
 - Netlify will auto-deploy
 
@@ -88,6 +90,7 @@ npx netlify deploy --prod --dir=frontend/dist --functions=menatech-apps/netlify/
 ### Verify API Key
 
 Check if email function works:
+
 ```bash
 curl -X POST https://startupopsv1.netlify.app/api/send-feedback \
   -H "Content-Type: application/json" \
@@ -103,16 +106,19 @@ curl -X POST https://startupopsv1.netlify.app/api/send-feedback \
 ## 🔧 Troubleshooting
 
 ### Build Fails?
+
 - Check build logs in Netlify dashboard
 - Verify base directory is set to `frontend`
 - Ensure environment variables are set
 
 ### Functions Not Working?
+
 - Check environment variable `RESEND_API_KEY` is set
 - Verify functions directory: `menatech-apps/netlify/functions`
 - Check function logs in dashboard
 
 ### API Errors?
+
 - Verify RESEND_API_KEY is correct
 - Check CORS headers are set
 - Test endpoint directly: `https://startupopsv1.netlify.app/.netlify/functions/send-feedback`
@@ -122,6 +128,7 @@ curl -X POST https://startupopsv1.netlify.app/api/send-feedback \
 ## ✅ Success Checklist
 
 After deployment, verify:
+
 - [ ] Site loads at https://startupopsv1.netlify.app
 - [ ] All pages accessible
 - [ ] Language toggle works
@@ -137,6 +144,7 @@ After deployment, verify:
 **Ready to deploy!** 🚀
 
 Choose your method:
+
 1. **Recommended:** Push to GitHub + Configure dashboard
 2. **Alternative:** Manual CLI deploy
 

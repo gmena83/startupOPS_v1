@@ -25,6 +25,7 @@ Functions directory:   ../menatech-apps/netlify/functions
 ```
 
 **Important Notes:**
+
 - Publish directory is `dist` (relative to base directory `frontend`)
 - Functions path is relative: `../menatech-apps/netlify/functions`
 - Leave "Package directory" blank (not needed)
@@ -38,12 +39,14 @@ Click **Save**
 3. Add these TWO variables:
 
 **Variable 1:**
+
 ```
 Key:   RESEND_API_KEY
 Value: re_2SXSkssi_9HK7fMKfPPFbmvvPQcXdhRir
 ```
 
 **Variable 2:**
+
 ```
 Key:   NODE_VERSION
 Value: 18
@@ -54,11 +57,13 @@ Click **Save** after adding both
 ### Step 3: Trigger Deployment
 
 **Option A: Auto Deploy (Recommended)**
+
 - Netlify should auto-deploy after detecting the GitHub push
 - Go to **Deploys** tab
 - Watch the build progress
 
 **Option B: Manual Trigger**
+
 - Go to **Deploys** tab
 - Click **Trigger deploy → Deploy site**
 
@@ -67,11 +72,13 @@ Click **Save** after adding both
 ## 🔍 Monitor Deployment
 
 ### Watch Build Logs
+
 1. Go to **Deploys** tab in Netlify
 2. Click on the latest deploy (in progress)
 3. Watch the build log for any errors
 
 ### Expected Build Output:
+
 ```
 - Installing dependencies
 - Building frontend with Vite
@@ -89,27 +96,33 @@ Click **Save** after adding both
 Once deployment completes:
 
 ### 1. Test Your Site
+
 Visit: **https://startupopsv1.netlify.app**
 
 ### 2. Check Pages
+
 - [ ] Home page loads
 - [ ] Features section visible
 - [ ] Pricing section visible
 - [ ] All navigation works
 
 ### 3. Test Functionality
+
 - [ ] Language toggle (EN/ES) works
 - [ ] Theme toggle (Light/Dark) works
 - [ ] Contact form appears
 - [ ] Form submission works
 
 ### 4. Test API/Email Function
+
 Try submitting the contact form:
+
 - Fill in name, email, message
 - Click submit
 - Check if email arrives at: gonzalo@menatech.cloud
 
 ### 5. Check Function Logs
+
 1. Go to **Functions** tab in Netlify
 2. Click **send-feedback**
 3. View logs to see if function executed
@@ -121,22 +134,26 @@ Try submitting the contact form:
 ### Build Fails?
 
 **Check:**
+
 - Base directory is set to `frontend`
 - Build command is `npm run build`
 - Publish directory is `frontend/dist`
 
 **Fix:**
+
 - Update build settings in Netlify dashboard
 - Clear cache and retry deploy
 
 ### Function Not Working?
 
 **Check:**
+
 - Environment variable `RESEND_API_KEY` is set
 - Functions directory is `menatech-apps/netlify/functions`
 - View function logs for errors
 
 **Fix:**
+
 - Verify API key is correct
 - Check function logs in Netlify dashboard
 - Test endpoint: `https://startupopsv1.netlify.app/.netlify/functions/send-feedback`
@@ -144,6 +161,7 @@ Try submitting the contact form:
 ### API Errors?
 
 **Test endpoint manually:**
+
 ```bash
 curl -X POST https://startupopsv1.netlify.app/api/send-feedback \
   -H "Content-Type: application/json" \
@@ -161,6 +179,7 @@ Should return: Success response or error message
 ## 📊 Expected Results
 
 ### Successful Deployment Shows:
+
 - ✅ Build status: Published
 - ✅ Deploy time: ~2-3 minutes
 - ✅ Site URL: https://startupopsv1.netlify.app
@@ -168,6 +187,7 @@ Should return: Success response or error message
 - ✅ No errors in logs
 
 ### Performance Metrics:
+
 - Bundle size: ~614 KB
 - Gzipped: ~126 KB
 - Load time: < 3 seconds
@@ -177,6 +197,7 @@ Should return: Success response or error message
 ## 🎯 Action Items Summary
 
 **REQUIRED NOW:**
+
 1. [ ] Go to Netlify dashboard
 2. [ ] Update build settings (base: `frontend`)
 3. [ ] Add environment variables (RESEND_API_KEY, NODE_VERSION)
@@ -191,6 +212,7 @@ Should return: Success response or error message
 ## 📞 Need Help?
 
 **Resources:**
+
 - Netlify Dashboard: https://app.netlify.com
 - Build Settings: Site Settings → Build & deploy
 - Environment Vars: Site Settings → Environment variables
@@ -198,6 +220,7 @@ Should return: Success response or error message
 - Function Logs: Functions tab → send-feedback
 
 **Documentation:**
+
 - DEPLOYMENT.md - Full deployment guide
 - PRE-DEPLOYMENT-ANALYSIS.md - Complete analysis
 
@@ -206,6 +229,7 @@ Should return: Success response or error message
 ## 🎉 Once Complete
 
 After successful deployment:
+
 - ✅ Your app is live at https://startupopsv1.netlify.app
 - ✅ Full-stack integration working
 - ✅ React frontend serving from CDN
